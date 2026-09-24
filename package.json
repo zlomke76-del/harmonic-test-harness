@@ -34,10 +34,11 @@
     "test:v107-witness-integrity": "node scripts/test-v107-playground-witness-integrity.cjs"
   },
   "dependencies": {
+    "@vercel/analytics": "^2.0.1",
     "next": "15.3.8",
+    "openai": "^4.104.0",
     "react": "19.0.1",
     "react-dom": "19.0.1",
-    "openai": "^4.104.0",
     "zod": "^3.25.36"
   },
   "devDependencies": {
