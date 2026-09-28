@@ -1959,15 +1959,15 @@ export default function Home() {
 }, [selectedModel, scenario, runtimeTarget]);
 
   useEffect(() => {
-    if (scenario !== CUSTOM_SCENARIO_ID) return;
+    if (scenario !== CUSTOM_SCENARIO_ID || exactPacketReplay) return;
 
-    // Custom entry is always a clean live-evaluation surface on entry/mount.
-    // This also defeats browser/React state restoration from a prior exact replay.
-    setExactPacketReplay(false);
+    // Ordinary Custom entry is a clean live-evaluation surface. Frozen exact-replay
+    // loaders intentionally enter Custom with exactPacketReplay=true, so do not
+    // erase their packet/replay state after React commits the scenario change.
     setExactPacketJson("");
     setError(null);
     setResult(null);
-  }, [scenario]);
+  }, [scenario, exactPacketReplay]);
 
   function applyScenario(id: string) {
     const selected = scenarios.find((item) => item.id === id);
