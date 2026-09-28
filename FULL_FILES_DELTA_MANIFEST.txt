@@ -1,14 +1,10 @@
-V109 full-files delta — apply over V108
+V110 V109 UI Runner Hotfix — full-files delta only
 
-Changed full file:
-- package.json
-
-New full files:
-- V109_SUCCESSOR_FEDERATION_EXAMINATION.md
-- fixtures/v109-successor-federation/freeze.json
-- fixtures/v109-successor-federation/dn1.json
-- fixtures/v109-successor-federation/dn2.json
-- scripts/test-v109-successor-federation-fixtures.cjs
+Replace/add these files at the same repo paths:
+app/page.tsx
+fixtures/v109-successor-federation/dn1.json
+fixtures/v109-successor-federation/dn2.json
+fixtures/v109-successor-federation/freeze.json
+V110_V109_UI_RUNNER_HOTFIX.md
 
 Harmonic core changes: NONE
-Requires V108 successor examination integrity hotfix already applied.
