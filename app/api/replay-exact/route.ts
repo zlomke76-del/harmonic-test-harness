@@ -3,6 +3,7 @@ import { NextResponse } from "next/server";
 import { z } from "zod";
 import { projectExactPacketReplay } from "../../../lib/governance-adapter";
 import type { CompareResponse, LaneResult } from "../../../lib/types";
+import { auditStandingSemanticPreload } from "../../../lib/examination-integrity";
 
 export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
@@ -10,7 +11,8 @@ export const dynamic = "force-dynamic";
 const DEFAULT_HARMONIC_API_URL = "https://www.solace-harmonic.com/api/evaluate";
 
 const RequestSchema = z.object({
-  packetJson: z.string().min(2).max(250000)
+  packetJson: z.string().min(2).max(250000),
+  enforceNoStandingPreload: z.boolean().default(false)
 });
 
 function asRecord(value: unknown): Record<string, unknown> | null {
@@ -48,6 +50,20 @@ export async function POST(req: Request) {
     } catch (err) {
       const message = err instanceof Error ? err.message : "Invalid JSON packet.";
       return NextResponse.json({ error: `Exact replay packet is not valid JSON: ${message}` }, { status: 400 });
+    }
+
+    if (input.enforceNoStandingPreload) {
+      const semanticPreloadFindings = auditStandingSemanticPreload(packet);
+      if (semanticPreloadFindings.length > 0) {
+        return NextResponse.json({
+          error: "Successor examination integrity failure: standing-bearing semantics are present upstream.",
+          examination_integrity: {
+            mode: "successor_no_standing_preload",
+            passed: false,
+            findings: semanticPreloadFindings
+          }
+        }, { status: 422 });
+      }
     }
 
     const packetId = typeof packet.packet_id === "string" && packet.packet_id.trim()
@@ -162,7 +178,9 @@ export async function POST(req: Request) {
         outbound_sha256: outboundSha256,
         outbound_bytes: outboundBytes,
         semantic_translation_performed: false,
-        llm_involved_in_packet_construction: false
+        llm_involved_in_packet_construction: false,
+        successor_no_standing_preload_enforced: input.enforceNoStandingPreload,
+        successor_no_standing_preload_passed: input.enforceNoStandingPreload ? true : null
       }
     };
 
