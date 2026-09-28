@@ -32,7 +32,8 @@
     "test:v99-consequence-record": "node scripts/test-v99-consequence-engineering-record.cjs",
     "test:v100-v42-contract": "node scripts/test-v100-v42-contract.cjs",
     "test:v107-witness-integrity": "node scripts/test-v107-playground-witness-integrity.cjs",
-    "test:v108-successor-integrity": "node scripts/test-v108-successor-integrity.cjs"
+    "test:v108-successor-integrity": "node scripts/test-v108-successor-integrity.cjs",
+    "test:v109-successor-federation": "node scripts/test-v109-successor-federation-fixtures.cjs"
   },
   "dependencies": {
     "@vercel/analytics": "^2.0.1",

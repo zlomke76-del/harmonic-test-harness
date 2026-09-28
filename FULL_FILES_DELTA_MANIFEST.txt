@@ -1,8 +1,14 @@
-Harmonic Test Harness V95 witness-label consistency delta
+V109 full-files delta — apply over V108
 
-Full replacement file:
-- lib/governance-adapter.ts
+Changed full file:
+- package.json
 
-Purpose:
-- Remove stale hard-coded adapter_build labels (v86/v75) from request witnesses and use HARNESS_METHODOLOGY_VERSION consistently.
-- No governance facts or outcomes are inferred or changed by this delta.
+New full files:
+- V109_SUCCESSOR_FEDERATION_EXAMINATION.md
+- fixtures/v109-successor-federation/freeze.json
+- fixtures/v109-successor-federation/dn1.json
+- fixtures/v109-successor-federation/dn2.json
+- scripts/test-v109-successor-federation-fixtures.cjs
+
+Harmonic core changes: NONE
+Requires V108 successor examination integrity hotfix already applied.
