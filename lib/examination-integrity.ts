@@ -25,7 +25,9 @@ const BANNED_VALUE_PATTERNS: Array<[string, RegExp]> = [
   ["material contradiction", /\bmaterial(?:ly)?\s+contradict(?:ion|ory|s|ed|ing)?\b/i],
   ["standing-preserving", /\b(?:preserv(?:e|ed|es|ing)|defeat(?:ed|s|ing)?)\b[\s_-]*(?:the\s+)?\bstanding\b/i],
   ["invalidated reliance", /\binvalidat(?:e|ed|es|ing|ion)\b[\s\S]{0,80}\breliance\b/i],
-  ["non-current prior state", /\b(?:non[_ -]?current|not[_ -]?current)\b[\s\S]{0,80}\b(?:prior\s+)?state\b/i]
+  ["non-current prior state", /\b(?:non[_ -]?current|not[_ -]?current)\b[\s\S]{0,80}\b(?:prior\s+)?state\b/i],
+  ["admissibility conclusion", /\b(?:admissible|inadmissible)\b/i],
+  ["execution disposition", /\b(?:permit(?:ted)?|den(?:y|ied)|allow(?:ed)?|block(?:ed)?)\b/i]
 ];
 
 export function auditStandingSemanticPreload(value: unknown): SemanticPreloadFinding[] {
