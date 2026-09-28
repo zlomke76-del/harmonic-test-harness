@@ -1917,6 +1917,7 @@ export default function Home() {
   const [customConsequenceProfileJson, setCustomConsequenceProfileJson] = useState("");
   const [customUnderstandingWitnessJson, setCustomUnderstandingWitnessJson] = useState("");
   const [exactPacketReplay, setExactPacketReplay] = useState(false);
+  const [enforceNoStandingPreload, setEnforceNoStandingPreload] = useState(false);
   const [exactPacketJson, setExactPacketJson] = useState("");
 
   const patternOptions = useMemo(() => [PATTERN_ALL, ...Array.from(new Set(scenarios.map((item) => item.pattern)))], [scenarios]);
@@ -2373,7 +2374,7 @@ export default function Home() {
         const replayRes = await fetch("/api/replay-exact", {
           method: "POST",
           headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({ packetJson: exactPacketJson })
+          body: JSON.stringify({ packetJson: exactPacketJson, enforceNoStandingPreload })
         });
         const replayJson = await replayRes.json();
         if (!replayRes.ok) {
@@ -2626,6 +2627,14 @@ export default function Home() {
   ...
 }'
                     />
+                  </label>
+                  <label className="witnessBoundary">
+                    <input
+                      type="checkbox"
+                      checked={enforceNoStandingPreload}
+                      onChange={(e) => setEnforceNoStandingPreload(e.target.checked)}
+                    />
+                    <strong> Successor examination integrity gate</strong> — reject the specimen before transport if it contains standing-bearing fields or language such as standing, revalidation, supersession, or material-contradiction classifications. This gate audits the examination fixture only; it does not make a governance determination.
                   </label>
                   <p className="witnessNote">Replay integrity is checked against packet_id. The Engineering View records the SHA-256 and byte length of the exact outbound JSON body.</p>
                 </>
