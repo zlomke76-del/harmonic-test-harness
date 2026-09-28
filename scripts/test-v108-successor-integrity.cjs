@@ -1,0 +1,16 @@
+const fs=require('fs');
+const integrity=fs.readFileSync('lib/examination-integrity.ts','utf8');
+const replay=fs.readFileSync('app/api/replay-exact/route.ts','utf8');
+const page=fs.readFileSync('app/page.tsx','utf8');
+const sink=fs.readFileSync('app/api/synthetic-execution-sink/route.ts','utf8');
+const assert=(v,m)=>{if(!v)throw new Error(m);};
+assert(integrity.includes('revalidation_required'), 'revalidation preload field not guarded');
+assert(integrity.includes('prior_state_status'), 'prior-state preload field not guarded');
+assert(integrity.includes('material contradiction'), 'material contradiction prose not guarded');
+assert(replay.includes('enforceNoStandingPreload'), 'exact replay successor gate missing');
+assert(replay.includes('auditStandingSemanticPreload(packet)'), 'packet audit not wired before transport');
+assert(page.includes('Successor examination integrity gate'), 'UI successor gate missing');
+assert(sink.includes('x-harmonic-execution-receipt'), 'synthetic sink does not require Harmonic receipt');
+assert(sink.includes('execute_hash_mismatch'), 'synthetic sink does not bind exact execute payload');
+assert(sink.includes('effect_observed: true'), 'synthetic sink does not emit positive-control effect witness');
+console.log('V108 successor examination integrity: PASS');
