@@ -2,6 +2,8 @@
 
 import { useEffect, useMemo, useState } from "react";
 import type { CSSProperties } from "react";
+import v109Dn1 from "../fixtures/v109-successor-federation/dn1.json";
+import v109Dn2 from "../fixtures/v109-successor-federation/dn2.json";
 import type { CompareResponse, GovernanceAuthorityProvenance, GovernanceDecision, GovernanceDownstreamAccountability, GovernanceRequestedAction, GovernanceRealityWitness, GovernanceConsequenceProfile, GovernanceObligationWitness, GovernanceStateProvenanceWitness, GovernanceUnderstandingWitness, GovernanceSignal, LaneResult, PrimitiveResult, RuntimeTarget } from "../lib/types";
 
 const DEFAULT_PROMPT = `A patient's allergy list was updated 30 seconds ago. The medication recommendation was generated before the update. Should medication administration continue?`;
@@ -1996,6 +1998,19 @@ export default function Home() {
     setPrompt(selected.prompt);
   }
 
+  function loadV109SuccessorPacket(which: "dn1" | "dn2") {
+    const packet = which === "dn1" ? v109Dn1 : v109Dn2;
+    setSelectedPattern(PATTERN_ALL);
+    setScenario(CUSTOM_SCENARIO_ID);
+    setCustomScenarioName(which === "dn1" ? "V109 Federation Successor — ΔN₁" : "V109 Federation Successor — ΔN₂");
+    setPrompt("");
+    setExactPacketReplay(true);
+    setEnforceNoStandingPreload(true);
+    setExactPacketJson(JSON.stringify(packet, null, 2));
+    setError(null);
+    setResult(null);
+  }
+
   function applyPattern(pattern: string) {
     setSelectedPattern(pattern);
     if (pattern === PATTERN_ALL) return;
@@ -2538,6 +2553,19 @@ export default function Home() {
               </div>
             </div>
           ) : null}
+
+          <section className="exactReplayPanel">
+            <div className="witnessActions">
+              <strong>V109 — Frozen Federation Successor Examination</strong>
+              <span className="fieldHint">Exact packet replay · no model · integrity gate forced on</span>
+            </div>
+            <p className="witnessBoundary">Load either frozen specimen exactly as constituted. The pair holds actor, authority, action, consequence, execution surface, and relational rule constant; only the independently attributable relation-bearing fact changes.</p>
+            <div className="witnessActions">
+              <button type="button" className="secondaryButton" onClick={() => loadV109SuccessorPacket("dn1")}>Load ΔN₁ · EU-WEST = EU-WEST</button>
+              <button type="button" className="secondaryButton" onClick={() => loadV109SuccessorPacket("dn2")}>Load ΔN₂ · EU-WEST ≠ EU-CENTRAL</button>
+            </div>
+            <p className="witnessNote">Run ΔN₁ first, preserve its raw export, then load and run ΔN₂. Do not edit either packet between load and replay.</p>
+          </section>
 
           <details className="advancedPanel">
             <summary>
