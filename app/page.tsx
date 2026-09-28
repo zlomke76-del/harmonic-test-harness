@@ -6,6 +6,8 @@ import v109Dn1 from "../fixtures/v109-successor-federation/dn1.json";
 import v109Dn2 from "../fixtures/v109-successor-federation/dn2.json";
 import v112Dn1 from "../fixtures/v112-specialty-pack-standing/dn1-harmonic-packet.json";
 import v112Dn2 from "../fixtures/v112-specialty-pack-standing/dn2-harmonic-packet.json";
+import v113Dn1 from "../fixtures/v113-complete-information-standing/dn1-harmonic-packet.json";
+import v113Dn2 from "../fixtures/v113-complete-information-standing/dn2-harmonic-packet.json";
 import type { CompareResponse, GovernanceAuthorityProvenance, GovernanceDecision, GovernanceDownstreamAccountability, GovernanceRequestedAction, GovernanceRealityWitness, GovernanceConsequenceProfile, GovernanceObligationWitness, GovernanceStateProvenanceWitness, GovernanceUnderstandingWitness, GovernanceSignal, LaneResult, PrimitiveResult, RuntimeTarget } from "../lib/types";
 
 const DEFAULT_PROMPT = `A patient's allergy list was updated 30 seconds ago. The medication recommendation was generated before the update. Should medication administration continue?`;
@@ -1922,6 +1924,7 @@ export default function Home() {
   const [customUnderstandingWitnessJson, setCustomUnderstandingWitnessJson] = useState("");
   const [exactPacketReplay, setExactPacketReplay] = useState(false);
   const [enforceNoStandingPreload, setEnforceNoStandingPreload] = useState(false);
+  const [enforceNoConstitutionalAnswerPreload, setEnforceNoConstitutionalAnswerPreload] = useState(false);
   const [exactPacketJson, setExactPacketJson] = useState("");
 
   const patternOptions = useMemo(() => [PATTERN_ALL, ...Array.from(new Set(scenarios.map((item) => item.pattern)))], [scenarios]);
@@ -2008,6 +2011,7 @@ export default function Home() {
     setPrompt("");
     setExactPacketReplay(true);
     setEnforceNoStandingPreload(true);
+    setEnforceNoConstitutionalAnswerPreload(false);
     setExactPacketJson(JSON.stringify(packet, null, 2));
     setError(null);
     setResult(null);
@@ -2021,6 +2025,21 @@ export default function Home() {
     setPrompt("");
     setExactPacketReplay(true);
     setEnforceNoStandingPreload(true);
+    setEnforceNoConstitutionalAnswerPreload(false);
+    setExactPacketJson(JSON.stringify(packet, null, 2));
+    setError(null);
+    setResult(null);
+  }
+
+  function loadV113SuccessorPacket(which: "dn1" | "dn2") {
+    const packet = which === "dn1" ? v113Dn1 : v113Dn2;
+    setSelectedPattern(PATTERN_ALL);
+    setScenario(CUSTOM_SCENARIO_ID);
+    setCustomScenarioName(which === "dn1" ? "V113 Complete Information → Harmonic — ΔN₁" : "V113 Complete Information → Harmonic — ΔN₂");
+    setPrompt("");
+    setExactPacketReplay(true);
+    setEnforceNoStandingPreload(false);
+    setEnforceNoConstitutionalAnswerPreload(true);
     setExactPacketJson(JSON.stringify(packet, null, 2));
     setError(null);
     setResult(null);
@@ -2404,7 +2423,7 @@ export default function Home() {
         const replayRes = await fetch("/api/replay-exact", {
           method: "POST",
           headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({ packetJson: exactPacketJson, enforceNoStandingPreload })
+          body: JSON.stringify({ packetJson: exactPacketJson, enforceNoStandingPreload, enforceNoConstitutionalAnswerPreload })
         });
         const replayJson = await replayRes.json();
         if (!replayRes.ok) {
@@ -2593,6 +2612,19 @@ export default function Home() {
               <button type="button" className="secondaryButton" onClick={() => loadV112SuccessorPacket("dn2")}>Load ΔN₂ · domain relationship: misalignment</button>
             </div>
             <p className="witnessNote">Run ΔN₁ first and preserve the raw export. Then run ΔN₂ unchanged. The integrity gate rejects standing-bearing constitutional conclusions upstream.</p>
+          </section>
+
+          <section className="exactReplayPanel">
+            <div className="witnessActions">
+              <strong>V113 — Complete Information → Harmonic Standing Successor</strong>
+              <span className="fieldHint">All required governing information in · case-specific constitutional answer out</span>
+            </div>
+            <p className="witnessBoundary">The Specialty Pack supplies the complete attributable domain transition classification required by Harmonic's constituted interface. Harmonic receives the frozen rule, facts, provenance, consequence and transition class, but never receives standing, revalidation, admissibility or execution disposition for the case.</p>
+            <div className="witnessActions">
+              <button type="button" className="secondaryButton" onClick={() => loadV113SuccessorPacket("dn1")}>Load ΔN₁ · consistent with prior state</button>
+              <button type="button" className="secondaryButton" onClick={() => loadV113SuccessorPacket("dn2")}>Load ΔN₂ · material contradiction</button>
+            </div>
+            <p className="witnessNote">Run ΔN₁ first and preserve the raw export. Then run ΔN₂ unchanged. V113 integrity permits the required domain transition classification while rejecting any case-specific constitutional answer upstream.</p>
           </section>
 
           <details className="advancedPanel">
