@@ -1,0 +1,144 @@
+{
+  "packet_id": "V113-COMPLETE-INFORMATION-DN1-001",
+  "requested_action": {
+    "type": "shared_execution",
+    "scope": [
+      "federated_shared_consequence"
+    ],
+    "reversibility": "reversible"
+  },
+  "understanding_state": {
+    "current": true,
+    "complete": true,
+    "provenance_preserved": true,
+    "applicable": true,
+    "confidence": 1,
+    "source_ids": [
+      "authority-a-state-113",
+      "authority-b-state-113",
+      "rule-r1",
+      "federation-domain-pack@1.0.0"
+    ],
+    "unresolved_tensions": [],
+    "missing_information": [],
+    "revision_status": "current"
+  },
+  "declared_reality": {
+    "current_state_claims": [
+      "Authority A is independently valid within jurisdiction A.",
+      "Authority B is independently valid within jurisdiction B.",
+      "The requested shared consequence is unchanged from T0."
+    ],
+    "last_verified_at": "2026-09-28T20:20:00.000Z"
+  },
+  "observed_reality": {
+    "signals": [
+      {
+        "statement": "Authority A reports execution_region = EU-WEST.",
+        "source": "authority-a-state-113",
+        "evidence_ref": "authority-a-state-113#execution_region"
+      },
+      {
+        "statement": "Authority B reports accepted_execution_region = EU-WEST.",
+        "source": "authority-b-state-113",
+        "evidence_ref": "authority-b-state-113#accepted_execution_region"
+      }
+    ]
+  },
+  "relational_rule": {
+    "rule_id": "rule-r1",
+    "version": "1",
+    "constituted_at": "T0",
+    "scope": [
+      "federated_shared_consequence"
+    ],
+    "expression": "authority_a.execution_region MUST_EQUAL authority_b.accepted_execution_region for shared_execution",
+    "source": "federation-constitution-r1"
+  },
+  "governing_basis": {
+    "constituted_at": "T0",
+    "domain_rule_ref": "rule-r1@1",
+    "transition_vocabulary_contract": "Harmonic V3_8 state_transition relationship vocabulary",
+    "comparison_operator": "MUST_EQUAL",
+    "preserving_class": "consistent_with_prior_state",
+    "defeating_domain_class": "material_contradiction",
+    "case_specific_constitutional_answer_supplied": false
+  },
+  "authority_chain": {
+    "subject": "federated-execution-agent",
+    "issuer": "institutional-execution-authority",
+    "scope": [
+      "federated_shared_consequence"
+    ],
+    "last_verified_at": "2026-09-28T20:20:00.000Z",
+    "chain": [
+      {
+        "actor": "federated-execution-agent",
+        "status": "active"
+      },
+      {
+        "actor": "institutional-execution-authority",
+        "status": "active"
+      }
+    ]
+  },
+  "revocation_state": {
+    "last_revocation_check_at": "2026-09-28T20:20:00.000Z",
+    "known_revocations": []
+  },
+  "present_state_provenance": {
+    "attributable_source": "federated-authorities-a+b",
+    "established_at": "2026-09-28T20:20:00.000Z",
+    "epistemic_status": "ESTABLISHED",
+    "evidence_refs": [
+      "authority-a-state-113",
+      "authority-b-state-113",
+      "rule-r1",
+      "federation-domain-pack@1.0.0"
+    ]
+  },
+  "obligation_witness": {
+    "detected": true,
+    "status": "not_applicable",
+    "source": "federation-examination:no-separate-obligation",
+    "evidence_refs": [
+      "federation-examination:no-separate-obligation"
+    ]
+  },
+  "consequence_profile": {
+    "level": "low",
+    "reversibility": "reversible",
+    "execution_surface": "shared_execution",
+    "blast_radius": "local"
+  },
+  "safeguards": {
+    "operator_review_confirmed": true
+  },
+  "state_transition": {
+    "prior_state_ref": "V113-T0-FEDERATED-RELATIONSHIP",
+    "new_observation_refs": [
+      "authority-a-state-113",
+      "authority-b-state-113"
+    ],
+    "relationship": "consistent_with_prior_state",
+    "attributable_source": "federation-domain-pack@1.0.0",
+    "observed_at": "2026-09-28T20:21:00.000Z",
+    "scope": [
+      "federated_shared_consequence"
+    ]
+  },
+  "specialty_pack_evidence": {
+    "specialty_pack": "federation-domain-pack@1.0.0",
+    "relationship_id": "v113-dn1-relationship-001",
+    "relationship": "consistent_with_prior_state",
+    "relationship_basis": "rule-r1 equality evaluation over independently attributable authority A/B region facts",
+    "domain_rule_ref": "rule-r1@1",
+    "transition_vocabulary_contract": "Harmonic V3_8 state_transition relationship vocabulary",
+    "attributable_sources": [
+      "authority-a-state-113",
+      "authority-b-state-113"
+    ],
+    "scope": "federated_shared_consequence",
+    "constitutional_answer_supplied": false
+  }
+}

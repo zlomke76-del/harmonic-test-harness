@@ -1,0 +1,32 @@
+{
+  "specimen_id": "V113-COMPLETE-INFORMATION-DN2-INPUT-001",
+  "specialty_pack": {
+    "id": "federation-domain-pack",
+    "version": "1.0.0"
+  },
+  "domain_rule": {
+    "rule_id": "rule-r1",
+    "version": "1",
+    "constituted_at": "T0",
+    "scope": [
+      "federated_shared_consequence"
+    ],
+    "expression": "authority_a.execution_region MUST_EQUAL authority_b.accepted_execution_region for shared_execution"
+  },
+  "governing_basis": {
+    "transition_vocabulary_contract": "Harmonic V3_8 state_transition relationship vocabulary",
+    "comparison_operator": "MUST_EQUAL",
+    "preserving_class": "consistent_with_prior_state",
+    "defeating_domain_class": "material_contradiction"
+  },
+  "authoritative_facts": {
+    "authority_a": {
+      "source_id": "authority-a-state-113",
+      "execution_region": "EU-WEST"
+    },
+    "authority_b": {
+      "source_id": "authority-b-state-113",
+      "accepted_execution_region": "EU-CENTRAL"
+    }
+  }
+}

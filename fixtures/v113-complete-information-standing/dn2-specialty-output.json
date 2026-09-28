@@ -1,0 +1,14 @@
+{
+  "specialty_pack": "federation-domain-pack@1.0.0",
+  "relationship_id": "v113-dn2-relationship-001",
+  "relationship": "material_contradiction",
+  "relationship_basis": "rule-r1 equality evaluation over independently attributable authority A/B region facts",
+  "domain_rule_ref": "rule-r1@1",
+  "transition_vocabulary_contract": "Harmonic V3_8 state_transition relationship vocabulary",
+  "attributable_sources": [
+    "authority-a-state-113",
+    "authority-b-state-113"
+  ],
+  "scope": "federated_shared_consequence",
+  "constitutional_answer_supplied": false
+}

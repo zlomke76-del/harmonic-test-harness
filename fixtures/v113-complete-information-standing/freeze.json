@@ -1,0 +1,34 @@
+{
+  "examination_id": "V113-COMPLETE-INFORMATION-STANDING-SUCCESSOR-001",
+  "predecessor": "V112-SPECIALTY-PACK-STANDING-SUCCESSOR-001",
+  "status": "PROSPECTIVE_FROZEN_SUCCESSOR",
+  "architectural_boundary": "Authoritative domain facts -> Specialty Pack establishes complete attributable domain transition classification under the frozen domain rule -> Harmonic determines consequence-relative constitutional standing -> governed consequence",
+  "principle": "Harmonic receives all information required by its constituted interface, but never receives the case-specific standing/admissibility/disposition answer.",
+  "harmonic_runtime": "unchanged",
+  "specialty_pack": "federation-domain-pack@1.0.0",
+  "t0_governing_basis": {
+    "domain_rule_ref": "rule-r1@1",
+    "domain_rule": "authority_a.execution_region MUST_EQUAL authority_b.accepted_execution_region for shared_execution",
+    "transition_vocabulary_contract": "Harmonic V3_8 state_transition relationship vocabulary",
+    "preserving_class": "consistent_with_prior_state",
+    "defeating_domain_class": "material_contradiction",
+    "note": "These are prospectively constituted transition classifications, not case-specific Harmonic standing or disposition outputs."
+  },
+  "prohibited_upstream_answers": [
+    "standing preserved",
+    "standing defeated",
+    "admissible",
+    "inadmissible",
+    "revalidation_required",
+    "prior_state_status",
+    "permit",
+    "deny",
+    "allow",
+    "block",
+    "expected_decision",
+    "expected_outcome"
+  ],
+  "frozen_proposition": "Can Harmonic discriminate the exact consequence when it receives the complete attributable domain transition classification required by its constituted interface, while receiving no case-specific standing, revalidation, admissibility, or execution disposition answer upstream?",
+  "falsifier": "Not established if Harmonic fails to discriminate the pair after receiving the complete frozen governing information, or if the case-specific constitutional answer is supplied upstream.",
+  "execution_claim": "Determination only; downstream causal execution remains separate unless deliberately examined."
+}
