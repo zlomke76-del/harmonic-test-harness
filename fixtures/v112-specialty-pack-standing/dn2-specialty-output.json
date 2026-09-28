@@ -1,0 +1,12 @@
+{
+  "specialty_pack": "federation-domain-pack@1.0.0",
+  "relationship_id": "v112-dn2-relationship-001",
+  "relationship": "execution_region_misalignment",
+  "domain_rule_ref": "rule-r1@1",
+  "attributable_sources": [
+    "authority-a-state-112",
+    "authority-b-state-112"
+  ],
+  "scope": "federated_shared_consequence",
+  "constitutional_interpretation_supplied": false
+}

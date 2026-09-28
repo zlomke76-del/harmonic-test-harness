@@ -1,0 +1,22 @@
+{
+  "specimen_id": "V112-SPECIALTY-PACK-DN2-INPUT-001",
+  "specialty_pack": {
+    "id": "federation-domain-pack",
+    "version": "1.0.0"
+  },
+  "domain_rule": {
+    "rule_id": "rule-r1",
+    "version": "1",
+    "expression": "authority_a.execution_region MUST_EQUAL authority_b.accepted_execution_region for shared_execution"
+  },
+  "authoritative_facts": {
+    "authority_a": {
+      "source_id": "authority-a-state-112",
+      "execution_region": "EU-WEST"
+    },
+    "authority_b": {
+      "source_id": "authority-b-state-112",
+      "accepted_execution_region": "EU-CENTRAL"
+    }
+  }
+}

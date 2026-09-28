@@ -1,0 +1,26 @@
+{
+  "examination_id": "V112-SPECIALTY-PACK-STANDING-SUCCESSOR-001",
+  "predecessor": "V109-FEDERATION-SUCCESSOR-001",
+  "architectural_boundary": "Authoritative domain facts -> Specialty Pack establishes attributable domain relationship -> Harmonic determines consequence-relative constitutional significance -> governed consequence",
+  "harmonic_runtime": "unchanged",
+  "specialty_pack": "federation-domain-pack@1.0.0",
+  "frozen_proposition": "Can Harmonic, when supplied an independently established and attributable non-constitutional domain relationship from the Specialty Pack, independently determine whether that relationship preserves or defeats standing for the exact frozen consequence?",
+  "dn1_domain_relationship": "execution_region_alignment",
+  "dn2_domain_relationship": "execution_region_misalignment",
+  "prohibited_upstream_meaning": [
+    "standing preserved",
+    "standing defeated",
+    "admissible",
+    "inadmissible",
+    "permit",
+    "deny",
+    "allow",
+    "block",
+    "revalidation required",
+    "superseded",
+    "invalidated",
+    "non-current"
+  ],
+  "falsifier": "The successor proposition is not established if Harmonic cannot discriminate the pair without receiving standing-bearing constitutional meaning upstream.",
+  "execution_claim": "Separate unless the synthetic execution sink is deliberately invoked with positive control."
+}
