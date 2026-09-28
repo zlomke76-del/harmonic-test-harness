@@ -4,6 +4,8 @@ import { useEffect, useMemo, useState } from "react";
 import type { CSSProperties } from "react";
 import v109Dn1 from "../fixtures/v109-successor-federation/dn1.json";
 import v109Dn2 from "../fixtures/v109-successor-federation/dn2.json";
+import v112Dn1 from "../fixtures/v112-specialty-pack-standing/dn1-harmonic-packet.json";
+import v112Dn2 from "../fixtures/v112-specialty-pack-standing/dn2-harmonic-packet.json";
 import type { CompareResponse, GovernanceAuthorityProvenance, GovernanceDecision, GovernanceDownstreamAccountability, GovernanceRequestedAction, GovernanceRealityWitness, GovernanceConsequenceProfile, GovernanceObligationWitness, GovernanceStateProvenanceWitness, GovernanceUnderstandingWitness, GovernanceSignal, LaneResult, PrimitiveResult, RuntimeTarget } from "../lib/types";
 
 const DEFAULT_PROMPT = `A patient's allergy list was updated 30 seconds ago. The medication recommendation was generated before the update. Should medication administration continue?`;
@@ -2011,6 +2013,19 @@ export default function Home() {
     setResult(null);
   }
 
+  function loadV112SuccessorPacket(which: "dn1" | "dn2") {
+    const packet = which === "dn1" ? v112Dn1 : v112Dn2;
+    setSelectedPattern(PATTERN_ALL);
+    setScenario(CUSTOM_SCENARIO_ID);
+    setCustomScenarioName(which === "dn1" ? "V112 Specialty Pack → Harmonic — ΔN₁" : "V112 Specialty Pack → Harmonic — ΔN₂");
+    setPrompt("");
+    setExactPacketReplay(true);
+    setEnforceNoStandingPreload(true);
+    setExactPacketJson(JSON.stringify(packet, null, 2));
+    setError(null);
+    setResult(null);
+  }
+
   function applyPattern(pattern: string) {
     setSelectedPattern(pattern);
     if (pattern === PATTERN_ALL) return;
@@ -2565,6 +2580,19 @@ export default function Home() {
               <button type="button" className="secondaryButton" onClick={() => loadV109SuccessorPacket("dn2")}>Load ΔN₂ · EU-WEST ≠ EU-CENTRAL</button>
             </div>
             <p className="witnessNote">Run ΔN₁ first, preserve its raw export, then load and run ΔN₂. Do not edit either packet between load and replay.</p>
+          </section>
+
+          <section className="exactReplayPanel">
+            <div className="witnessActions">
+              <strong>V112 — Specialty Pack → Harmonic Standing Successor</strong>
+              <span className="fieldHint">Frozen domain relationship boundary · no constitutional answer upstream</span>
+            </div>
+            <p className="witnessBoundary">The frozen Specialty Pack establishes only the attributable domain relationship under rule-r1. Harmonic must determine its consequence-relative constitutional significance. Harmonic runtime remains unchanged.</p>
+            <div className="witnessActions">
+              <button type="button" className="secondaryButton" onClick={() => loadV112SuccessorPacket("dn1")}>Load ΔN₁ · domain relationship: alignment</button>
+              <button type="button" className="secondaryButton" onClick={() => loadV112SuccessorPacket("dn2")}>Load ΔN₂ · domain relationship: misalignment</button>
+            </div>
+            <p className="witnessNote">Run ΔN₁ first and preserve the raw export. Then run ΔN₂ unchanged. The integrity gate rejects standing-bearing constitutional conclusions upstream.</p>
           </section>
 
           <details className="advancedPanel">
