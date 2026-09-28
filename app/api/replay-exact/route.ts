@@ -3,7 +3,7 @@ import { NextResponse } from "next/server";
 import { z } from "zod";
 import { projectExactPacketReplay } from "../../../lib/governance-adapter";
 import type { CompareResponse, LaneResult } from "../../../lib/types";
-import { auditStandingSemanticPreload } from "../../../lib/examination-integrity";
+import { auditStandingSemanticPreload, auditCaseSpecificConstitutionalAnswerPreload } from "../../../lib/examination-integrity";
 
 export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
@@ -12,7 +12,8 @@ const DEFAULT_HARMONIC_API_URL = "https://www.solace-harmonic.com/api/evaluate";
 
 const RequestSchema = z.object({
   packetJson: z.string().min(2).max(250000),
-  enforceNoStandingPreload: z.boolean().default(false)
+  enforceNoStandingPreload: z.boolean().default(false),
+  enforceNoConstitutionalAnswerPreload: z.boolean().default(false)
 });
 
 function asRecord(value: unknown): Record<string, unknown> | null {
@@ -62,6 +63,16 @@ export async function POST(req: Request) {
             passed: false,
             findings: semanticPreloadFindings
           }
+        }, { status: 422 });
+      }
+    }
+
+    if (input.enforceNoConstitutionalAnswerPreload) {
+      const answerFindings = auditCaseSpecificConstitutionalAnswerPreload(packet);
+      if (answerFindings.length > 0) {
+        return NextResponse.json({
+          error: "Successor examination integrity failure: a case-specific constitutional answer is present upstream.",
+          examination_integrity: { mode: "successor_complete_information_no_answer_preload", passed: false, findings: answerFindings }
         }, { status: 422 });
       }
     }
