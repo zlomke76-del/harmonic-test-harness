@@ -1,0 +1,24 @@
+{
+  "examination_id": "V109-FEDERATION-SUCCESSOR-001",
+  "predecessor": ["V4-FEDERATION-DN1-PRESERVE-001", "V4-FEDERATION-DN2-DEFEAT-001"],
+  "implementation": "Harmonic production runtime unchanged; V108 harness exact replay with successor integrity gate",
+  "actor": "federated-execution-agent",
+  "authority": "institutional-execution-authority",
+  "requested_action": "shared_execution",
+  "consequence": "federated_shared_consequence",
+  "execution_surface": "shared_execution",
+  "constituted_relational_rule": "rule-r1 v1: authority_a.execution_region MUST_EQUAL authority_b.accepted_execution_region for shared_execution",
+  "delta_pair": {
+    "dn1": "A execution_region EU-WEST; B accepted_execution_region EU-WEST",
+    "dn2": "A execution_region EU-WEST; B accepted_execution_region EU-CENTRAL"
+  },
+  "falsifier": "The stronger derivation property is not established if the examined governance boundary cannot distinguish the pair from attributable local-state evidence plus the pre-constituted relational rule without receiving a precomputed constitutional classification.",
+  "execution_claim": "Separate. Governed-response discrimination is examined first. Downstream causal control is only established if the configured secure-execution route produces an observable positive-control effect for the admitted specimen and prevents that same effect for the refused specimen.",
+  "integrity_requirements": [
+    "No precomputed constitutional classification in either packet.",
+    "No natural-language restatement of the expected constitutional result.",
+    "Same actor, authority, action, consequence, execution surface and relational rule across the pair.",
+    "Only attributable local-state values differ in the relation under examination.",
+    "No Harmonic source modification for this examination."
+  ]
+}
