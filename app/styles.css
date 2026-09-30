@@ -2769,3 +2769,6 @@ pre {
 .witnessPanel[open] {
   scroll-margin-top: 18px;
 }
+
+/* V114 executable execution-boundary examination */
+.v114Panel{margin:24px 0}.v114Lead{max-width:980px;color:var(--muted,#9ca3af);line-height:1.6}.v114Panel .runButton{margin:14px 0 4px;cursor:pointer}.v114Record{margin-top:18px;display:grid;gap:14px}.v114Finding,.v114Error{display:flex;justify-content:space-between;gap:18px;align-items:center;padding:14px 16px;border:1px solid rgba(148,163,184,.25);border-radius:12px}.v114Finding strong{font-size:1rem}.v114Finding span,.v114Error span{color:var(--muted,#9ca3af)}.v114Freeze{padding:12px 16px;border-left:3px solid currentColor;background:rgba(148,163,184,.06)}.v114Freeze p{margin:6px 0}.v114Cases{display:grid;gap:8px}.v114Case{display:flex;justify-content:space-between;gap:18px;padding:12px 14px;border:1px solid rgba(148,163,184,.18);border-radius:10px}.v114Case div{display:grid;gap:4px}.v114Case span,.v114Case em,.v114Boundary{font-size:.86rem;color:var(--muted,#9ca3af)}.v114Case em{white-space:nowrap}.v114Case.fail{border-width:2px}.v114Boundary{margin:0}@media(max-width:760px){.v114Finding,.v114Case{align-items:flex-start;flex-direction:column}.v114Case em{white-space:normal}}

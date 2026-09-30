@@ -1901,6 +1901,51 @@ function ConstitutionalJurisdiction() {
   );
 }
 
+
+type V114Result = {
+  examination: string;
+  frozen_claim: string;
+  falsifier: string;
+  finding: string;
+  falsifier_triggered: boolean;
+  positive_control_passed: boolean;
+  consequence_count: number;
+  expected_consequence_count: number;
+  boundary: string;
+  generated_at: string;
+  cases: Array<{ id: string; expected: string; observed: string; passed: boolean; detail: string }>;
+};
+
+function V114ExecutionBoundary() {
+  const [running, setRunning] = useState(false);
+  const [record, setRecord] = useState<V114Result | null>(null);
+  const [error, setError] = useState<string | null>(null);
+  async function runV114() {
+    setRunning(true); setError(null); setRecord(null);
+    try {
+      const res = await fetch("/api/v114-execution-boundary", { method: "POST", headers: { "content-type": "application/json" }, body: "{}" });
+      const data = await res.json();
+      if (!res.ok) throw new Error(data?.error || `V114 failed (${res.status})`);
+      setRecord(data as V114Result);
+    } catch (e) { setError(e instanceof Error ? e.message : "V114 execution failed"); }
+    finally { setRunning(false); }
+  }
+  return (
+    <section className="panel v114Panel" id="v114-execution-boundary">
+      <div className="sectionTitle withMeta"><div><span>V114</span><h2>Execution-Boundary Falsification</h2></div><em>Frozen property · executable adversarial examination</em></div>
+      <p className="v114Lead">Tests whether a consequence can cross the harness&apos;s constituted execution boundary through receiptless bypass, forgery, payload tamper, stale authority, governance refusal, or missing governance evidence.</p>
+      <button className="runButton" type="button" onClick={runV114} disabled={running}>{running ? "Running V114…" : "Run V114 Execution-Boundary Test"}</button>
+      {error ? <div className="v114Error"><strong>EXAMINATION ERROR</strong><span>{error}</span></div> : null}
+      {record ? <div className="v114Record">
+        <div className="v114Finding"><strong>{record.finding}</strong><span>Falsifier triggered: {String(record.falsifier_triggered)} · Positive control: {record.positive_control_passed ? "PASS" : "FAIL"} · Consequences: {record.consequence_count}/{record.expected_consequence_count}</span></div>
+        <div className="v114Freeze"><p><b>Frozen claim:</b> {record.frozen_claim}</p><p><b>Falsifier:</b> {record.falsifier}</p></div>
+        <div className="v114Cases">{record.cases.map(c => <div className={`v114Case ${c.passed ? "pass" : "fail"}`} key={c.id}><div><strong>{c.id}</strong><span>{c.detail}</span></div><em>{c.observed} · expected {c.expected}</em></div>)}</div>
+        <p className="v114Boundary"><b>Evidence boundary:</b> {record.boundary}</p>
+      </div> : null}
+    </section>
+  );
+}
+
 export default function Home() {
   const scenarios = useMemo(() => scenarioOptions(), []);
   const [prompt, setPrompt] = useState(scenarios[0]?.prompt ?? DEFAULT_PROMPT);
@@ -2840,6 +2885,8 @@ export default function Home() {
           )}
         </section>
       </section>
+
+      <V114ExecutionBoundary />
 
       <ConstitutionalJurisdiction />
 
