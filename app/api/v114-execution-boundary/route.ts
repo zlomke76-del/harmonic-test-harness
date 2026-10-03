@@ -23,7 +23,7 @@ export async function POST() {
     const { signature, ...unsigned } = r;
     if (!verify(null, Buffer.from(canon(unsigned)), publicKey, Buffer.from(signature, "base64"))) return "BLOCKED" as const;
     const t = Date.now(), issued = Date.parse(r.issued_at), expires = Date.parse(r.expires_at);
-    if (!Number.isFinite(issued) || !Number.isFinite(expires) || t < issued - 10_000 || t > expires + 10_000) return "BLOCKED" as const;
+    if (!Number.isFinite(issued) || !Number.isFinite(expires) || expires <= issued || t < issued || t >= expires) return "BLOCKED" as const;
     if (hash(execute) !== r.execute_hash) return "BLOCKED" as const;
     return "CONSEQUENCE" as const;
   };
