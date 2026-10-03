@@ -33,16 +33,17 @@ const hash = v => createHash('sha256').update(canon(v)).digest('hex');
       method: 'POST', headers: { ...(auth ? { authorization: auth } : {}), ...(origin ? { origin } : {}) }
     });
     delete process.env.HARNESS_ACCESS_PASSWORD;
-    process.env.NODE_ENV = 'development';
+    for (const mode of ['development', 'production']) {
+      process.env.NODE_ENV = mode;
+      assert.equal(requireHostedAccess(req()), null);
+      assert.equal(requireHostedAccess(req(undefined, 'https://harness.example')), null);
+      assert.equal(requireHostedAccess(req(undefined, 'https://attacker.example')).status, 403);
+    }
+    process.env.HARNESS_ACCESS_PASSWORD = 'obsolete-password-does-not-enable-a-gate';
     assert.equal(requireHostedAccess(req()), null);
-    process.env.NODE_ENV = 'production';
-    assert.equal(requireHostedAccess(req()).status, 503);
-    process.env.HARNESS_ACCESS_PASSWORD = 'test-access-password-at-least-24-characters';
-    assert.equal(requireHostedAccess(req()).status, 401);
-    const auth = 'Basic ' + Buffer.from('harness:' + process.env.HARNESS_ACCESS_PASSWORD).toString('base64');
-    assert.equal(requireHostedAccess(req(auth)), null);
-    assert.equal(requireHostedAccess(req(auth, 'https://attacker.example')).status, 403);
-    assert.equal(requireHostedAccess(req('Basic ' + Buffer.from('harness:wrong').toString('base64'))).status, 401);
+    assert.equal(requireHostedAccess(new Request('https://harness.example/api/compare', {
+      method: 'POST', headers: { 'sec-fetch-site': 'cross-site' }
+    })).status, 403);
 
     const sink = load('app/api/synthetic-execution-sink/route.ts');
     const { publicKey, privateKey } = generateKeyPairSync('ed25519');
@@ -89,7 +90,7 @@ const hash = v => createHash('sha256').update(canon(v)).digest('hex');
     assert.equal(result.falsifier_triggered, false);
     assert.equal(result.consequence_count, 1);
     assert(result.cases.every(c => c.passed));
-    console.log('Hosted access and actual synthetic receipt route behavior: PASS');
+    console.log('Anonymous public access and actual synthetic receipt route behavior: PASS');
   } finally {
     for (const key of Object.keys(process.env)) if (!(key in original)) delete process.env[key];
     Object.assign(process.env, original);
