@@ -1,0 +1,56 @@
+name: Reproduction result
+description: Report an independent PASS, FAIL, or UNRESOLVED reproduction.
+title: "[REPRODUCTION] "
+body:
+  - type: input
+    id: target
+    attributes:
+      label: Examination target
+      description: Name the example/test and tag or commit reproduced.
+      placeholder: "example:raw-vs-governed at v0.2.0 / commit ..."
+    validations:
+      required: true
+
+  - type: textarea
+    id: environment
+    attributes:
+      label: Environment
+      description: Node version, OS, relevant configuration, and endpoint/version if known. Do not include secrets.
+    validations:
+      required: true
+
+  - type: textarea
+    id: commands
+    attributes:
+      label: Commands run
+      render: shell
+    validations:
+      required: true
+
+  - type: textarea
+    id: result
+    attributes:
+      label: Preserved result
+      description: Paste or attach the bounded terminal output, returned disposition, and consequence result. Redact secrets.
+    validations:
+      required: true
+
+  - type: dropdown
+    id: disposition
+    attributes:
+      label: Reproduction disposition
+      options:
+        - PASS
+        - FAIL
+        - UNRESOLVED
+    validations:
+      required: true
+
+  - type: textarea
+    id: ceiling
+    attributes:
+      label: Claim ceiling
+      description: State exactly what this reproduction establishes and what it does not establish.
+      placeholder: "Establishes ... for this version/path/run. Does not establish ..."
+    validations:
+      required: true

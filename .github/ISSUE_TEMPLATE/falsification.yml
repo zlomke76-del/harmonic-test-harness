@@ -1,0 +1,67 @@
+name: Falsification attempt
+description: Submit a bounded attempt to falsify a Harmonic harness claim.
+title: "[FALSIFICATION] "
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Use this form when you believe a frozen claim or executable path produced a result the preserved evidence does not support.
+
+        A specification refinement, adjacent property, or broader architectural criticism is not automatically a falsification. Freeze the claim you are attacking and preserve the evidence.
+
+  - type: input
+    id: claim
+    attributes:
+      label: Frozen claim
+      description: State the exact proposition you believe this run falsifies.
+      placeholder: "Example: After a defeating ΔN, the governed path does not invoke the synthetic consequence without explicit executable permission."
+    validations:
+      required: true
+
+  - type: textarea
+    id: setup
+    attributes:
+      label: Setup and version
+      description: Include repository commit/tag, runtime endpoint/version if known, Node version, OS, and any modifications.
+      placeholder: "Tag/commit, environment, configuration, modifications..."
+    validations:
+      required: true
+
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Preserved evidence
+      description: Include the input packet/fixture, Harmonic response, execution result, and relevant logs. Redact secrets.
+      placeholder: "Attach or paste bounded evidence here. Never post API keys or credentials."
+    validations:
+      required: true
+
+  - type: textarea
+    id: falsifier
+    attributes:
+      label: Why this reaches the frozen claim
+      description: Explain the contradiction between the frozen proposition and the observed evidence.
+      placeholder: "The claim predicts X under these conditions; the preserved run produced Y..."
+    validations:
+      required: true
+
+  - type: dropdown
+    id: disposition
+    attributes:
+      label: Requested disposition
+      options:
+        - FAIL / claim falsified
+        - UNRESOLVED / evidence insufficient
+        - Claim-boundary dispute
+    validations:
+      required: true
+
+  - type: checkboxes
+    id: hygiene
+    attributes:
+      label: Evidence hygiene
+      options:
+        - label: I removed API keys, tokens, credentials, and other secrets.
+          required: true
+        - label: I am not claiming beyond the exact run, version, path, and evidence I supplied.
+          required: true

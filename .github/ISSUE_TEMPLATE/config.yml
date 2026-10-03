@@ -1,0 +1,8 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Break this first
+    url: https://github.com/zlomke76-del/harmonic-test-harness/blob/main/docs/public/BREAK_THIS_FIRST.md
+    about: Start with the bounded public falsification target.
+  - name: Claim boundaries
+    url: https://github.com/zlomke76-del/harmonic-test-harness/blob/main/docs/public/CLAIM_BOUNDARIES.md
+    about: Read the current public claim ceiling before filing a result.
