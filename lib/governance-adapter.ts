@@ -49,7 +49,9 @@ const HARNESS_METHODOLOGY_HASH = sha256Canonical(HARNESS_METHODOLOGY_DESCRIPTOR)
 function normalizeDecision(value: unknown): GovernanceDecision {
   const normalized = String(value || "").trim().toUpperCase();
 
-  if (["ALLOW", "ALLOWED", "PASS", "PASSED", "APPROVE", "APPROVED", "CONTACT_CONFIRMED", "AUTHORITY_CONTINUOUS", "ADMISSIBLE", "PERMITTED", "EXECUTION_ALLOWED"].includes(normalized)) {
+  // Current public contract: only explicit execution-permission vocabulary maps to ALLOW.
+  // PASS/APPROVED/ADMISSIBLE and domain-state labels are not execution authority.
+  if (["ALLOW", "ALLOWED", "PERMIT", "PERMITTED", "EXECUTION_ALLOWED"].includes(normalized)) {
     return "ALLOW";
   }
 
@@ -97,7 +99,8 @@ function asArray(value: unknown): unknown[] {
 
 function unifiedEndpoint(): { url?: string; key?: string } {
   return {
-    // Runtime 4.1 primary always resolves through the live single-call endpoint.
+    // Current primary runtime resolves through the live single-call endpoint.
+    // Historical runtime/version labels are preserved elsewhere as examination lineage.
     url:
       process.env.HARMONIC_API_URL ||
       process.env.HARMONIC_ONLY_API_URL ||
