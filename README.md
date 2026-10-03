@@ -40,7 +40,7 @@ Requirements:
 - an issued Harmonic API key for live API examples
 
 ```bash
-npm install
+npm ci
 ```
 
 Run the raw-vs-governed terminal contrast:
@@ -109,6 +109,18 @@ HARMONIC_API_KEY=your_issued_key
 ```
 
 Never commit a real Harmonic key, model-provider key, receipt signing key, or other secret.
+
+## Hosted access
+
+Production hosting requires `HARNESS_ACCESS_PASSWORD` (at least 24 characters).
+The browser prompts for HTTP Basic credentials: username `harness`, password as configured.
+Use HTTPS. Missing configuration closes hosted access with HTTP 503. Local development
+remains accessible when the password is unset. The credential-bearing routes also
+check access directly, independently of middleware.
+
+This is controlled examiner access. For an anonymous public playground, first add an
+allowlisted fixture-only API and durable per-user quotas; do not remove this access gate
+from routes that accept arbitrary prompts, model IDs, or replay packets.
 
 ## Exact execution-authority rule
 

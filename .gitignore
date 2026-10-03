@@ -6,3 +6,6 @@ out
 .env.*.local
 .DS_Store
 *.log
+.env.*
+!.env.example
+*.tsbuildinfo
