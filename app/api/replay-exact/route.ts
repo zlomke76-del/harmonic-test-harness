@@ -1,5 +1,6 @@
 import { createHash } from "node:crypto";
 import { NextResponse } from "next/server";
+import { requireHostedAccess } from "../../../lib/hosted-access";
 import { z } from "zod";
 import { projectExactPacketReplay } from "../../../lib/governance-adapter";
 import type { CompareResponse, LaneResult } from "../../../lib/types";
@@ -39,6 +40,8 @@ function returnedPacketId(json: Record<string, unknown>): string | null {
 }
 
 export async function POST(req: Request) {
+  const accessDenied = requireHostedAccess(req);
+  if (accessDenied) return accessDenied;
   try {
     const input = RequestSchema.parse(await req.json());
 
@@ -98,6 +101,7 @@ export async function POST(req: Request) {
 
     const started = Date.now();
     const res = await fetch(url, {
+      signal: AbortSignal.timeout(30_000),
       method: "POST",
       headers: {
         "Content-Type": "application/json",
