@@ -110,17 +110,13 @@ HARMONIC_API_KEY=your_issued_key
 
 Never commit a real Harmonic key, model-provider key, receipt signing key, or other secret.
 
-## Hosted access
+## Public hosted access
 
-Production hosting requires `HARNESS_ACCESS_PASSWORD` (at least 24 characters).
-The browser prompts for HTTP Basic credentials: username `harness`, password as configured.
-Use HTTPS. Missing configuration closes hosted access with HTTP 503. Local development
-remains accessible when the password is unset. The credential-bearing routes also
-check access directly, independently of middleware.
-
-This is controlled examiner access. For an anonymous public playground, first add an
-allowlisted fixture-only API and durable per-user quotas; do not remove this access gate
-from routes that accept arbitrary prompts, model IDs, or replay packets.
+The original examination UI and API are open to visitors without a login or password.
+`HARNESS_ACCESS_PASSWORD` is no longer required or used. Serve over HTTPS and keep
+Harmonic and model-provider keys in server-side environment variables.
+Cross-site browser submissions are rejected; same-origin public use remains open.
+Live public tests use the deployment's configured provider credentials and budgets.
 
 ## Exact execution-authority rule
 
