@@ -1,37 +1,26 @@
-# V116 Public Repository Cleanup — Apply Instructions
+# Apply — Public Falsification Intake Upgrade
 
-This is a **full-files delta** against the uploaded `harmonic-test-harness-main (8)(1).zip` source.
+Copy the files in this delta over the repository root, preserving paths.
 
-## Apply
+This upgrade adds:
 
-1. Copy every file/folder in this delta into the repository root, preserving paths.
-2. Delete every path listed in `DELETE_PATHS.txt` from the repository root. Those historical records are not discarded; replacement copies are included under `docs/history/root-lineage/`.
-3. Run:
+- a visible `BREAK THIS FIRST` bounded falsification target;
+- GitHub issue forms for falsification attempts and independent reproductions;
+- a pull-request claim/evidence checklist;
+- contribution guidance;
+- security-sensitive disclosure guidance;
+- changelog entry and harness package version `0.2.1`;
+- public-contract regression assertions for the new intake surface.
+
+## Verify
 
 ```bash
 npm install
 npm test
 ```
 
-4. Configure a real Harmonic key only in local/server environment variables. Do not commit it.
+Expected current acceptance result: PASS.
 
-## What V116 fixes
+## Still requires an owner decision
 
-- replaces the favicon-only README with current public harness documentation;
-- removes the retired direct `/api/governance-pack` endpoint from `.env.example`;
-- states that the raw-vs-governed demo uses a frozen synthetic proposal rather than a live LLM;
-- removes claims of an external HTTP disclosure from the demo contract;
-- requires explicit execution permission plus `admissible=true` before the synthetic consequence may proceed;
-- stops generic `PASS`, `APPROVED`, `ADMISSIBLE`, `CONTACT_CONFIRMED`, and `AUTHORITY_CONTINUOUS` labels from being normalized into `ALLOW`;
-- separates current public docs from historical lineage;
-- gives the package a public-harness identity (`harmonic-public-test-harness`, v0.2.0);
-- adds `npm test` / `test:current` as the current acceptance surface;
-- removes stale historical regression commands from active npm scripts while preserving their source files;
-- repairs the stale unified single-call test to assert the current methodology witness;
-- adds public claim-boundary, integration, and validation documentation.
-
-## Verified
-
-`npm test` passes for the current public acceptance suite.
-
-A production Next.js build was not completed in this environment because installing the full dependency tree timed out. No build success is claimed here.
+No general open-source license is added by this delta. Choose a license explicitly before representing the repository as open source or inviting unrestricted reuse.

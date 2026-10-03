@@ -5,6 +5,8 @@ It does **not** contain the private Harmonic runtime.
 
 The harness supplies explicit, bounded test evidence to the configured Harmonic API, preserves returned governance dispositions, and provides synthetic consequence boundaries for reproducible examination of determination and enforcement behavior.
 
+**Start here:** [`BREAK THIS FIRST`](docs/public/BREAK_THIS_FIRST.md) · [`Contributing`](CONTRIBUTING.md) · [`Claim boundaries`](docs/public/CLAIM_BOUNDARIES.md) · [`Validation`](docs/public/VALIDATION.md)
+
 ## What this repository demonstrates
 
 The public harness is designed to make three layers inspectable without collapsing them:
@@ -126,6 +128,7 @@ lib/                    Harness adapters and types
 scripts/                Regression and examination scripts
 docs/public/            Current public architecture and claim boundaries
 docs/history/           Preserved historical release/examination lineage
+.github/                Falsification/reproduction issue forms and PR template
 ```
 
 Historical release notes and delta manifests are preserved under `docs/history/` so they remain auditable without being mistaken for current integration instructions.
@@ -146,6 +149,19 @@ Do not infer runtime version from an examination identifier.
 The V114 route is a **synthetic constituted executor boundary**. It generates an ephemeral Ed25519 keypair for the examination and tests receiptless bypass, forgery, payload tampering, expiry, refusal, missing governance evidence, and a positive control.
 
 It is not the production Harmonic secure-execution implementation and does not claim exhaustive production path coverage.
+
+## Public falsification and reproduction
+
+The preferred entry point for external examination is [`docs/public/BREAK_THIS_FIRST.md`](docs/public/BREAK_THIS_FIRST.md).
+
+GitHub issue forms distinguish:
+
+- **Falsification attempt** — preserved evidence contradicts a frozen proposition; and
+- **Reproduction result** — an independent PASS, FAIL, or UNRESOLVED rerun with an explicit claim ceiling.
+
+A useful refinement is not automatically a falsification. Freeze the claim, show the evidence, and state exactly what the result reaches.
+
+See [`CONTRIBUTING.md`](CONTRIBUTING.md) before opening a pull request.
 
 ## Historical lineage
 
