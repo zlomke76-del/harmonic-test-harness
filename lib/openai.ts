@@ -112,6 +112,8 @@ export function getProviderLabel(modelOverride?: string): string {
 export function getOpenAIClient(): OpenAI {
   const config = getGatewayConfig();
   return new OpenAI({
+    timeout: 30_000,
+    maxRetries: 1,
     apiKey: config.apiKey,
     baseURL: config.baseURL
   });
@@ -130,6 +132,7 @@ export async function callSameLlm(params: {
     const completion = await client.chat.completions.create({
       model: modelId,
       temperature: params.temperature ?? 0.2,
+      max_completion_tokens: 2048,
       messages: [
         { role: "system", content: params.system },
         { role: "user", content: params.user }
