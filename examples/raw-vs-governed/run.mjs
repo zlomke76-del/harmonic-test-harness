@@ -184,10 +184,20 @@ function dispositionFrom(unified) {
     .map((v) => String(v).trim().toUpperCase());
   const admissible = typeof layer?.admissible === "boolean" ? layer.admissible : null;
 
-  if (admissible === false || values.some((v) => ["BLOCK", "BLOCKED", "DENY", "DENIED", "REFUSE", "REFUSED", "INADMISSIBLE"].includes(v))) {
+  const explicitBlock = values.some((v) => [
+    "BLOCK", "BLOCKED", "DENY", "DENIED", "REFUSE", "REFUSED", "INADMISSIBLE"
+  ].includes(v));
+  const explicitPermit = values.some((v) => [
+    "ALLOW", "ALLOWED", "PERMIT", "PERMITTED", "EXECUTION_ALLOWED"
+  ].includes(v));
+
+  // Public execution rule: descriptive statuses such as PASS/APPROVED/ADMISSIBLE
+  // are evidence labels, not execution authority. Anything short of an explicit
+  // current permit plus admissible=true fails closed as BLOCK or UNRESOLVED.
+  if (admissible === false || explicitBlock) {
     return { normalized: "BLOCK", admissible, rawValues: values };
   }
-  if (admissible === true && values.some((v) => ["ALLOW", "ALLOWED", "PERMIT", "PERMITTED", "ADMISSIBLE", "PASS", "PASSED"].includes(v))) {
+  if (admissible === true && explicitPermit) {
     return { normalized: "ALLOW", admissible, rawValues: values };
   }
   return { normalized: "UNRESOLVED", admissible, rawValues: values };
