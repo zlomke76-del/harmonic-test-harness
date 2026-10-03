@@ -9,7 +9,7 @@ mustNot(adapter,'DEFAULT_HARMONIC_GOVERNANCE_API_URL = "https://www.solace-harmo
 must(adapter,'export async function evaluateUnifiedGovernance','unified projection function missing');
 must(adapter,'asRecord(params.unified.harmonic)','Harmonic layer not projected from unified response');
 must(adapter,'asRecord(params.unified.governance)','Harmonic+ layer not projected from unified response');
-must(adapter,'v3.6-universal-transaction-projection-2026-08-09','single-call witness missing');
+must(adapter,'HARNESS_METHODOLOGY_VERSION = "v107-playground-witness-integrity-2026-08-28"','current methodology witness missing');
 must(route,'runUnifiedGovernedLanes','unified lane runner missing');
 must(route,'const unified = await evaluateUnifiedGovernance','route does not make unified governance call');
 mustNot(route,'lanes.map((lane)','old per-lane governance fanout still present');
