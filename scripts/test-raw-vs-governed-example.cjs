@@ -1,0 +1,20 @@
+const fs = require('fs');
+const path = require('path');
+const assert = require('assert');
+const root = process.cwd();
+const run = fs.readFileSync(path.join(root, 'examples/raw-vs-governed/run.mjs'), 'utf8');
+const readme = fs.readFileSync(path.join(root, 'examples/raw-vs-governed/README.md'), 'utf8');
+const fixture = JSON.parse(fs.readFileSync(path.join(root, 'examples/raw-vs-governed/fixtures/nda-authority-pair.json'), 'utf8'));
+
+assert(Array.isArray(fixture.cases) && fixture.cases.length === 2, 'paired fixture must have exactly two cases');
+assert(fixture.cases.some(c => c.id === 'standing-preserved'), 'preserving ΔN case missing');
+assert(fixture.cases.some(c => c.id === 'standing-defeated'), 'defeating ΔN case missing');
+assert(run.includes('HARMONIC_API_KEY'), 'live API key must be environment supplied');
+assert(!/hs_live_[A-Za-z0-9_-]{8,}/.test(run), 'runner must not embed a live Harmonic secret');
+assert(run.includes('allow_harness_inference: false'), 'runner must disable harness inference');
+assert(run.includes('model_response_used_as_observed_reality: false'), 'proposal must not be promoted to observed reality');
+assert(run.includes('UNRESOLVED'), 'unrecognized live disposition must fail closed');
+assert(run.includes('syntheticExecutor'), 'synthetic consequence boundary missing');
+assert(readme.includes('Production non-bypassability is a separate property'), 'claim ceiling missing');
+assert(readme.includes('paired ΔN'), 'paired control documentation missing');
+console.log('Raw-vs-governed public terminal example regression: PASS');
