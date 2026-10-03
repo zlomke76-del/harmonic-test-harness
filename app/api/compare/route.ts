@@ -1,4 +1,5 @@
 import { NextResponse } from "next/server";
+import { requireHostedAccess } from "../../../lib/hosted-access";
 import { z } from "zod";
 import { evaluateGovernance, evaluateUnifiedGovernance } from "../../../lib/governance-adapter";
 import { callSameLlm, getModelName, getProviderLabel } from "../../../lib/openai";
@@ -166,6 +167,8 @@ async function runUnifiedGovernedLanes(params: {
 }
 
 export async function POST(req: Request) {
+  const accessDenied = requireHostedAccess(req);
+  if (accessDenied) return accessDenied;
   try {
     const body = await req.json();
     const parsed = RequestSchema.parse(body);
