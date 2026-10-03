@@ -2772,3 +2772,31 @@ pre {
 
 /* V114 executable execution-boundary examination */
 .v114Panel{margin:24px 0}.v114Lead{max-width:980px;color:var(--muted,#9ca3af);line-height:1.6}.v114Panel .runButton{margin:14px 0 4px;cursor:pointer}.v114Record{margin-top:18px;display:grid;gap:14px}.v114Finding,.v114Error{display:flex;justify-content:space-between;gap:18px;align-items:center;padding:14px 16px;border:1px solid rgba(148,163,184,.25);border-radius:12px}.v114Finding strong{font-size:1rem}.v114Finding span,.v114Error span{color:var(--muted,#9ca3af)}.v114Freeze{padding:12px 16px;border-left:3px solid currentColor;background:rgba(148,163,184,.06)}.v114Freeze p{margin:6px 0}.v114Cases{display:grid;gap:8px}.v114Case{display:flex;justify-content:space-between;gap:18px;padding:12px 14px;border:1px solid rgba(148,163,184,.18);border-radius:10px}.v114Case div{display:grid;gap:4px}.v114Case span,.v114Case em,.v114Boundary{font-size:.86rem;color:var(--muted,#9ca3af)}.v114Case em{white-space:nowrap}.v114Case.fail{border-width:2px}.v114Boundary{margin:0}@media(max-width:760px){.v114Finding,.v114Case{align-items:flex-start;flex-direction:column}.v114Case em{white-space:normal}}
+
+/* Public visitor flow: compact introduction and progressive disclosure. */
+.heroGrid { grid-template-columns: minmax(0,1.15fr) minmax(0,.85fr); align-items:center; gap:32px; margin-bottom:24px; }
+.heroCopy h1 { font-size:clamp(34px,3.4vw,50px); line-height:1.06; letter-spacing:-.045em; max-width:650px; }
+.heroCopy .lede { max-width:620px; font-size:16px; line-height:1.55; }
+.gettingStarted { padding:20px 24px; border:1px solid var(--border); border-radius:18px; background:rgba(148,163,184,.04); }
+.gettingStarted ol { margin:0; padding-left:22px; display:grid; gap:12px; }
+.gettingStarted li { padding-left:6px; color:var(--accent); }
+.gettingStarted li strong { display:block; color:var(--text); font-size:14px; }
+.gettingStarted li span { display:block; color:var(--muted); font-size:12px; line-height:1.5; margin-top:3px; }
+.flowDetails { margin-top:16px; padding-top:12px; border-top:1px solid var(--border); }
+.flowDetails summary,.researchExaminations summary,.outcomeGuide summary { cursor:pointer; font-size:13px; font-weight:700; line-height:1.5; color:var(--text); }
+.flowDetails .executionMap { margin-top:14px; }
+.workspace { grid-template-columns:minmax(0,.95fr) minmax(0,1.05fr); align-items:start; }
+.primaryConfigGrid { grid-template-columns:1fr; }
+.researchExaminations { margin-top:20px; padding-top:16px; border-top:1px solid var(--border); }
+.researchExaminations summary small { display:inline-block; color:var(--muted); margin-left:8px; font-weight:400; }
+.researchExaminations .exactReplayPanel { margin-top:14px; }
+.researchExaminations .witnessActions { gap:8px; }
+.researchExaminations .secondaryButton { width:100%; text-align:left; }
+.outcomeGuide { margin-bottom:16px; }
+.outcomeGuide .runtimeDispositionPanel { margin-top:12px; }
+.resultsPanel .emptyState { min-height:250px; padding:28px; text-align:center; }
+.emptyResultIcon { display:block; font-size:32px; color:var(--accent); margin-bottom:12px; }
+.emptyState small { max-width:440px; color:var(--muted); font-size:12px; line-height:1.6; }
+summary:focus-visible { outline:2px solid var(--accent); outline-offset:5px; border-radius:4px; }
+@media(max-width:980px) { .heroGrid { grid-template-columns:1fr; gap:18px; } .workspace { grid-template-columns:1fr; } }
+@media(max-width:620px) { .heroCopy h1 { font-size:36px; } .gettingStarted { padding:18px; } .resultsPanel .emptyState { min-height:200px; padding:20px; } }

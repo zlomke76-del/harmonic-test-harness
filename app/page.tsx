@@ -2581,20 +2581,26 @@ export default function Home() {
         <div className="heroCopy">
           <p className="eyebrow">Constitutional execution infrastructure</p>
           <h1>
-            Harmonic Constitutional <span>Runtime Console</span>
+            Test what happens <span>when reality changes.</span>
           </h1>
           <p className="lede">
-            Keep domain intelligence sovereign. Harmonic determines whether consequential execution remains admissible under the institution&apos;s present reality before consequence binds.
+            Choose a scenario, run an evaluation, and compare the model’s proposal with Harmonic’s decision under the current facts.
           </p>
         </div>
-        <ExecutionDiagram loading={loading} result={result} scanIndex={scanIndex} />
+        <div className="gettingStarted">
+          <p className="eyebrow">Start with a sample</p>
+          <ol><li><strong>Choose a scenario</strong><span>Use the ready-made example or select another.</span></li><li><strong>Run the evaluation</strong><span>The model proposes; Harmonic evaluates the present state.</span></li><li><strong>Inspect the decision</strong><span>Compare the responses and review the evidence.</span></li></ol>
+          <details className="flowDetails"><summary>How the execution path works</summary>
+            <ExecutionDiagram loading={loading} result={result} scanIndex={scanIndex} />
+          </details>
+        </div>
       </section>
 
       <section className="workspace">
         <section className="panel inputPanel">
           <div className="sectionTitle">
             <span>1</span>
-            <h2>Execution scenario</h2>
+            <h2>Choose your test</h2>
           </div>
 
           <div className="configGrid primaryConfigGrid">
@@ -2632,45 +2638,6 @@ export default function Home() {
               </div>
             </div>
           ) : null}
-
-          <section className="exactReplayPanel">
-            <div className="witnessActions">
-              <strong>V109 — Frozen Federation Successor Examination</strong>
-              <span className="fieldHint">Exact packet replay · no model · integrity gate forced on</span>
-            </div>
-            <p className="witnessBoundary">Load either frozen specimen exactly as constituted. The pair holds actor, authority, action, consequence, execution surface, and relational rule constant; only the independently attributable relation-bearing fact changes.</p>
-            <div className="witnessActions">
-              <button type="button" className="secondaryButton" onClick={() => loadV109SuccessorPacket("dn1")}>Load ΔN₁ · EU-WEST = EU-WEST</button>
-              <button type="button" className="secondaryButton" onClick={() => loadV109SuccessorPacket("dn2")}>Load ΔN₂ · EU-WEST ≠ EU-CENTRAL</button>
-            </div>
-            <p className="witnessNote">Run ΔN₁ first, preserve its raw export, then load and run ΔN₂. Do not edit either packet between load and replay.</p>
-          </section>
-
-          <section className="exactReplayPanel">
-            <div className="witnessActions">
-              <strong>V112 — Specialty Pack → Harmonic Standing Successor</strong>
-              <span className="fieldHint">Frozen domain relationship boundary · no constitutional answer upstream</span>
-            </div>
-            <p className="witnessBoundary">The frozen Specialty Pack establishes only the attributable domain relationship under rule-r1. Harmonic must determine its consequence-relative constitutional significance. Harmonic runtime remains unchanged.</p>
-            <div className="witnessActions">
-              <button type="button" className="secondaryButton" onClick={() => loadV112SuccessorPacket("dn1")}>Load ΔN₁ · domain relationship: alignment</button>
-              <button type="button" className="secondaryButton" onClick={() => loadV112SuccessorPacket("dn2")}>Load ΔN₂ · domain relationship: misalignment</button>
-            </div>
-            <p className="witnessNote">Run ΔN₁ first and preserve the raw export. Then run ΔN₂ unchanged. The integrity gate rejects standing-bearing constitutional conclusions upstream.</p>
-          </section>
-
-          <section className="exactReplayPanel">
-            <div className="witnessActions">
-              <strong>V113 — Complete Information → Harmonic Standing Successor</strong>
-              <span className="fieldHint">All required governing information in · case-specific constitutional answer out</span>
-            </div>
-            <p className="witnessBoundary">The Specialty Pack supplies the complete attributable domain transition classification required by Harmonic's constituted interface. Harmonic receives the frozen rule, facts, provenance, consequence and transition class, but never receives standing, revalidation, admissibility or execution disposition for the case.</p>
-            <div className="witnessActions">
-              <button type="button" className="secondaryButton" onClick={() => loadV113SuccessorPacket("dn1")}>Load ΔN₁ · consistent with prior state</button>
-              <button type="button" className="secondaryButton" onClick={() => loadV113SuccessorPacket("dn2")}>Load ΔN₂ · material contradiction</button>
-            </div>
-            <p className="witnessNote">Run ΔN₁ first and preserve the raw export. Then run ΔN₂ unchanged. V113 integrity permits the required domain transition classification while rejecting any case-specific constitutional answer upstream.</p>
-          </section>
 
           <details className="advancedPanel">
             <summary>
@@ -2852,18 +2819,65 @@ export default function Home() {
           </button>
 
           {error ? <p className="error">{error}</p> : null}
+          <details className="researchExaminations">
+            <summary>Research examinations <small>V109 · V112 · V113</small></summary>
+            <p className="fieldHint">For exact reproduction: load a frozen specimen, then run its packet unchanged.</p>
+          <section className="exactReplayPanel">
+            <div className="witnessActions">
+              <strong>V109 — Frozen Federation Successor Examination</strong>
+              <span className="fieldHint">Exact packet replay · no model · integrity gate forced on</span>
+            </div>
+            <p className="witnessBoundary">Load either frozen specimen exactly as constituted. The pair holds actor, authority, action, consequence, execution surface, and relational rule constant; only the independently attributable relation-bearing fact changes.</p>
+            <div className="witnessActions">
+              <button type="button" className="secondaryButton" onClick={() => loadV109SuccessorPacket("dn1")}>Load ΔN₁ · EU-WEST = EU-WEST</button>
+              <button type="button" className="secondaryButton" onClick={() => loadV109SuccessorPacket("dn2")}>Load ΔN₂ · EU-WEST ≠ EU-CENTRAL</button>
+            </div>
+            <p className="witnessNote">Run ΔN₁ first, preserve its raw export, then load and run ΔN₂. Do not edit either packet between load and replay.</p>
+          </section>
+
+          <section className="exactReplayPanel">
+            <div className="witnessActions">
+              <strong>V112 — Specialty Pack → Harmonic Standing Successor</strong>
+              <span className="fieldHint">Frozen domain relationship boundary · no constitutional answer upstream</span>
+            </div>
+            <p className="witnessBoundary">The frozen Specialty Pack establishes only the attributable domain relationship under rule-r1. Harmonic must determine its consequence-relative constitutional significance. Harmonic runtime remains unchanged.</p>
+            <div className="witnessActions">
+              <button type="button" className="secondaryButton" onClick={() => loadV112SuccessorPacket("dn1")}>Load ΔN₁ · domain relationship: alignment</button>
+              <button type="button" className="secondaryButton" onClick={() => loadV112SuccessorPacket("dn2")}>Load ΔN₂ · domain relationship: misalignment</button>
+            </div>
+            <p className="witnessNote">Run ΔN₁ first and preserve the raw export. Then run ΔN₂ unchanged. The integrity gate rejects standing-bearing constitutional conclusions upstream.</p>
+          </section>
+
+          <section className="exactReplayPanel">
+            <div className="witnessActions">
+              <strong>V113 — Complete Information → Harmonic Standing Successor</strong>
+              <span className="fieldHint">All required governing information in · case-specific constitutional answer out</span>
+            </div>
+            <p className="witnessBoundary">The Specialty Pack supplies the complete attributable domain transition classification required by Harmonic's constituted interface. Harmonic receives the frozen rule, facts, provenance, consequence and transition class, but never receives standing, revalidation, admissibility or execution disposition for the case.</p>
+            <div className="witnessActions">
+              <button type="button" className="secondaryButton" onClick={() => loadV113SuccessorPacket("dn1")}>Load ΔN₁ · consistent with prior state</button>
+              <button type="button" className="secondaryButton" onClick={() => loadV113SuccessorPacket("dn2")}>Load ΔN₂ · material contradiction</button>
+            </div>
+            <p className="witnessNote">Run ΔN₁ first and preserve the raw export. Then run ΔN₂ unchanged. V113 integrity permits the required domain transition classification while rejecting any case-specific constitutional answer upstream.</p>
+          </section>
+
+          </details>
         </section>
 
         <section className="panel resultsPanel">
           <div className="sectionTitle withMeta">
             <div>
               <span>2</span>
-              <h2>Execution decision</h2>
+              <h2>Review the result</h2>
             </div>
-            {result ? <em>{result.model}</em> : <em>Possible outcomes: ADMIT · DENY · ESCALATE · DEFER\nResults appear after run</em>}
+            {result ? <em>{result.model}</em> : <em>{loading ? "Evaluation in progress" : "Your result will appear here"}</em>}
           </div>
 
-          <RuntimeDispositionStrip decision={result ? (result.lanes.find((lane) => lane.lane === "harmonic_governance") ?? result.lanes.find((lane) => lane.lane === "harmonic"))?.evaluation.decision : undefined} />
+          {result ? (<RuntimeDispositionStrip decision={result ? (result.lanes.find((lane) => lane.lane === "harmonic_governance") ?? result.lanes.find((lane) => lane.lane === "harmonic"))?.evaluation.decision : undefined} />) : (
+            <details className="outcomeGuide"><summary>What do the possible decisions mean?</summary>
+              <RuntimeDispositionStrip decision={undefined} />
+            </details>
+          )}
 
           {loading ? (
             <GovernanceScan loading={loading} result={null} />
@@ -2879,8 +2893,10 @@ export default function Home() {
             </>
           ) : (
             <div className="emptyState">
-              <strong>No live evaluation yet.</strong>
-              <p>Choose a model, select a sample or build your own scenario, then run the evaluation.</p>
+              <span className="emptyResultIcon" aria-hidden="true">→</span>
+              <strong>Ready for your first test</strong>
+              <p>The NDA example is already loaded. Select <b>Run live evaluation</b> to see the model’s proposal and Harmonic’s decision.</p>
+              <small>This harness examines decisions and synthetic consequences. It does not execute a real-world action.</small>
             </div>
           )}
         </section>
