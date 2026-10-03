@@ -1,6 +1,6 @@
 {
-  "name": "harmonic-governance-compare",
-  "version": "0.1.0",
+  "name": "harmonic-public-test-harness",
+  "version": "0.2.0",
   "private": true,
   "type": "module",
   "scripts": {
@@ -9,19 +9,14 @@
     "start": "next start",
     "lint": "next lint",
     "test:unified-harmonic": "node scripts/test-unified-harmonic-call.cjs",
-    "test:v2-runtime-selector": "node scripts/test-v2-runtime-selector.cjs",
     "test:v2-protected-fetch": "node scripts/test-v2-protected-fetch.cjs",
     "test:v3-universal-single-call": "node scripts/test-v3-universal-single-call.cjs",
     "test:v3-customer-boundary-jurisdiction": "node scripts/test-v3-customer-boundary-jurisdiction.cjs",
     "test:v3-canonical-transaction-projection": "node scripts/test-v3-canonical-transaction-projection.cjs",
-    "test:v72-obligation-witness": "node scripts/test-v72-obligation-witness.cjs",
     "test:v75-exact-packet-replay": "node scripts/test-v75-exact-packet-replay.cjs",
-    "test:v76-synthetic-fixture-transport": "node scripts/test-v76-synthetic-fixture-transport.cjs",
-    "test:v81-synthetic-fixture-transport": "node scripts/test-v81-synthetic-fixture-transport.cjs",
     "test:v86-methodology-hardening": "node scripts/test-v86-methodology-hardening.cjs",
     "test:v87": "node scripts/test-v87-falsification-integrity.cjs",
     "test:v89": "node scripts/test-v89-explicit-fixture-evidence.cjs",
-    "test:v91": "node scripts/test-v91-current-production-provenance.cjs",
     "test:v92-runtime-routing": "node scripts/test-v92-runtime-routing.cjs",
     "test:v94-fixtures": "node scripts/test-v94-frozen-scenario-fixtures.cjs",
     "test:v95b-shape": "node scripts/test-v95b-request-witness-shape.cjs",
@@ -37,7 +32,11 @@
     "test:v112-specialty-pack-standing": "node scripts/test-v112-specialty-pack-standing-fixtures.cjs",
     "test:v114-execution-boundary": "node scripts/test-v114-execution-sink-boundary.cjs",
     "example:raw-vs-governed": "node examples/raw-vs-governed/run.mjs",
-    "test:raw-vs-governed": "node scripts/test-raw-vs-governed-example.cjs"
+    "test:raw-vs-governed": "node scripts/test-raw-vs-governed-example.cjs",
+    "test:public-contract": "node scripts/test-public-repo-contract.cjs",
+    "test:v113-complete-information": "node scripts/test-v113-complete-information-standing-fixtures.cjs",
+    "test:current": "npm run test:public-contract && npm run test:unified-harmonic && npm run test:v100-v42-contract && npm run test:v107-witness-integrity && npm run test:v108-successor-integrity && npm run test:v109-successor-federation && npm run test:v112-specialty-pack-standing && npm run test:v113-complete-information && npm run test:v114-execution-boundary && npm run test:raw-vs-governed",
+    "test": "npm run test:current"
   },
   "dependencies": {
     "@vercel/analytics": "^2.0.1",
@@ -54,5 +53,6 @@
     "eslint": "^9.27.0",
     "eslint-config-next": "15.3.8",
     "typescript": "^5.8.3"
-  }
+  },
+  "description": "Public examination and integration harness for Harmonic runtime governance."
 }
