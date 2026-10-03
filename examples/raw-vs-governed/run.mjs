@@ -206,6 +206,7 @@ function dispositionFrom(unified) {
 async function callHarmonic(packet) {
   if (!API_KEY) throw new Error("Missing HARMONIC_API_KEY (or HARMONIC_GOVERNANCE_API_KEY). The public demo never embeds a production secret.");
   const res = await fetch(API_URL, {
+    signal: AbortSignal.timeout(30_000),
     method: "POST",
     headers: {
       "content-type": "application/json",
