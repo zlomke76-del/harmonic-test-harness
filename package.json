@@ -35,7 +35,9 @@
     "test:v108-successor-integrity": "node scripts/test-v108-successor-integrity.cjs",
     "test:v109-successor-federation": "node scripts/test-v109-successor-federation-fixtures.cjs",
     "test:v112-specialty-pack-standing": "node scripts/test-v112-specialty-pack-standing-fixtures.cjs",
-    "test:v114-execution-boundary": "node scripts/test-v114-execution-sink-boundary.cjs"
+    "test:v114-execution-boundary": "node scripts/test-v114-execution-sink-boundary.cjs",
+    "example:raw-vs-governed": "node examples/raw-vs-governed/run.mjs",
+    "test:raw-vs-governed": "node scripts/test-raw-vs-governed-example.cjs"
   },
   "dependencies": {
     "@vercel/analytics": "^2.0.1",
