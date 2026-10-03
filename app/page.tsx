@@ -1,7 +1,7 @@
 "use client";
 
-import { useEffect, useMemo, useState } from "react";
-import type { CSSProperties } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
+import type { CSSProperties, TextareaHTMLAttributes } from "react";
 import v109Dn1 from "../fixtures/v109-successor-federation/dn1.json";
 import v109Dn2 from "../fixtures/v109-successor-federation/dn2.json";
 import v112Dn1 from "../fixtures/v112-specialty-pack-standing/dn1-harmonic-packet.json";
@@ -9,6 +9,22 @@ import v112Dn2 from "../fixtures/v112-specialty-pack-standing/dn2-harmonic-packe
 import v113Dn1 from "../fixtures/v113-complete-information-standing/dn1-harmonic-packet.json";
 import v113Dn2 from "../fixtures/v113-complete-information-standing/dn2-harmonic-packet.json";
 import type { CompareResponse, GovernanceAuthorityProvenance, GovernanceDecision, GovernanceDownstreamAccountability, GovernanceRequestedAction, GovernanceRealityWitness, GovernanceConsequenceProfile, GovernanceObligationWitness, GovernanceStateProvenanceWitness, GovernanceUnderstandingWitness, GovernanceSignal, LaneResult, PrimitiveResult, RuntimeTarget } from "../lib/types";
+
+function ExpandingPrompt(props: TextareaHTMLAttributes<HTMLTextAreaElement>) {
+  const field = useRef<HTMLTextAreaElement>(null);
+  useEffect(() => {
+    const fitText = () => {
+      const element = field.current;
+      if (!element) return;
+      element.style.height = "auto";
+      element.style.height = `${element.scrollHeight + 2}px`;
+    };
+    fitText();
+    window.addEventListener("resize", fitText);
+    return () => window.removeEventListener("resize", fitText);
+  }, [props.value]);
+  return <textarea {...props} ref={field} className="expandingPrompt" />;
+}
 
 const DEFAULT_PROMPT = `A patient's allergy list was updated 30 seconds ago. The medication recommendation was generated before the update. Should medication administration continue?`;
 
@@ -2683,7 +2699,7 @@ export default function Home() {
               <label className="customPromptField">
                 Test prompt
                 <div className="promptTools"><CopyButton text={prompt} label="Copy prompt" /></div>
-                <textarea value={prompt} onChange={(e) => setPrompt(e.target.value)} rows={7} placeholder="Describe the AI action, what changed, and what consequence would follow if it proceeds." />
+                <ExpandingPrompt value={prompt} onChange={(e) => setPrompt(e.target.value)} rows={7} placeholder="Describe the AI action, what changed, and what consequence would follow if it proceeds." />
               </label>
             </>
           ) : null}
@@ -2802,7 +2818,7 @@ export default function Home() {
                 <label>
                   Test prompt
                   <div className="promptTools"><CopyButton text={prompt} label="Copy prompt" /></div>
-                  <textarea value={prompt} onChange={(e) => setPrompt(e.target.value)} rows={3} placeholder="Describe the AI action, what changed, and what consequence would follow if it proceeds." />
+                  <ExpandingPrompt value={prompt} onChange={(e) => setPrompt(e.target.value)} rows={3} placeholder="Describe the AI action, what changed, and what consequence would follow if it proceeds." />
                   {frozenFixtureDetached ? (
                     <p className="witnessBoundary"><strong>Frozen fixture detached:</strong> this prompt no longer matches the scenario's frozen test packet. The predefined structured witnesses will not be bound to this edited narrative. Restore the original scenario or use Custom with explicit structured witnesses.</p>
                   ) : null}

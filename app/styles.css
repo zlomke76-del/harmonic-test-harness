@@ -2800,3 +2800,5 @@ pre {
 summary:focus-visible { outline:2px solid var(--accent); outline-offset:5px; border-radius:4px; }
 @media(max-width:980px) { .heroGrid { grid-template-columns:1fr; gap:18px; } .workspace { grid-template-columns:1fr; } }
 @media(max-width:620px) { .heroCopy h1 { font-size:36px; } .gettingStarted { padding:18px; } .resultsPanel .emptyState { min-height:200px; padding:20px; } }
+
+.inputPanel textarea.expandingPrompt { min-height:156px; max-height:none; overflow-y:hidden; resize:vertical; font-size:14px; line-height:1.6; }
