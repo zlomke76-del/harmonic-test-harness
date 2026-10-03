@@ -2639,6 +2639,12 @@ export default function Home() {
             </div>
           ) : null}
 
+          <button onClick={runCompare} disabled={loading || (scenario === CUSTOM_SCENARIO_ID && exactPacketReplay ? !exactPacketJson.trim() : !prompt.trim())}>
+            <span>{loading ? "Evaluating runtime" : result ? "Run again" : scenario === CUSTOM_SCENARIO_ID && exactPacketReplay ? "Replay exact packet" : "Run live evaluation"}</span>
+          </button>
+
+          {error ? <p className="error">{error}</p> : null}
+
           <details className="advancedPanel">
             <summary>
               <span>Advanced run settings</span>
@@ -2814,11 +2820,6 @@ export default function Home() {
             </>
           ) : null}
 
-          <button onClick={runCompare} disabled={loading || (scenario === CUSTOM_SCENARIO_ID && exactPacketReplay ? !exactPacketJson.trim() : !prompt.trim())}>
-            <span>{loading ? "Evaluating runtime" : result ? "Run again" : scenario === CUSTOM_SCENARIO_ID && exactPacketReplay ? "Replay exact packet" : "Run live evaluation"}</span>
-          </button>
-
-          {error ? <p className="error">{error}</p> : null}
           <details className="researchExaminations">
             <summary>Research examinations <small>V109 · V112 · V113</small></summary>
             <p className="fieldHint">For exact reproduction: load a frozen specimen, then run its packet unchanged.</p>
