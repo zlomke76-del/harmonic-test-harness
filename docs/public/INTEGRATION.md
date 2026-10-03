@@ -39,3 +39,12 @@ For a browser-hosted public demo, keep the Harmonic credential server-side and e
 A Harmonic response establishes the returned governance disposition for the submitted packet. It does not by itself prove that every downstream production route obeyed that disposition.
 
 Where enforcement is examined, preserve the exact boundary and falsifier separately.
+
+## Hosted examiner access
+
+Set `HARNESS_ACCESS_PASSWORD` to a unique password of at least 24 characters and
+serve over HTTPS. The UI and API require HTTP Basic access (`harness` username).
+The model-comparison and exact-replay routes check authentication themselves before
+using server credentials. Never publish the password in source or a browser bundle.
+Authenticated examiners can still incur provider costs; use provider budgets as well.
+Anonymous public access requires a separate fixture allowlist and durable quotas.
