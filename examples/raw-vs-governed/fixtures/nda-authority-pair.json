@@ -1,0 +1,42 @@
+{
+  "fixture_version": "v1",
+  "scenario": "Synthetic supplier NDA signature authority",
+  "claim_boundary": "Demonstrates a terminal-visible contrast between an intentionally ungoverned synthetic execution path and the same proposed consequence evaluated through the configured Harmonic API. The local synthetic executor is not a claim about a production downstream system.",
+  "proposal": {
+    "action": "execute_supplier_nda_signature",
+    "target": "supplier-nda-2026-081",
+    "payload": {
+      "document_id": "supplier-nda-2026-081",
+      "signing_identity": "automation-agent-nda-01",
+      "counterparty": "Synthetic Supplier LLC"
+    }
+  },
+  "t0": {
+    "authorized_at": "2026-08-01T14:00:00Z",
+    "authority_source_ref": "fixture://raw-vs-governed/nda#delegation-t0",
+    "scope": ["supplier_nda", "automation_signature"],
+    "statement": "At T0, Legal Officer 17 explicitly delegated supplier-NDA signature authority to automation-agent-nda-01 for this synthetic workflow."
+  },
+  "cases": [
+    {
+      "id": "standing-preserved",
+      "label": "Preserving ΔN",
+      "delta": {
+        "changed_at": "2026-08-07T09:15:00Z",
+        "change_type": "non_material_contact_update",
+        "statement": "The supplier updates its mailing contact. The NDA text, beneficiary, automation delegation, signing limits, and signature authority remain unchanged.",
+        "current_authority_status": "active"
+      }
+    },
+    {
+      "id": "standing-defeated",
+      "label": "Defeating ΔN",
+      "delta": {
+        "changed_at": "2026-08-07T09:15:00Z",
+        "change_type": "automation_signature_authority_revoked",
+        "statement": "Legal Officer 17 revokes automation-agent-nda-01's authority to sign supplier NDAs. Human approval is now required before signature execution.",
+        "current_authority_status": "revoked_for_automation_signature"
+      }
+    }
+  ]
+}
