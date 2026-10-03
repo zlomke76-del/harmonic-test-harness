@@ -7,14 +7,21 @@ judgment, and synthetic execution. The private runtime is not included in the
 reviewed current source. V113 fixture checks preserve the verdict-path claim ceiling;
 V114 remains a synthetic boundary examination with a locally generated signer.
 
-## Changes required before hosted use
+## Owner-directed public access update
+
+The owner requested the original full harness remain publicly accessible. The
+password gate added during this review has been removed. The UI and API accept
+anonymous same-origin use, including live tests with configured provider credentials.
+`HARNESS_ACCESS_PASSWORD` is not required or used. Cross-site browser submissions
+still reject, and server API keys remain server-side.
+
+## Changes applied before hosted use
 
 - Updated Next.js to 15.5.27 and React/React DOM to 19.0.4; pinned patched
   PostCSS and Sharp transitive dependencies. Removed unused ESLint dependencies
   and replaced the unconfigured `next lint` command with `typecheck`.
-- Added controlled hosted access, including independent checks before routes spend
-  model or Harmonic server credentials. Production requires a unique
-  `HARNESS_ACCESS_PASSWORD` of at least 24 characters and HTTPS.
+- Preserved public access as directed by the owner, with independent cross-site
+  request checks before routes use model or Harmonic server credentials. Use HTTPS.
 - Removed the ten-second acceptance grace period outside signed receipt validity.
   Malformed receipt structures and key/signature verification failures fail closed.
 - Added executable tests of the actual synthetic sink route and the hosted-access
@@ -30,8 +37,8 @@ V114 remains a synthetic boundary examination with a locally generated signer.
 - `npm run typecheck`: PASS.
 - `npm run build`: PASS.
 - `npm audit`: zero known vulnerabilities at review time.
-- Local production HTTP checks: unauthenticated UI/credential-bearing routes reject;
-  authenticated UI and V114 route succeed; cross-origin authenticated POST rejects.
+- Local production HTTP checks: anonymous UI and V114 examination succeed;
+  malformed anonymous API inputs reach validation; cross-origin POST rejects.
 - Common credential-pattern scan: 439 commits / 456 unique blobs inspected;
   matches in historical documentation/environment examples were labeled placeholders.
   This is a bounded pattern scan, not a universal secret-detection guarantee.
@@ -43,6 +50,6 @@ provided. Local success does not claim live determination or production enforcem
 The synthetic sink has no persisted receipt consumption; valid in-window replay is
 possible. It does not establish anti-replay or exactly-once execution.
 
-Hosted access is intended for controlled examiners. Anonymous public execution
-requires a fixture allowlist and durable quotas before exposing server-paid calls.
+Public live execution uses the configured providers and their budgets. This
+repository does not implement durable per-visitor quotas.
 The review does not verify any existing deployment's environment configuration.

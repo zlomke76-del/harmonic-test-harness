@@ -40,11 +40,9 @@ A Harmonic response establishes the returned governance disposition for the subm
 
 Where enforcement is examined, preserve the exact boundary and falsifier separately.
 
-## Hosted examiner access
+## Public hosted access
 
-Set `HARNESS_ACCESS_PASSWORD` to a unique password of at least 24 characters and
-serve over HTTPS. The UI and API require HTTP Basic access (`harness` username).
-The model-comparison and exact-replay routes check authentication themselves before
-using server credentials. Never publish the password in source or a browser bundle.
-Authenticated examiners can still incur provider costs; use provider budgets as well.
-Anonymous public access requires a separate fixture allowlist and durable quotas.
+The examination UI and API are open without HTTP Basic authentication.
+`HARNESS_ACCESS_PASSWORD` is not required or used. Serve over HTTPS and keep
+provider API keys server-side. Cross-site browser submissions are rejected.
+Live public examinations use the configured server provider credentials and budgets.
