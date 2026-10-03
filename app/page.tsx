@@ -2896,7 +2896,7 @@ export default function Home() {
             <div className="emptyState">
               <span className="emptyResultIcon" aria-hidden="true">→</span>
               <strong>Ready for your first test</strong>
-              <p>The NDA example is already loaded. Select <b>Run live evaluation</b> to see the model’s proposal and Harmonic’s decision.</p>
+              <p>Your selected test is ready. Select <b>{scenario === CUSTOM_SCENARIO_ID && exactPacketReplay ? "Replay exact packet" : "Run live evaluation"}</b> to review the returned decision and evidence.</p>
               <small>This harness examines decisions and synthetic consequences. It does not execute a real-world action.</small>
             </div>
           )}
