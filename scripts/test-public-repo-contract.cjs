@@ -22,6 +22,12 @@ must(!adapter.includes('"PASS", "PASSED", "APPROVE", "APPROVED", "CONTACT_CONFIR
 must(pkg.private === true, 'package must remain npm-private to prevent accidental publication');
 must(pkg.name === 'harmonic-public-test-harness', 'package name must identify public harness');
 must(fs.existsSync(path.join(root, 'docs/history/root-lineage')), 'historical lineage must be separated from onboarding surface');
+must(fs.existsSync(path.join(root, 'docs/public/BREAK_THIS_FIRST.md')), 'public falsification target must exist');
+must(fs.existsSync(path.join(root, '.github/ISSUE_TEMPLATE/falsification.yml')), 'falsification issue form must exist');
+must(fs.existsSync(path.join(root, '.github/ISSUE_TEMPLATE/reproduction.yml')), 'reproduction issue form must exist');
+must(fs.existsSync(path.join(root, '.github/pull_request_template.md')), 'public PR evidence template must exist');
+must(fs.existsSync(path.join(root, 'CONTRIBUTING.md')), 'contribution guidance must exist');
+must(fs.existsSync(path.join(root, 'SECURITY.md')), 'security disclosure guidance must exist');
 
 const secretPattern = /(hs_live_[A-Za-z0-9_-]{8,}|sk-[A-Za-z0-9_-]{20,}|vck_[A-Za-z0-9_-]{12,})/g;
 for (const file of ['README.md', '.env.example', 'examples/raw-vs-governed/README.md', 'examples/raw-vs-governed/run.mjs']) {
