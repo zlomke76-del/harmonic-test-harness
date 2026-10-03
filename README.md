@@ -180,6 +180,12 @@ Historical records live under [`docs/history/`](docs/history/).
 
 `"private": true` in `package.json` intentionally prevents accidental npm publication. It does **not** mean the GitHub repository itself must be private.
 
+## License
+
+This public harness is released under the [MIT License](LICENSE).
+
+The license applies to the contents of this repository only. It does **not** grant access to, disclose, or license the private Harmonic runtime, private credentials, private infrastructure, trademarks, or materials not included in this repository.
+
 ## Public evidence rule
 
 A public claim should be no broader than the evidence preserved by the corresponding examination.

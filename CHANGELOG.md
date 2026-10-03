@@ -1,5 +1,12 @@
 # Changelog
 
+## 0.2.2 — Public license
+
+- Added the MIT License for the public Harmonic test harness.
+- Clarified that the license applies only to materials contained in this repository and does not license the private Harmonic runtime or non-repository assets.
+- Added `license: MIT` package metadata.
+- Added public-contract coverage for the license surface.
+
 ## 0.2.1 — Public examination intake
 
 - added a default **BREAK THIS FIRST** falsification target;
