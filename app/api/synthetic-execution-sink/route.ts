@@ -18,7 +18,10 @@ function canonicalize(value: unknown) { return JSON.stringify(stableSort(value))
 function sha256(value: string) { return createHash("sha256").update(value, "utf8").digest("hex"); }
 function decodeReceipt(value: string | null): Record<string, unknown> | null {
   if (!value) return null;
-  try { return JSON.parse(Buffer.from(value, "base64").toString("utf8")) as Record<string, unknown>; }
+  try {
+    const parsed: unknown = JSON.parse(Buffer.from(value, "base64").toString("utf8"));
+    return parsed && typeof parsed === "object" && !Array.isArray(parsed) ? parsed as Record<string, unknown> : null;
+  }
   catch { return null; }
 }
 
@@ -39,12 +42,17 @@ export async function POST(req: Request) {
   const issuedAt = new Date(String(receipt.issued_at || ""));
   const expiresAt = new Date(String(receipt.expires_at || ""));
   const now = Date.now();
-  if (!Number.isFinite(issuedAt.getTime()) || !Number.isFinite(expiresAt.getTime()) || now + 10000 < issuedAt.getTime() || now - 10000 > expiresAt.getTime()) {
+  if (!Number.isFinite(issuedAt.getTime()) || !Number.isFinite(expiresAt.getTime()) || expiresAt.getTime() <= issuedAt.getTime() || now < issuedAt.getTime() || now >= expiresAt.getTime()) {
     return NextResponse.json({ error: "receipt_outside_validity_window" }, { status: 403 });
   }
 
   const { signature, ...unsigned } = receipt;
-  const signatureValid = verify(null, Buffer.from(canonicalize(unsigned), "utf8"), publicKey, Buffer.from(String(signature), "base64"));
+  let signatureValid = false;
+  try {
+    signatureValid = verify(null, Buffer.from(canonicalize(unsigned), "utf8"), publicKey, Buffer.from(String(signature), "base64"));
+  } catch {
+    return NextResponse.json({ error: "invalid_receipt_signature" }, { status: 403 });
+  }
   if (!signatureValid) return NextResponse.json({ error: "invalid_receipt_signature" }, { status: 403 });
 
   const executeHash = sha256(canonicalize(body.execute));
