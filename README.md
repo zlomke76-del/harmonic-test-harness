@@ -217,3 +217,13 @@ The Pack must distinguish **historically authoritative** from **currently govern
 The primary disposition is local to the Specialty Pack source-selection boundary. Harmonic exact replay is deliberately secondary; it confirms that the constituted transition is accepted by the current Harmonic interface but cannot rescue an incorrect Pack result.
 
 Run `npm run test:v117-source-standing`, then use the Research examinations panel to load Case A and Case B unchanged. Preserve both raw exports. No live result is claimed until the frozen pair is executed and adjudicated.
+
+## V118 Registry Content Validity vs Issuer Standing examination
+
+V118 implements **RED TEAM 003** and moves one level upstream of V117. The authority-registry record is fixed across the pair: same content, same issuer, same current status, same valid signature, same attribution and same integrity. Only the **independently established standing of the registry issuer** changes.
+
+The frozen distinction is **registry content validity ≠ registry / issuer authority standing**. The anti-circularity rule is explicit: the registry statement under examination may not establish its own issuer standing.
+
+Case A admits the record because independent charter evidence establishes the issuer as currently governing. Case B preserves the record as valid but refuses to use it as governing after the issuer's standing ends; because no successor-issued source-governance statement is supplied, the Pack returns `UNRESOLVED_AUTHORITY_STANDING` rather than silently inheriting the old authority statement.
+
+Run `npm run test:v118-registry-authority-standing`, then use the Research examinations panel to load Case A and Case B unchanged. Harmonic exact replay is downstream witness evidence only. No live result is claimed until the frozen pair is executed and independently adjudicated.

@@ -1,5 +1,14 @@
 # Changelog
 
+## 0.2.6 — V118 registry / issuer authority-standing examination
+
+- Added prospective **V118 / RED TEAM 003** fixtures for registry-content validity vs registry/issuer standing.
+- Freezes the authority-registry record byte-equivalent across the pair while changing only independently established issuer-standing state.
+- Adds an explicit anti-circularity rule preventing the registry statement from bootstrapping its own issuer authority.
+- Adds an executable Specialty Pack reference that returns `UNRESOLVED_AUTHORITY_STANDING` when a valid record's issuer no longer has standing.
+- Uses canonical Harmonic V3.8 state-transition values (`consistent`, `invalidates_prior_state`, `current`, `non_current`) verified against the supplied private Harmonic source snapshot.
+- Adds exact-replay Case A / Case B controls to the Research examinations panel.
+
 ## 0.2.2 — Public license
 
 - Added the MIT License for the public Harmonic test harness.
