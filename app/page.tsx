@@ -10,6 +10,8 @@ import v113Dn1 from "../fixtures/v113-complete-information-standing/dn1-harmonic
 import v113Dn2 from "../fixtures/v113-complete-information-standing/dn2-harmonic-packet.json";
 import v116CaseA from "../fixtures/v116-pack-boundary-invariance/case-a-harmonic-packet.json";
 import v116CaseB from "../fixtures/v116-pack-boundary-invariance/case-b-harmonic-packet.json";
+import v117CaseA from "../fixtures/v117-source-standing/case-a-harmonic-packet.json";
+import v117CaseB from "../fixtures/v117-source-standing/case-b-harmonic-packet.json";
 import type { CompareResponse, GovernanceAuthorityProvenance, GovernanceDecision, GovernanceDownstreamAccountability, GovernanceRequestedAction, GovernanceRealityWitness, GovernanceConsequenceProfile, GovernanceObligationWitness, GovernanceStateProvenanceWitness, GovernanceUnderstandingWitness, GovernanceSignal, LaneResult, PrimitiveResult, RuntimeTarget } from "../lib/types";
 
 function ExpandingPrompt(props: TextareaHTMLAttributes<HTMLTextAreaElement>) {
@@ -2122,6 +2124,20 @@ export default function Home() {
     setResult(null);
   }
 
+  function loadV117SourceStandingPacket(which: "a" | "b") {
+    const packet = which === "a" ? v117CaseA : v117CaseB;
+    setSelectedPattern(PATTERN_ALL);
+    setScenario(CUSTOM_SCENARIO_ID);
+    setCustomScenarioName(which === "a" ? "V117 Source Standing — Case A" : "V117 Source Standing — Case B");
+    setPrompt("");
+    setExactPacketReplay(true);
+    setEnforceNoStandingPreload(false);
+    setEnforceNoConstitutionalAnswerPreload(true);
+    setExactPacketJson(JSON.stringify(packet, null, 2));
+    setError(null);
+    setResult(null);
+  }
+
   function applyPattern(pattern: string) {
     setSelectedPattern(pattern);
     if (pattern === PATTERN_ALL) return;
@@ -2853,7 +2869,7 @@ export default function Home() {
           ) : null}
 
           <details className="researchExaminations">
-            <summary>Research examinations <small>V109 · V112 · V113 · V116</small></summary>
+            <summary>Research examinations <small>V109 · V112 · V113 · V116 · V117</small></summary>
             <p className="fieldHint">For exact reproduction: load a frozen specimen, then run its packet unchanged.</p>
           <section className="exactReplayPanel">
             <div className="witnessActions">
@@ -2905,6 +2921,19 @@ export default function Home() {
               <button type="button" className="secondaryButton" onClick={() => loadV116BoundaryInvariancePacket("b")}>Load Case B · binding prohibition unsatisfied</button>
             </div>
             <p className="witnessNote">Run Case A first and preserve the raw export. Then run Case B unchanged. Do not reclassify ownership after seeing the results. PASS requires semantically invariant Specialty Pack output and materially different Harmonic dispositions caused only by the frozen downstream constitutional basis.</p>
+          </section>
+
+          <section className="exactReplayPanel">
+            <div className="witnessActions">
+              <strong>V117 — Source Standing vs Source Continuity</strong>
+              <span className="fieldHint">RED TEAM 002 · current source authority isolated from freshness, provenance and static hierarchy</span>
+            </div>
+            <p className="witnessBoundary">Both source records remain current, attributable, available, unchanged and fixed at the same hierarchy positions. Only the prospectively frozen source-authority relation changes. The Pack must select the source currently governing for the proposition rather than silently treating freshness, confidence, historical primacy or hierarchy as present authority.</p>
+            <div className="witnessActions">
+              <button type="button" className="secondaryButton" onClick={() => loadV117SourceStandingPacket("a")}>Load Case A · Source A currently governing</button>
+              <button type="button" className="secondaryButton" onClick={() => loadV117SourceStandingPacket("b")}>Load Case B · Source B now governing</button>
+            </div>
+            <p className="witnessNote">Primary PASS/FAIL is decided at the Specialty Pack source-selection boundary. Run the frozen fixture test first. Harmonic replay is a secondary integration witness only and cannot rescue an incorrect Pack constitution. No post-result source reclassification is permitted.</p>
           </section>
 
           </details>
