@@ -55,9 +55,13 @@ for (const [label, input, expected, packet] of [
   assert(packet.specialty_pack_evidence.anti_circularity_satisfied === true, `${label}: anti-circularity witness missing`);
   assert(packet.governing_basis.case_specific_constitutional_answer_supplied === false, `${label}: packet preloads constitutional answer`);
   assert(packet.state_transition.attributable_source === 'federation-domain-pack@1.2.0-v118', `${label}: transition attribution drifted`);
-  assert(packet.state_transition.relationship === expected.relationship, `${label}: transition relationship must preserve Pack result`);
-  assert(packet.state_transition.prior_state_status === (label === 'case-a' ? 'current' : 'non_current'), `${label}: canonical V3.8 prior-state status missing`);
-  assert(packet.state_transition.revalidation_required === (label === 'case-b'), `${label}: canonical V3.8 revalidation flag incorrect`);
+  const expectedRelationship = label === 'case-a' ? 'consistent_with_prior_state' : 'invalidates_prior_state';
+  assert(packet.state_transition.relationship === expectedRelationship, `${label}: Harmonic transition relationship drifted`);
+  assert(!Object.prototype.hasOwnProperty.call(packet.state_transition, 'prior_state_status'), `${label}: prior_state_status would preload a case-specific constitutional answer`);
+  assert(!Object.prototype.hasOwnProperty.call(packet.state_transition, 'revalidation_required'), `${label}: revalidation_required would preload a case-specific constitutional answer`);
+  const packetText = JSON.stringify(packet);
+  assert(!/\"(?:prior_state_status|revalidation_required|standing_status|standing_preserved|standing_defeated|admissibility_status|expected_decision|expected_outcome)\"/i.test(packetText), `${label}: banned constitutional-answer field present upstream`);
+  assert(!/\b(?:admissible|inadmissible|permit(?:ted)?|den(?:y|ied)|allow(?:ed)?|block(?:ed)?)\b/i.test(packetText), `${label}: case-specific constitutional disposition appears upstream`);
 }
 
 assert(aOut.constitution_status === 'CONSTITUTED', 'Case A must constitute from the valid statement of a standing issuer');
