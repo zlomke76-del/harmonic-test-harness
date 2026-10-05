@@ -1,6 +1,6 @@
 {
   "name": "harmonic-public-test-harness",
-  "version": "0.2.2",
+  "version": "0.2.3",
   "private": true,
   "type": "module",
   "scripts": {
@@ -34,10 +34,11 @@
     "test:raw-vs-governed": "node scripts/test-raw-vs-governed-example.cjs",
     "test:public-contract": "node scripts/test-public-repo-contract.cjs",
     "test:v113-complete-information": "node scripts/test-v113-complete-information-standing-fixtures.cjs",
-    "test:current": "npm run test:public-contract && npm run test:unified-harmonic && npm run test:v100-v42-contract && npm run test:v107-witness-integrity && npm run test:v108-successor-integrity && npm run test:v109-successor-federation && npm run test:v112-specialty-pack-standing && npm run test:v113-complete-information && npm run test:v114-execution-boundary && npm run test:raw-vs-governed && npm run test:public-behavior",
+    "test:current": "npm run test:public-contract && npm run test:unified-harmonic && npm run test:v100-v42-contract && npm run test:v107-witness-integrity && npm run test:v108-successor-integrity && npm run test:v109-successor-federation && npm run test:v112-specialty-pack-standing && npm run test:v113-complete-information && npm run test:v114-execution-boundary && npm run test:v116-pack-boundary-invariance && npm run test:raw-vs-governed && npm run test:public-behavior",
     "test": "npm run test:current",
     "test:public-behavior": "node scripts/test-public-behavior.cjs",
-    "typecheck": "tsc --noEmit"
+    "typecheck": "tsc --noEmit",
+    "test:v116-pack-boundary-invariance": "node scripts/test-v116-pack-boundary-invariance-fixtures.cjs"
   },
   "dependencies": {
     "@vercel/analytics": "^2.0.1",

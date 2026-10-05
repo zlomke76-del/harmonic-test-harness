@@ -152,6 +152,14 @@ This repository contains several kinds of version labels. They are not interchan
 
 Do not infer runtime version from an examination identifier.
 
+## V116 Specialty Pack boundary-invariance examination
+
+V116 is a **prospectively frozen** test of the Specialty Pack / Harmonic responsibility boundary. The pair holds every Pack-visible fact, rule, provenance, freshness condition, evidence-sufficiency condition, Pack output, and domain relationship constant. Only `/obligation_witness`, prospectively classified as downstream consequence-relative constitutional basis, changes; `/packet_id` changes only for transport identity.
+
+Frozen property: **constitutional significance must not leak upstream into domain constitution.**
+
+Run `npm run test:v116-pack-boundary-invariance` before any live replay, then use the Research examinations panel to run Case A and Case B unchanged and preserve both raw exports. V116 is not a result until the live pair has been executed and adjudicated against the frozen files.
+
 ## V114 execution-boundary examination
 
 The V114 route is a **synthetic constituted executor boundary**. It generates an ephemeral Ed25519 keypair for the examination and tests receiptless bypass, forgery, payload tampering, expiry, refusal, missing governance evidence, and a positive control.
