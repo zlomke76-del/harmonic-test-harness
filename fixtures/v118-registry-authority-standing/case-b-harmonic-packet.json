@@ -130,8 +130,6 @@
       "institutional-charter-registry#v118-case-b-issuer-standing"
     ],
     "relationship": "invalidates_prior_state",
-    "prior_state_status": "non_current",
-    "revalidation_required": true,
     "attributable_source": "federation-domain-pack@1.2.0-v118",
     "observed_at": "2026-10-05T19:15:00.000Z",
     "scope": [

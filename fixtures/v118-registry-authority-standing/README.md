@@ -17,3 +17,7 @@ The authority-registry record is byte-for-byte identical across Case A and Case 
 Case A admits the statement because independent charter evidence establishes the issuer as currently governing. Case B preserves the statement as a valid historical/current record but refuses to use it as governing because the issuer's standing has ended. No successor-issued source-governance statement is supplied, so the Pack remains `UNRESOLVED_AUTHORITY_STANDING`.
 
 Primary PASS/FAIL is at the Specialty Pack authority-admission boundary. Harmonic replay is secondary integration evidence only. No rescue, reinterpretation or ownership shift is permitted after execution.
+
+## V118.1 replay-integrity correction
+
+The exact-replay harness rejects `prior_state_status` and `revalidation_required` in successor packets because those fields can preload case-specific constitutional significance. V118.1 therefore supplies only the attributable domain transition relationship required for the examination: `consistent_with_prior_state` for Case A and `invalidates_prior_state` for Case B. Harmonic's V3.8 interface accepts the relationship itself as sufficient material-transition input; the omitted fields are optional aliases/augmentations, not required fields. The fixture test now fails if either banned field or an upstream execution disposition reappears.

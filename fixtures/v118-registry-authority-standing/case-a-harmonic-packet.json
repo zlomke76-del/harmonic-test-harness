@@ -127,9 +127,7 @@
       "institutional-authority-registry#AUTH-REG-118-001",
       "institutional-charter-registry#v118-case-a-issuer-standing"
     ],
-    "relationship": "consistent",
-    "prior_state_status": "current",
-    "revalidation_required": false,
+    "relationship": "consistent_with_prior_state",
     "attributable_source": "federation-domain-pack@1.2.0-v118",
     "observed_at": "2026-10-05T19:15:00.000Z",
     "scope": [
