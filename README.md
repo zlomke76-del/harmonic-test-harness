@@ -115,7 +115,7 @@ Never commit a real Harmonic key, model-provider key, receipt signing key, or ot
 The original examination UI and API are open to visitors without a login or password.
 `HARNESS_ACCESS_PASSWORD` is no longer required or used. Serve over HTTPS and keep
 Harmonic and model-provider keys in server-side environment variables.
-Cross-site browser submissions are rejected; same-origin public use remains open.
+Cross-site state-changing browser submissions are rejected. Normal public GET/HEAD navigation remains open, including visitors arriving from links on other origins.
 Live public tests use the deployment's configured provider credentials and budgets.
 
 ## Exact execution-authority rule

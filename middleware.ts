@@ -7,5 +7,8 @@ export function middleware(req: NextRequest) {
 
 export const config = {
   runtime: "nodejs",
-  matcher: ["/", "/api/:path*"]
+  // The public UI must remain reachable through normal top-level navigation,
+  // including links from other origins. Cross-site submission protection belongs
+  // on API routes, not on the public page itself.
+  matcher: ["/api/:path*"]
 };
