@@ -41,6 +41,16 @@ const hash = v => createHash('sha256').update(canon(v)).digest('hex');
     }
     process.env.HARNESS_ACCESS_PASSWORD = 'obsolete-password-does-not-enable-a-gate';
     assert.equal(requireHostedAccess(req()), null);
+
+    // Normal public navigation must remain open even when the visitor arrived
+    // from another origin. Only state-changing cross-site submissions are blocked.
+    assert.equal(requireHostedAccess(new Request('https://harness.example/', {
+      method: 'GET', headers: { origin: 'https://linkedin.com', 'sec-fetch-site': 'cross-site' }
+    })), null);
+    assert.equal(requireHostedAccess(new Request('https://harness.example/', {
+      method: 'HEAD', headers: { origin: 'https://attacker.example', 'sec-fetch-site': 'cross-site' }
+    })), null);
+
     assert.equal(requireHostedAccess(new Request('https://harness.example/api/compare', {
       method: 'POST', headers: { 'sec-fetch-site': 'cross-site' }
     })).status, 403);
