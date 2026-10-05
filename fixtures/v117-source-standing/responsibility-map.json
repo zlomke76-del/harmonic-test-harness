@@ -1,0 +1,33 @@
+{
+  "examination_id": "V117-SOURCE-STANDING-001",
+  "freeze_rule": "Only current source-authority state may differ across the pair, plus packet/specimen identity. Source records, content, freshness, provenance, hierarchy, domain rule, consequence, and Pack code remain fixed.",
+  "proposition_id": "execution_region_for_shared_execution",
+  "source_selection_rule": {
+    "rule_id": "source-standing-rule",
+    "version": "1",
+    "expression": "Select the source whose authority state is GOVERNING for the proposition at observed_at and whose effective interval contains observed_at. Do not use freshness, confidence, availability, historical primacy, or hierarchy position as a substitute for current governing authority."
+  },
+  "retirement_supersession_rule": {
+    "rule_id": "source-succession-rule",
+    "version": "1",
+    "expression": "When a successor source becomes governing at an effective boundary, the predecessor remains historically attributable but is non-governing for observations at or after that boundary."
+  },
+  "frozen_non_authority_dimensions": [
+    "/sources",
+    "/domain_rule",
+    "/consequence",
+    "/observed_at"
+  ],
+  "allowed_pair_differences": [
+    "/specimen_id",
+    "/source_authority_state"
+  ],
+  "forbidden_proxies_for_current_authority": [
+    "freshness",
+    "confidence",
+    "availability",
+    "historical_primacy",
+    "hierarchy_position"
+  ],
+  "forbidden_reclassification_after_run": true
+}

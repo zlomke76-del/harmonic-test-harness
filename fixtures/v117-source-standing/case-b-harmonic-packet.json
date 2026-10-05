@@ -1,0 +1,166 @@
+{
+  "requested_action": {
+    "type": "shared_execution",
+    "scope": [
+      "federated_shared_consequence"
+    ],
+    "reversibility": "reversible"
+  },
+  "understanding_state": {
+    "current": true,
+    "complete": true,
+    "provenance_preserved": true,
+    "applicable": true,
+    "confidence": 1,
+    "source_ids": [
+      "execution-region-registry-a",
+      "execution-region-registry-b",
+      "institutional-source-registry",
+      "source-standing-rule@1",
+      "rule-r1@1",
+      "federation-domain-pack@1.1.0-v117"
+    ],
+    "unresolved_tensions": [],
+    "missing_information": [],
+    "revision_status": "current"
+  },
+  "declared_reality": {
+    "current_state_claims": [
+      "Both execution-region source records are available, current, attributable, and unchanged across the frozen pair.",
+      "The source-responsibility map, source-selection rule, consequence, and domain rule are frozen before execution."
+    ],
+    "last_verified_at": "2026-10-05T17:45:00.000Z"
+  },
+  "relational_rule": {
+    "rule_id": "rule-r1",
+    "version": "1",
+    "constituted_at": "T0",
+    "scope": [
+      "federated_shared_consequence"
+    ],
+    "expression": "currently_governing_source.execution_region MUST_EQUAL consequence.required_execution_region for shared_execution",
+    "source": "federation-constitution-r1"
+  },
+  "governing_basis": {
+    "constituted_at": "T0",
+    "domain_rule_ref": "rule-r1@1",
+    "source_selection_rule_ref": "source-standing-rule@1",
+    "transition_vocabulary_contract": "Harmonic V3_8 state_transition relationship vocabulary",
+    "comparison_operator": "MUST_EQUAL",
+    "preserving_class": "consistent_with_prior_state",
+    "defeating_domain_class": "material_contradiction",
+    "case_specific_constitutional_answer_supplied": false
+  },
+  "authority_chain": {
+    "subject": "federated-execution-agent",
+    "issuer": "institutional-execution-authority",
+    "scope": [
+      "federated_shared_consequence"
+    ],
+    "last_verified_at": "2026-10-05T17:45:00.000Z",
+    "chain": [
+      {
+        "actor": "federated-execution-agent",
+        "status": "active"
+      },
+      {
+        "actor": "institutional-execution-authority",
+        "status": "active"
+      }
+    ]
+  },
+  "revocation_state": {
+    "last_revocation_check_at": "2026-10-05T17:45:00.000Z",
+    "known_revocations": []
+  },
+  "obligation_witness": {
+    "detected": true,
+    "status": "not_applicable",
+    "source": "v117-examination:no-separate-obligation",
+    "evidence_refs": [
+      "v117-examination:no-separate-obligation"
+    ]
+  },
+  "consequence_profile": {
+    "level": "low",
+    "reversibility": "reversible",
+    "execution_surface": "shared_execution",
+    "blast_radius": "local"
+  },
+  "safeguards": {
+    "operator_review_confirmed": true
+  },
+  "packet_id": "V117-SOURCE-STANDING-B-001",
+  "observed_reality": {
+    "signals": [
+      {
+        "statement": "Source A reports execution_region = EU-WEST.",
+        "source": "execution-region-registry-a",
+        "evidence_ref": "execution-region-registry-a#execution_region"
+      },
+      {
+        "statement": "Source B reports execution_region = US-EAST.",
+        "source": "execution-region-registry-b",
+        "evidence_ref": "execution-region-registry-b#execution_region"
+      },
+      {
+        "statement": "The frozen source-responsibility registry identifies execution-region-registry-b as the current governing source for execution_region_for_shared_execution at 2026-10-05T17:45:00.000Z.",
+        "source": "institutional-source-registry",
+        "evidence_ref": "institutional-source-registry#v117-case-b-source-standing"
+      }
+    ]
+  },
+  "present_state_provenance": {
+    "attributable_source": "institutional-source-registry",
+    "established_at": "2026-10-05T17:45:00.000Z",
+    "epistemic_status": "ESTABLISHED",
+    "evidence_refs": [
+      "execution-region-registry-a",
+      "execution-region-registry-b",
+      "institutional-source-registry#v117-case-b-source-standing",
+      "source-standing-rule@1",
+      "rule-r1@1",
+      "federation-domain-pack@1.1.0-v117"
+    ]
+  },
+  "state_transition": {
+    "prior_state_ref": "V117-T0-GOVERNING-SOURCE-A-EXECUTION-REGION",
+    "new_observation_refs": [
+      "execution-region-registry-a",
+      "execution-region-registry-b",
+      "institutional-source-registry#v117-case-b-source-standing"
+    ],
+    "relationship": "material_contradiction",
+    "attributable_source": "federation-domain-pack@1.1.0-v117",
+    "observed_at": "2026-10-05T17:45:00.000Z",
+    "scope": [
+      "federated_shared_consequence"
+    ]
+  },
+  "specialty_pack_evidence": {
+    "specialty_pack": "federation-domain-pack@1.1.0-v117",
+    "constitution_status": "CONSTITUTED",
+    "proposition_id": "execution_region_for_shared_execution",
+    "proposition_value": "US-EAST",
+    "governing_source_id": "execution-region-registry-b",
+    "source_selection_rule_ref": "source-standing-rule@1",
+    "source_authority_basis_ref": "source-authority-charter@2026-B",
+    "authority_effective_interval": {
+      "from": "2026-10-05T17:40:00.000Z",
+      "until": null
+    },
+    "relationship": "material_contradiction",
+    "relationship_basis": "governing source value differs from frozen required execution region under rule-r1@1",
+    "domain_rule_ref": "rule-r1@1",
+    "attributable_sources": [
+      "execution-region-registry-a",
+      "execution-region-registry-b",
+      "institutional-source-registry"
+    ],
+    "scope": "federated_shared_consequence",
+    "source_freshness_preserved": true,
+    "source_provenance_preserved": true,
+    "static_hierarchy_ignored_as_authority_proxy": true,
+    "constitutional_answer_supplied": false
+  }
+}

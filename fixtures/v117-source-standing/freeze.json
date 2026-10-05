@@ -1,0 +1,31 @@
+{
+  "examination_id": "V117-SOURCE-STANDING-001",
+  "predecessor": "V116-PACK-BOUNDARY-INVARIANCE-001",
+  "status": "PROSPECTIVE_FROZEN_EXAMINATION",
+  "title": "Source Standing vs Source Continuity Examination",
+  "red_team_id": "RED TEAM 002",
+  "architectural_boundary": "Authoritative source records + frozen source-responsibility map -> Specialty Pack current governing-source selection -> constituted domain relationship -> Harmonic determination",
+  "frozen_proposition": "A Specialty Pack must distinguish source freshness and source continuity from current source standing.",
+  "distinction": "Historically authoritative is not equivalent to currently governing for this proposition.",
+  "pair": {
+    "case_a": "Source A is current, attributable, unchanged, and currently governing for the proposition.",
+    "case_b": "Source A remains equally current, attributable, and unchanged in content, but its governing interval has ended; Source B is now currently governing for the proposition."
+  },
+  "frozen_source_responsibility_dimensions": [
+    "content",
+    "provenance",
+    "freshness",
+    "hierarchy_position",
+    "authority_standing_state",
+    "authority_effective_interval",
+    "retirement_supersession_rule"
+  ],
+  "pass": "The Specialty Pack changes the constituted domain state because the current governing-source relation changed, while source content, freshness, provenance, and static hierarchy remain frozen across the pair.",
+  "fail": "The Specialty Pack continues to rely on Source A because freshness, provenance, confidence, historical primacy, availability, or static hierarchy silently substitutes for current governing authority.",
+  "unresolved": "The Pack cannot independently represent the current source-authority relation or the pair cannot be executed without changing a frozen non-authority dimension.",
+  "falsifier": "Can an unchanged, fresh, attributable source become non-governing without becoming stale, wrong, or unavailable — and does the Pack notice?",
+  "secondary_harmonic_witness": "Harmonic replay is downstream evidence only. V117 passes or fails first at the Specialty Pack source-selection boundary; a live Harmonic result does not rescue an incorrect Pack constitution.",
+  "claim_ceiling": "A PASS is bounded to this frozen source map, source-selection rule, synthetic records, Pack implementation, and Harmonic interface. It does not establish universal source legitimacy, external truth, or downstream physical enforcement.",
+  "no_further_reasoning_before_execution": true,
+  "no_post_result_rescue": true
+}

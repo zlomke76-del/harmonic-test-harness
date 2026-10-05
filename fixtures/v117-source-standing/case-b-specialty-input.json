@@ -1,0 +1,49 @@
+{
+  "specimen_id": "V117-SOURCE-STANDING-B-INPUT-001",
+  "specialty_pack": {"id": "federation-domain-pack", "version": "1.1.0-v117"},
+  "observed_at": "2026-10-05T17:45:00.000Z",
+  "consequence": {
+    "type": "shared_execution",
+    "scope": "federated_shared_consequence",
+    "required_execution_region": "EU-WEST"
+  },
+  "domain_rule": {
+    "rule_id": "rule-r1",
+    "version": "1",
+    "expression": "currently_governing_source.execution_region MUST_EQUAL consequence.required_execution_region for shared_execution",
+    "preserving_class": "consistent_with_prior_state",
+    "defeating_domain_class": "material_contradiction"
+  },
+  "sources": {
+    "source_a": {
+      "source_id": "execution-region-registry-a",
+      "content": {"execution_region": "EU-WEST"},
+      "provenance": {"attributable_source": "institutional-source-registry", "record_id": "A-117", "integrity": "preserved"},
+      "freshness": {"status": "current", "observed_at": "2026-10-05T17:44:30.000Z", "max_age_seconds": 300},
+      "hierarchy_position": 1,
+      "availability": "available",
+      "confidence": 1
+    },
+    "source_b": {
+      "source_id": "execution-region-registry-b",
+      "content": {"execution_region": "US-EAST"},
+      "provenance": {"attributable_source": "institutional-source-registry", "record_id": "B-117", "integrity": "preserved"},
+      "freshness": {"status": "current", "observed_at": "2026-10-05T17:44:30.000Z", "max_age_seconds": 300},
+      "hierarchy_position": 2,
+      "availability": "available",
+      "confidence": 1
+    }
+  },
+  "source_authority_state": {
+    "source_a": {
+      "standing_state": "NON_GOVERNING_SUPERSEDED",
+      "effective_interval": {"from": "2026-01-01T00:00:00.000Z", "until": "2026-10-05T17:40:00.000Z"},
+      "authority_basis_ref": "source-authority-charter@2026-A"
+    },
+    "source_b": {
+      "standing_state": "GOVERNING",
+      "effective_interval": {"from": "2026-10-05T17:40:00.000Z", "until": null},
+      "authority_basis_ref": "source-authority-charter@2026-B"
+    }
+  }
+}

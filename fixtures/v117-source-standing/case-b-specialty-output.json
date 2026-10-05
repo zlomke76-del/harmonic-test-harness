@@ -1,0 +1,19 @@
+{
+  "specialty_pack": "federation-domain-pack@1.1.0-v117",
+  "constitution_status": "CONSTITUTED",
+  "proposition_id": "execution_region_for_shared_execution",
+  "proposition_value": "US-EAST",
+  "governing_source_id": "execution-region-registry-b",
+  "source_selection_rule_ref": "source-standing-rule@1",
+  "source_authority_basis_ref": "source-authority-charter@2026-B",
+  "authority_effective_interval": {"from": "2026-10-05T17:40:00.000Z", "until": null},
+  "relationship": "material_contradiction",
+  "relationship_basis": "governing source value differs from frozen required execution region under rule-r1@1",
+  "domain_rule_ref": "rule-r1@1",
+  "attributable_sources": ["execution-region-registry-a", "execution-region-registry-b", "institutional-source-registry"],
+  "scope": "federated_shared_consequence",
+  "source_freshness_preserved": true,
+  "source_provenance_preserved": true,
+  "static_hierarchy_ignored_as_authority_proxy": true,
+  "constitutional_answer_supplied": false
+}
