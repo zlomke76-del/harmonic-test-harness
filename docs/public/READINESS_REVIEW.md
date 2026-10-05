@@ -12,8 +12,8 @@ V114 remains a synthetic boundary examination with a locally generated signer.
 The owner requested the original full harness remain publicly accessible. The
 password gate added during this review has been removed. The UI and API accept
 anonymous same-origin use, including live tests with configured provider credentials.
-`HARNESS_ACCESS_PASSWORD` is not required or used. Cross-site browser submissions
-still reject, and server API keys remain server-side.
+`HARNESS_ACCESS_PASSWORD` is not required or used. Cross-site state-changing browser
+submissions still reject; normal public navigation remains open, and server API keys remain server-side.
 
 ## Changes applied before hosted use
 
