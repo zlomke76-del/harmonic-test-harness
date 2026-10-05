@@ -12,6 +12,8 @@ import v116CaseA from "../fixtures/v116-pack-boundary-invariance/case-a-harmonic
 import v116CaseB from "../fixtures/v116-pack-boundary-invariance/case-b-harmonic-packet.json";
 import v117CaseA from "../fixtures/v117-source-standing/case-a-harmonic-packet.json";
 import v117CaseB from "../fixtures/v117-source-standing/case-b-harmonic-packet.json";
+import v118CaseA from "../fixtures/v118-registry-authority-standing/case-a-harmonic-packet.json";
+import v118CaseB from "../fixtures/v118-registry-authority-standing/case-b-harmonic-packet.json";
 import type { CompareResponse, GovernanceAuthorityProvenance, GovernanceDecision, GovernanceDownstreamAccountability, GovernanceRequestedAction, GovernanceRealityWitness, GovernanceConsequenceProfile, GovernanceObligationWitness, GovernanceStateProvenanceWitness, GovernanceUnderstandingWitness, GovernanceSignal, LaneResult, PrimitiveResult, RuntimeTarget } from "../lib/types";
 
 function ExpandingPrompt(props: TextareaHTMLAttributes<HTMLTextAreaElement>) {
@@ -2138,6 +2140,20 @@ export default function Home() {
     setResult(null);
   }
 
+  function loadV118RegistryAuthorityPacket(which: "a" | "b") {
+    const packet = which === "a" ? v118CaseA : v118CaseB;
+    setSelectedPattern(PATTERN_ALL);
+    setScenario(CUSTOM_SCENARIO_ID);
+    setCustomScenarioName(which === "a" ? "V118 Registry Authority — Case A" : "V118 Registry Authority — Case B");
+    setPrompt("");
+    setExactPacketReplay(true);
+    setEnforceNoStandingPreload(false);
+    setEnforceNoConstitutionalAnswerPreload(true);
+    setExactPacketJson(JSON.stringify(packet, null, 2));
+    setError(null);
+    setResult(null);
+  }
+
   function applyPattern(pattern: string) {
     setSelectedPattern(pattern);
     if (pattern === PATTERN_ALL) return;
@@ -2869,7 +2885,7 @@ export default function Home() {
           ) : null}
 
           <details className="researchExaminations">
-            <summary>Research examinations <small>V109 · V112 · V113 · V116 · V117</small></summary>
+            <summary>Research examinations <small>V109 · V112 · V113 · V116 · V117 · V118</small></summary>
             <p className="fieldHint">For exact reproduction: load a frozen specimen, then run its packet unchanged.</p>
           <section className="exactReplayPanel">
             <div className="witnessActions">
@@ -2934,6 +2950,19 @@ export default function Home() {
               <button type="button" className="secondaryButton" onClick={() => loadV117SourceStandingPacket("b")}>Load Case B · Source B now governing</button>
             </div>
             <p className="witnessNote">Primary PASS/FAIL is decided at the Specialty Pack source-selection boundary. Run the frozen fixture test first. Harmonic replay is a secondary integration witness only and cannot rescue an incorrect Pack constitution. No post-result source reclassification is permitted.</p>
+          </section>
+
+          <section className="exactReplayPanel">
+            <div className="witnessActions">
+              <strong>V118 — Registry Content Validity vs Issuer Standing</strong>
+              <span className="fieldHint">RED TEAM 003 · valid authority record isolated from the standing of the authority that empowers it</span>
+            </div>
+            <p className="witnessBoundary">The authority-registry statement remains current, signed, attributable, internally valid and unchanged across the pair. Only independently established registry/issuer standing changes. The Pack must not let a valid record bootstrap the present authority of its own issuer.</p>
+            <div className="witnessActions">
+              <button type="button" className="secondaryButton" onClick={() => loadV118RegistryAuthorityPacket("a")}>Load Case A · issuer currently standing</button>
+              <button type="button" className="secondaryButton" onClick={() => loadV118RegistryAuthorityPacket("b")}>Load Case B · issuer standing ended</button>
+            </div>
+            <p className="witnessNote">Primary PASS/FAIL is decided at the Specialty Pack authority-admission boundary. Anti-circularity is frozen: the registry statement under examination cannot establish its own issuer standing. No rescue, reinterpretation or ownership shift is permitted after execution.</p>
           </section>
 
           </details>
