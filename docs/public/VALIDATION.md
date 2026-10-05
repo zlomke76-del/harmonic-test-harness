@@ -13,6 +13,7 @@ The current public acceptance suite checks:
 - v4.2 contract visibility;
 - current explicit-witness methodology integrity;
 - V108/V109/V112/V113 examination-lineage fixtures;
+- V116 prospective Specialty Pack boundary-invariance fixtures, including a frozen responsibility map and pair-difference guard;
 - V114 source regression and executable synthetic receipt-route tests (positive control, forgery, tamper, refusal, exact expiry, future validity, malformed receipt, and unavailable key);
 - the raw-vs-governed public terminal demo contract.
 
