@@ -1,0 +1,28 @@
+{
+  "examination_id": "V116-PACK-BOUNDARY-INVARIANCE-001",
+  "freeze_rule": "Ownership is classified prospectively. It may not be reassigned after results are observed to rescue either side of the examination.",
+  "pack_visible_domain_constitution": [
+    "/specialty_pack_evidence",
+    "/state_transition",
+    "/observed_reality",
+    "/relational_rule",
+    "/present_state_provenance",
+    "/understanding_state",
+    "/requested_action",
+    "/authority_chain",
+    "/revocation_state",
+    "/consequence_profile",
+    "/safeguards"
+  ],
+  "downstream_consequence_relative_constitutional_basis": [
+    "/obligation_witness"
+  ],
+  "transport_identity_only": [
+    "/packet_id"
+  ],
+  "allowed_pair_differences": [
+    "/packet_id",
+    "/obligation_witness"
+  ],
+  "forbidden_reclassification_after_run": true
+}

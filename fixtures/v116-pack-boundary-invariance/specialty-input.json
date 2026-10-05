@@ -1,0 +1,31 @@
+{
+  "specimen_id": "V116-PACK-BOUNDARY-INVARIANCE-INPUT-001",
+  "specialty_pack": {
+    "id": "federation-domain-pack",
+    "version": "1.0.0"
+  },
+  "domain_rule": {
+    "rule_id": "rule-r1",
+    "version": "1",
+    "constituted_at": "T0",
+    "scope": [
+      "federated_shared_consequence"
+    ],
+    "expression": "authority_a.execution_region MUST_EQUAL authority_b.accepted_execution_region for shared_execution"
+  },
+  "authoritative_facts": {
+    "authority_a": {
+      "source_id": "authority-a-state-116",
+      "execution_region": "EU-WEST"
+    },
+    "authority_b": {
+      "source_id": "authority-b-state-116",
+      "accepted_execution_region": "EU-WEST"
+    }
+  },
+  "evidence_state": {
+    "freshness": "current",
+    "provenance": "preserved",
+    "sufficiency": "complete"
+  }
+}
