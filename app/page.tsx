@@ -8,6 +8,8 @@ import v112Dn1 from "../fixtures/v112-specialty-pack-standing/dn1-harmonic-packe
 import v112Dn2 from "../fixtures/v112-specialty-pack-standing/dn2-harmonic-packet.json";
 import v113Dn1 from "../fixtures/v113-complete-information-standing/dn1-harmonic-packet.json";
 import v113Dn2 from "../fixtures/v113-complete-information-standing/dn2-harmonic-packet.json";
+import v116CaseA from "../fixtures/v116-pack-boundary-invariance/case-a-harmonic-packet.json";
+import v116CaseB from "../fixtures/v116-pack-boundary-invariance/case-b-harmonic-packet.json";
 import type { CompareResponse, GovernanceAuthorityProvenance, GovernanceDecision, GovernanceDownstreamAccountability, GovernanceRequestedAction, GovernanceRealityWitness, GovernanceConsequenceProfile, GovernanceObligationWitness, GovernanceStateProvenanceWitness, GovernanceUnderstandingWitness, GovernanceSignal, LaneResult, PrimitiveResult, RuntimeTarget } from "../lib/types";
 
 function ExpandingPrompt(props: TextareaHTMLAttributes<HTMLTextAreaElement>) {
@@ -2106,6 +2108,20 @@ export default function Home() {
     setResult(null);
   }
 
+  function loadV116BoundaryInvariancePacket(which: "a" | "b") {
+    const packet = which === "a" ? v116CaseA : v116CaseB;
+    setSelectedPattern(PATTERN_ALL);
+    setScenario(CUSTOM_SCENARIO_ID);
+    setCustomScenarioName(which === "a" ? "V116 Pack Boundary Invariance — Case A" : "V116 Pack Boundary Invariance — Case B");
+    setPrompt("");
+    setExactPacketReplay(true);
+    setEnforceNoStandingPreload(false);
+    setEnforceNoConstitutionalAnswerPreload(true);
+    setExactPacketJson(JSON.stringify(packet, null, 2));
+    setError(null);
+    setResult(null);
+  }
+
   function applyPattern(pattern: string) {
     setSelectedPattern(pattern);
     if (pattern === PATTERN_ALL) return;
@@ -2837,7 +2853,7 @@ export default function Home() {
           ) : null}
 
           <details className="researchExaminations">
-            <summary>Research examinations <small>V109 · V112 · V113</small></summary>
+            <summary>Research examinations <small>V109 · V112 · V113 · V116</small></summary>
             <p className="fieldHint">For exact reproduction: load a frozen specimen, then run its packet unchanged.</p>
           <section className="exactReplayPanel">
             <div className="witnessActions">
@@ -2876,6 +2892,19 @@ export default function Home() {
               <button type="button" className="secondaryButton" onClick={() => loadV113SuccessorPacket("dn2")}>Load ΔN₂ · material contradiction</button>
             </div>
             <p className="witnessNote">Run ΔN₁ first and preserve the raw export. Then run ΔN₂ unchanged. V113 integrity permits the required domain transition classification while rejecting any case-specific constitutional answer upstream.</p>
+          </section>
+
+          <section className="exactReplayPanel">
+            <div className="witnessActions">
+              <strong>V116 — Specialty Pack Boundary Invariance</strong>
+              <span className="fieldHint">Frozen responsibility map · invariant Pack output · downstream constitutional basis changes only</span>
+            </div>
+            <p className="witnessBoundary">Case A and Case B hold every Pack-visible fact, rule, provenance, freshness condition, evidence-sufficiency condition, Pack output and domain relationship constant. Only the prospectively frozen downstream obligation basis differs. The property at risk is: constitutional significance must not leak upstream into domain constitution.</p>
+            <div className="witnessActions">
+              <button type="button" className="secondaryButton" onClick={() => loadV116BoundaryInvariancePacket("a")}>Load Case A · constitutional hold not applicable</button>
+              <button type="button" className="secondaryButton" onClick={() => loadV116BoundaryInvariancePacket("b")}>Load Case B · binding prohibition unsatisfied</button>
+            </div>
+            <p className="witnessNote">Run Case A first and preserve the raw export. Then run Case B unchanged. Do not reclassify ownership after seeing the results. PASS requires semantically invariant Specialty Pack output and materially different Harmonic dispositions caused only by the frozen downstream constitutional basis.</p>
           </section>
 
           </details>
