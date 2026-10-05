@@ -1,0 +1,41 @@
+{
+  "examination_id": "V118-REGISTRY-AUTHORITY-STANDING-001",
+  "freeze_rule": "Registry statement content/validity and all domain facts remain fixed. Only independently established issuer-standing state may differ across the pair, plus specimen/packet identity.",
+  "separate_variables": [
+    "registry_content_validity",
+    "registry_issuer_authority_standing"
+  ],
+  "frozen_registry_content_dimensions": [
+    "record_id",
+    "issuer_id",
+    "statement",
+    "issued_at",
+    "record_status",
+    "signature",
+    "provenance",
+    "content_hash"
+  ],
+  "frozen_non_standing_dimensions": [
+    "/authority_registry_statement",
+    "/sources",
+    "/domain_rule",
+    "/consequence",
+    "/observed_at",
+    "/issuer_standing_rule"
+  ],
+  "allowed_pair_differences": [
+    "/specimen_id",
+    "/issuer_authority_state"
+  ],
+  "anti_circularity_rule": "Issuer standing evidence must come from a source other than the authority-registry statement under examination.",
+  "forbidden_proxies_for_issuer_standing": [
+    "record_currentness",
+    "signature_validity",
+    "record_attribution",
+    "internal_validity",
+    "unchanged_content",
+    "registry_designation"
+  ],
+  "forbidden_reclassification_after_run": true,
+  "forbidden_ownership_shift_after_run": true
+}

@@ -1,0 +1,23 @@
+{
+  "specialty_pack": "federation-domain-pack@1.2.0-v118",
+  "constitution_status": "CONSTITUTED",
+  "proposition_id": "execution_region_for_shared_execution",
+  "proposition_value": "EU-WEST",
+  "governing_source_id": "execution-region-registry-a",
+  "authority_registry_record_id": "AUTH-REG-118-001",
+  "registry_statement_content_valid": true,
+  "registry_issuer_id": "institutional-source-governance-office",
+  "registry_issuer_standing": "GOVERNING",
+  "registry_issuer_standing_basis_ref": "institutional-charter#source-governance-office-v1",
+  "registry_issuer_authority_effective_interval": {
+    "from": "2026-01-01T00:00:00.000Z",
+    "until": "2026-10-05T20:00:00.000Z"
+  },
+  "issuer_standing_evidence_source": "institutional-charter-registry",
+  "anti_circularity_satisfied": true,
+  "relationship": "consistent",
+  "relationship_basis": "valid registry statement is empowered by independently standing issuer and selects Source A, whose value matches the frozen domain rule",
+  "domain_rule_ref": "rule-r1@1",
+  "scope": "federated_shared_consequence",
+  "constitutional_answer_supplied": false
+}

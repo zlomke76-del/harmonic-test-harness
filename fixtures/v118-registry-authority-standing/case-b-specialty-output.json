@@ -1,0 +1,23 @@
+{
+  "specialty_pack": "federation-domain-pack@1.2.0-v118",
+  "constitution_status": "UNRESOLVED_AUTHORITY_STANDING",
+  "proposition_id": "execution_region_for_shared_execution",
+  "proposition_value": null,
+  "governing_source_id": null,
+  "authority_registry_record_id": "AUTH-REG-118-001",
+  "registry_statement_content_valid": true,
+  "registry_issuer_id": "institutional-source-governance-office",
+  "registry_issuer_standing": "NON_GOVERNING_SUPERSEDED",
+  "registry_issuer_standing_basis_ref": "institutional-charter#source-governance-office-v1",
+  "registry_issuer_authority_effective_interval": {
+    "from": "2026-01-01T00:00:00.000Z",
+    "until": "2026-10-05T19:10:00.000Z"
+  },
+  "issuer_standing_evidence_source": "institutional-charter-registry",
+  "anti_circularity_satisfied": true,
+  "relationship": "invalidates_prior_state",
+  "relationship_basis": "registry statement remains internally valid but cannot govern because its issuer no longer has current standing for the proposition; no successor-issued source-governance statement is supplied",
+  "domain_rule_ref": "rule-r1@1",
+  "scope": "federated_shared_consequence",
+  "constitutional_answer_supplied": false
+}

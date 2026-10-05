@@ -1,0 +1,121 @@
+{
+  "specialty_pack": {
+    "id": "federation-domain-pack",
+    "version": "1.2.0-v118"
+  },
+  "observed_at": "2026-10-05T19:15:00.000Z",
+  "consequence": {
+    "type": "shared_execution",
+    "scope": "federated_shared_consequence",
+    "required_execution_region": "EU-WEST"
+  },
+  "domain_rule": {
+    "rule_id": "rule-r1",
+    "version": "1",
+    "expression": "currently_governing_source.execution_region MUST_EQUAL consequence.required_execution_region for shared_execution",
+    "preserving_class": "consistent",
+    "defeating_domain_class": "material_contradiction"
+  },
+  "sources": {
+    "source_a": {
+      "source_id": "execution-region-registry-a",
+      "content": {
+        "execution_region": "EU-WEST"
+      },
+      "provenance": {
+        "attributable_source": "source-data-service",
+        "record_id": "A-118",
+        "integrity": "preserved"
+      },
+      "freshness": {
+        "status": "current",
+        "observed_at": "2026-10-05T19:14:30.000Z",
+        "max_age_seconds": 300
+      },
+      "availability": "available",
+      "confidence": 1
+    },
+    "source_b": {
+      "source_id": "execution-region-registry-b",
+      "content": {
+        "execution_region": "US-EAST"
+      },
+      "provenance": {
+        "attributable_source": "source-data-service",
+        "record_id": "B-118",
+        "integrity": "preserved"
+      },
+      "freshness": {
+        "status": "current",
+        "observed_at": "2026-10-05T19:14:30.000Z",
+        "max_age_seconds": 300
+      },
+      "availability": "available",
+      "confidence": 1
+    }
+  },
+  "authority_registry_statement": {
+    "record_id": "AUTH-REG-118-001",
+    "issuer_id": "institutional-source-governance-office",
+    "proposition_id": "execution_region_for_shared_execution",
+    "statement": {
+      "governing_source_id": "execution-region-registry-a"
+    },
+    "issued_at": "2026-09-01T00:00:00.000Z",
+    "record_status": "current",
+    "signature": {
+      "status": "valid",
+      "algorithm": "synthetic-ed25519",
+      "signature_ref": "sig-auth-reg-118-001"
+    },
+    "provenance": {
+      "attributable_source": "institutional-authority-registry",
+      "integrity": "preserved"
+    },
+    "content_hash": "sha256:7d2d5f4cfb6466ffea547f7b64a1b0065d478ebda2f2b5955b938d74f8d98f01"
+  },
+  "issuer_standing_rule": {
+    "rule_id": "registry-issuer-standing-rule",
+    "version": "1",
+    "expression": "An authority-registry statement may govern a proposition only if its issuer has independently established GOVERNING standing for that proposition at observed_at. Registry content may not bootstrap issuer standing."
+  },
+  "specimen_id": "V118-REGISTRY-AUTHORITY-B-INPUT-001",
+  "issuer_authority_state": {
+    "registry_issuer": {
+      "issuer_id": "institutional-source-governance-office",
+      "standing_state": "NON_GOVERNING_SUPERSEDED",
+      "scope": [
+        "execution_region_for_shared_execution"
+      ],
+      "effective_interval": {
+        "from": "2026-01-01T00:00:00.000Z",
+        "until": "2026-10-05T19:10:00.000Z"
+      },
+      "standing_basis_ref": "institutional-charter#source-governance-office-v1",
+      "standing_evidence": {
+        "source_id": "institutional-charter-registry",
+        "record_id": "CHAR-118-A-SUPERSEDED",
+        "integrity": "preserved",
+        "self_asserted": false
+      }
+    },
+    "successor_issuer": {
+      "issuer_id": "institutional-source-governance-council",
+      "standing_state": "GOVERNING",
+      "scope": [
+        "execution_region_for_shared_execution"
+      ],
+      "effective_interval": {
+        "from": "2026-10-05T19:10:00.000Z",
+        "until": null
+      },
+      "standing_basis_ref": "institutional-charter#source-governance-council-v2",
+      "standing_evidence": {
+        "source_id": "institutional-charter-registry",
+        "record_id": "CHAR-118-B-ACTIVE",
+        "integrity": "preserved",
+        "self_asserted": false
+      }
+    }
+  }
+}
