@@ -24,3 +24,11 @@
 - V113 complete-information fixtures;
 - V114 synthetic execution-boundary examination;
 - public claim-boundary and validation documentation.
+## 0.2.5 — V117 source-standing examination
+
+- Added prospective **V117 / RED TEAM 002** fixtures for source standing vs source continuity.
+- Freezes source content, provenance, freshness, confidence, availability and static hierarchy while changing only current source-authority state.
+- Adds explicit authority effective intervals and retirement/supersession semantics.
+- Adds fixture tests that reject freshness/hierarchy substitution for current governing authority.
+- Adds exact-replay Case A / Case B controls to the Research examinations panel.
+- Verifies fixture compatibility against the supplied private Harmonic runtime source without claiming a live result.

@@ -207,3 +207,13 @@ The license applies to the contents of this repository only. It does **not** gra
 A public claim should be no broader than the evidence preserved by the corresponding examination.
 
 **PASS where earned. Stop where the evidence stops.**
+
+## V117 Source Standing vs Source Continuity examination
+
+V117 implements **RED TEAM 002** and moves upstream of V116. It freezes two current, attributable, available source records whose content, provenance, freshness, confidence and static hierarchy positions are identical across the pair. Only the independently attributable **current source-authority relation** changes.
+
+The Pack must distinguish **historically authoritative** from **currently governing for this proposition**. Case A selects Source A. Case B must stop relying on still-fresh, still-available, historically primary Source A after its governing interval ends and select Source B under the frozen source-standing rule.
+
+The primary disposition is local to the Specialty Pack source-selection boundary. Harmonic exact replay is deliberately secondary; it confirms that the constituted transition is accepted by the current Harmonic interface but cannot rescue an incorrect Pack result.
+
+Run `npm run test:v117-source-standing`, then use the Research examinations panel to load Case A and Case B unchanged. Preserve both raw exports. No live result is claimed until the frozen pair is executed and adjudicated.

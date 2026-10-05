@@ -1,0 +1,94 @@
+{
+  "version": "V117",
+  "title": "Source Standing vs Source Continuity / RED TEAM 002",
+  "status": "PROSPECTIVE_FROZEN_EXAMINATION",
+  "source_repo": "harmonic-test-harness",
+  "private_harmonic_compatibility_check": {
+    "source_snapshot": "user-supplied harmonic-main (45).zip",
+    "case_a_local_result": "PERMITTED / admissible=true / allow",
+    "case_b_local_result": "REFUSED / admissible=false / refuse",
+    "note": "Compatibility check only; not a live V117 result and not part of primary PASS/FAIL."
+  },
+  "changed_or_added_files": [
+    {
+      "path": "CHANGELOG.md",
+      "sha256": "0b4ba7797f20cfc46fa2434cc22c4fe1773fde4c34a2b66e76d3d8548af725e0",
+      "size_bytes": 1818
+    },
+    {
+      "path": "README.md",
+      "sha256": "b883d9e8ea06338b855931aaa7eed8542f3aa9453192f8ebacb0e7bacc5fa239",
+      "size_bytes": 10169
+    },
+    {
+      "path": "app/page.tsx",
+      "sha256": "fa1032fc9aecd6922b3543f98f4fcb4d48b51ac0ce044beb356271ac25b9f461",
+      "size_bytes": 148207
+    },
+    {
+      "path": "package.json",
+      "sha256": "11b56127b5c4155805b12291c99c820ca4697b84e283f2a725574f115381523f",
+      "size_bytes": 3859
+    },
+    {
+      "path": "package-lock.json",
+      "sha256": "3d2e6184e47a648b0e39f84baaa675dc495f69f0562d32f4565699358c32d472",
+      "size_bytes": 50296
+    },
+    {
+      "path": "docs/history/root-lineage/V117_SOURCE_STANDING_VS_CONTINUITY_FREEZE.md",
+      "sha256": "8fc4a7937c65f738dea97f048075b3d1aa39e6c8d528035441b85048768323a9",
+      "size_bytes": 3100
+    },
+    {
+      "path": "fixtures/v117-source-standing/README.md",
+      "sha256": "d01ac4d964f41bc62493d3a8252aeb3f38115659ae4d9b18964730e5d93d2c9a",
+      "size_bytes": 2472
+    },
+    {
+      "path": "fixtures/v117-source-standing/freeze.json",
+      "sha256": "a5c11697a0e3429c4dd6e52e3a40790e11670ded74b90014dae46cd90ef71169",
+      "size_bytes": 2576
+    },
+    {
+      "path": "fixtures/v117-source-standing/responsibility-map.json",
+      "sha256": "93e07ff5c4db326478de9c759416bd2341ecc5ae4712445bf2ef3257d30d87db",
+      "size_bytes": 1448
+    },
+    {
+      "path": "fixtures/v117-source-standing/case-a-specialty-input.json",
+      "sha256": "27a8d01d19e84e1a5ebb6d41cb23f19dc8e061d56669946b28f2055c2d0c9628",
+      "size_bytes": 2044
+    },
+    {
+      "path": "fixtures/v117-source-standing/case-a-specialty-output.json",
+      "sha256": "a49f876e41e38909ce99ccf8edbc064d16870bfb4e67c7d837bf15780043ae09",
+      "size_bytes": 1014
+    },
+    {
+      "path": "fixtures/v117-source-standing/case-a-harmonic-packet.json",
+      "sha256": "951ac685e7386c2aa3a96923789465d20aab028e70daf714c7f27c2faa61d7e8",
+      "size_bytes": 5728
+    },
+    {
+      "path": "fixtures/v117-source-standing/case-b-specialty-input.json",
+      "sha256": "2bfe37ceeb93b937698269950092305fb57e2a061244f50a6a246e4348022c86",
+      "size_bytes": 2037
+    },
+    {
+      "path": "fixtures/v117-source-standing/case-b-specialty-output.json",
+      "sha256": "bf456695b24a040148a538627d0cdcb6f79e84445ca761ff93597eea31cbe22f",
+      "size_bytes": 993
+    },
+    {
+      "path": "fixtures/v117-source-standing/case-b-harmonic-packet.json",
+      "sha256": "5a12b3b360cae634b00cc9fd49a1a29f066ccdfd03d64ab554718b23e490bc8a",
+      "size_bytes": 5702
+    },
+    {
+      "path": "scripts/test-v117-source-standing-fixtures.cjs",
+      "sha256": "4fe874d61545658135f27fe8a3920dc1ac613ce71387f5c934a854da30aa2930",
+      "size_bytes": 9120
+    }
+  ]
+}
