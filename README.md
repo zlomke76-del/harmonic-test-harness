@@ -243,6 +243,8 @@ npm run test:v121-authority-scope-sufficiency
 Then use **Research examinations → V121** for exact packet replay. Primary PASS/FAIL is at the Specialty Pack scope-admission boundary; Harmonic is downstream witness evidence only.
 
 
+> **V122 exact-replay integrity:** the generic V113 constitutional-answer scanner is intentionally not applied to V122 downstream Harmonic packets because those packets must contain the Pack-derived constitution result and the two source dispositions under examination. V122 no-answer-smuggling is enforced against the frozen Specialty Pack inputs by `npm run test:v122-authority-precedence` before replay.
+
 ## V122 / RED TEAM 006 — Concurrent authority validity vs constituted precedence
 
 Frozen distinction: **authority validity ≠ authority precedence**.
