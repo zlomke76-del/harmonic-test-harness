@@ -227,3 +227,18 @@ The frozen distinction is **registry content validity ≠ registry / issuer auth
 Case A admits the record because independent charter evidence establishes the issuer as currently governing. Case B preserves the record as valid but refuses to use it as governing after the issuer's standing ends; because no successor-issued source-governance statement is supplied, the Pack returns `UNRESOLVED_AUTHORITY_STANDING` rather than silently inheriting the old authority statement.
 
 Run `npm run test:v118-registry-authority-standing`, then use the Research examinations panel to load Case A and Case B unchanged. Harmonic exact replay is downstream witness evidence only. No live result is claimed until the frozen pair is executed and independently adjudicated.
+
+## V121 / RED TEAM 005 — Authority scope sufficiency
+
+Frozen distinction: **authority-chain continuity ≠ consequence-specific scope sufficiency**.
+
+V121 keeps `R₀ → B → C` current and valid in both cases. The exact proposition, Scope `scope-s`, and Consequence `consequence-k` are fixed. Only the current effective B-to-C delegated scope changes. The Pack must derive the mismatch from the current delegation itself; no precomputed `scope_insufficient` flag is supplied.
+
+Run the fixture integrity test with:
+
+```bash
+npm run test:v121-authority-scope-sufficiency
+```
+
+Then use **Research examinations → V121** for exact packet replay. Primary PASS/FAIL is at the Specialty Pack scope-admission boundary; Harmonic is downstream witness evidence only.
+
