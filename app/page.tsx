@@ -14,6 +14,8 @@ import v117CaseA from "../fixtures/v117-source-standing/case-a-harmonic-packet.j
 import v117CaseB from "../fixtures/v117-source-standing/case-b-harmonic-packet.json";
 import v118CaseA from "../fixtures/v118-registry-authority-standing/case-a-harmonic-packet.json";
 import v118CaseB from "../fixtures/v118-registry-authority-standing/case-b-harmonic-packet.json";
+import v120CaseA from "../fixtures/v120-authority-chain-continuity/case-a-harmonic-packet.json";
+import v120CaseB from "../fixtures/v120-authority-chain-continuity/case-b-harmonic-packet.json";
 import type { CompareResponse, GovernanceAuthorityProvenance, GovernanceDecision, GovernanceDownstreamAccountability, GovernanceRequestedAction, GovernanceRealityWitness, GovernanceConsequenceProfile, GovernanceObligationWitness, GovernanceStateProvenanceWitness, GovernanceUnderstandingWitness, GovernanceSignal, LaneResult, PrimitiveResult, RuntimeTarget } from "../lib/types";
 
 function ExpandingPrompt(props: TextareaHTMLAttributes<HTMLTextAreaElement>) {
@@ -2154,6 +2156,20 @@ export default function Home() {
     setResult(null);
   }
 
+  function loadV120AuthorityChainPacket(which: "a" | "b") {
+    const packet = which === "a" ? v120CaseA : v120CaseB;
+    setSelectedPattern(PATTERN_ALL);
+    setScenario(CUSTOM_SCENARIO_ID);
+    setCustomScenarioName(which === "a" ? "V120 Authority Chain — Case A" : "V120 Authority Chain — Case B");
+    setPrompt("");
+    setExactPacketReplay(true);
+    setEnforceNoStandingPreload(false);
+    setEnforceNoConstitutionalAnswerPreload(true);
+    setExactPacketJson(JSON.stringify(packet, null, 2));
+    setError(null);
+    setResult(null);
+  }
+
   function applyPattern(pattern: string) {
     setSelectedPattern(pattern);
     if (pattern === PATTERN_ALL) return;
@@ -2885,7 +2901,7 @@ export default function Home() {
           ) : null}
 
           <details className="researchExaminations">
-            <summary>Research examinations <small>V109 · V112 · V113 · V116 · V117 · V118</small></summary>
+            <summary>Research examinations <small>V109 · V112 · V113 · V116 · V117 · V118 · V120</small></summary>
             <p className="fieldHint">For exact reproduction: load a frozen specimen, then run its packet unchanged.</p>
           <section className="exactReplayPanel">
             <div className="witnessActions">
@@ -2963,6 +2979,19 @@ export default function Home() {
               <button type="button" className="secondaryButton" onClick={() => loadV118RegistryAuthorityPacket("b")}>Load Case B · issuer standing ended</button>
             </div>
             <p className="witnessNote">Primary PASS/FAIL is decided at the Specialty Pack authority-admission boundary. Anti-circularity is frozen: the registry statement under examination cannot establish its own issuer standing. No rescue, reinterpretation or ownership shift is permitted after execution.</p>
+          </section>
+
+          <section className="exactReplayPanel">
+            <div className="witnessActions">
+              <strong>V120 — Authority Artifact Validity vs Authority-Chain Continuity</strong>
+              <span className="fieldHint">RED TEAM 004 · R₀ frozen outside the falsifier · unchanged intermediate artifacts</span>
+            </div>
+            <p className="witnessBoundary">R₀, the B-to-C delegation, C&apos;s authority instrument, domain facts, rules and consequence remain fixed. Only the current higher-order R₀-to-B empowerment relation changes. The Pack must not infer a live R₀ → B → C authority path merely because the B-to-C and C artifacts remain current, signed, attributable and internally valid.</p>
+            <div className="witnessActions">
+              <button type="button" className="secondaryButton" onClick={() => loadV120AuthorityChainPacket("a")}>Load Case A · R₀ → B → C intact</button>
+              <button type="button" className="secondaryButton" onClick={() => loadV120AuthorityChainPacket("b")}>Load Case B · R₀ no longer empowers B</button>
+            </div>
+            <p className="witnessNote">Primary PASS/FAIL is decided at the Specialty Pack authority-chain admission boundary. R₀ is frozen as the external trust anchor and is outside this falsifier. No intermediate artifact may bootstrap continuity of the authority path. Harmonic replay is secondary witness evidence only.</p>
           </section>
 
           </details>
