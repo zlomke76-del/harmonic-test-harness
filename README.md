@@ -242,3 +242,21 @@ npm run test:v121-authority-scope-sufficiency
 
 Then use **Research examinations → V121** for exact packet replay. Primary PASS/FAIL is at the Specialty Pack scope-admission boundary; Harmonic is downstream witness evidence only.
 
+
+## V122 / RED TEAM 006 — Concurrent authority validity vs constituted precedence
+
+Frozen distinction: **authority validity ≠ authority precedence**.
+
+V122 freezes two concurrently current, attributable, internally valid, scope-sufficient and consequence-specific authority paths for the same proposition, Scope `scope-s`, and Consequence `consequence-k`. `C₁` supports `PERMIT`; `C₂` supports `REFUSE`.
+
+Case A supplies one prospectively constituted precedence relation and requires the Pack to derive the governing path from that relation. Case B supplies no governing precedence relation and requires the Pack to preserve the concurrent conflict as `UNRESOLVED_AUTHORITY_CONFLICT` rather than inventing a winner.
+
+The fixture also reverses authority-path iteration order and requires an identical constitutional result, preventing array order / first-match behavior from masquerading as precedence.
+
+Run:
+
+```bash
+npm run test:v122-authority-precedence
+```
+
+Then use **Research examinations → V122** for exact packet replay. Primary PASS/FAIL is at the Specialty Pack precedence/conflict-admission boundary; Harmonic is downstream witness evidence only.
