@@ -16,6 +16,8 @@ import v118CaseA from "../fixtures/v118-registry-authority-standing/case-a-harmo
 import v118CaseB from "../fixtures/v118-registry-authority-standing/case-b-harmonic-packet.json";
 import v120CaseA from "../fixtures/v120-authority-chain-continuity/case-a-harmonic-packet.json";
 import v120CaseB from "../fixtures/v120-authority-chain-continuity/case-b-harmonic-packet.json";
+import v121CaseA from "../fixtures/v121-authority-scope-sufficiency/case-a-harmonic-packet.json";
+import v121CaseB from "../fixtures/v121-authority-scope-sufficiency/case-b-harmonic-packet.json";
 import type { CompareResponse, GovernanceAuthorityProvenance, GovernanceDecision, GovernanceDownstreamAccountability, GovernanceRequestedAction, GovernanceRealityWitness, GovernanceConsequenceProfile, GovernanceObligationWitness, GovernanceStateProvenanceWitness, GovernanceUnderstandingWitness, GovernanceSignal, LaneResult, PrimitiveResult, RuntimeTarget } from "../lib/types";
 
 function ExpandingPrompt(props: TextareaHTMLAttributes<HTMLTextAreaElement>) {
@@ -2170,6 +2172,20 @@ export default function Home() {
     setResult(null);
   }
 
+  function loadV121AuthorityScopePacket(which: "a" | "b") {
+    const packet = which === "a" ? v121CaseA : v121CaseB;
+    setSelectedPattern(PATTERN_ALL);
+    setScenario(CUSTOM_SCENARIO_ID);
+    setCustomScenarioName(which === "a" ? "V121 Authority Scope — Case A" : "V121 Authority Scope — Case B");
+    setPrompt("");
+    setExactPacketReplay(true);
+    setEnforceNoStandingPreload(false);
+    setEnforceNoConstitutionalAnswerPreload(true);
+    setExactPacketJson(JSON.stringify(packet, null, 2));
+    setError(null);
+    setResult(null);
+  }
+
   function applyPattern(pattern: string) {
     setSelectedPattern(pattern);
     if (pattern === PATTERN_ALL) return;
@@ -2901,7 +2917,7 @@ export default function Home() {
           ) : null}
 
           <details className="researchExaminations">
-            <summary>Research examinations <small>V109 · V112 · V113 · V116 · V117 · V118 · V120</small></summary>
+            <summary>Research examinations <small>V109 · V112 · V113 · V116 · V117 · V118 · V120 · V121</small></summary>
             <p className="fieldHint">For exact reproduction: load a frozen specimen, then run its packet unchanged.</p>
           <section className="exactReplayPanel">
             <div className="witnessActions">
@@ -2992,6 +3008,19 @@ export default function Home() {
               <button type="button" className="secondaryButton" onClick={() => loadV120AuthorityChainPacket("b")}>Load Case B · R₀ no longer empowers B</button>
             </div>
             <p className="witnessNote">Primary PASS/FAIL is decided at the Specialty Pack authority-chain admission boundary. R₀ is frozen as the external trust anchor and is outside this falsifier. No intermediate artifact may bootstrap continuity of the authority path. Harmonic replay is secondary witness evidence only.</p>
+          </section>
+
+          <section className="exactReplayPanel">
+            <div className="witnessActions">
+              <strong>V121 — Authority-Chain Continuity vs Consequence-Specific Scope Sufficiency</strong>
+              <span className="fieldHint">RED TEAM 005 · chain intact in both cases · only effective delegated scope changes</span>
+            </div>
+            <p className="witnessBoundary">R₀ → B → C remains current and valid in both cases. The exact proposition, Scope S and Consequence K remain fixed. Only the current effective B-to-C delegated scope changes. The Pack must derive whether C still carries standing for the exact consequence; no precomputed scope-insufficient flag is supplied.</p>
+            <div className="witnessActions">
+              <button type="button" className="secondaryButton" onClick={() => loadV121AuthorityScopePacket("a")}>Load Case A · Scope S / Consequence K covered</button>
+              <button type="button" className="secondaryButton" onClick={() => loadV121AuthorityScopePacket("b")}>Load Case B · chain intact, exact scope narrowed</button>
+            </div>
+            <p className="witnessNote">Primary PASS/FAIL is decided at the Specialty Pack scope-admission boundary. Hard rule: no child authority may inherit broader standing than the currently effective scope of the authority empowering it. Unaffected delegated authority must remain preserved. Harmonic replay is secondary witness evidence only.</p>
           </section>
 
           </details>
