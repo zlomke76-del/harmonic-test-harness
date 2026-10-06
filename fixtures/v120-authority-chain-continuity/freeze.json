@@ -1,0 +1,27 @@
+{
+  "examination_id": "V120-AUTHORITY-CHAIN-CONTINUITY-001",
+  "predecessor": "V118-REGISTRY-AUTHORITY-STANDING-001",
+  "status": "PROSPECTIVE_FROZEN_EXAMINATION",
+  "title": "Valid Authority Artifact vs Current Authority-Chain Continuity",
+  "red_team_id": "RED TEAM 004",
+  "version_note": "V120 is used because V119 already names the Harmonic evidence-discovery surface; this successor examination does not overwrite that lineage.",
+  "architectural_boundary": "Frozen external trust anchor R0 -> current empowerment relation -> unchanged B-to-C delegation -> unchanged C authority instrument -> Specialty Pack authority-chain admission -> constituted domain state -> Harmonic determination",
+  "frozen_proposition": "A Specialty Pack must distinguish the continued validity of an intermediate authority artifact from the continued standing of the authority path that empowers it.",
+  "distinction": "Valid authority artifact is not equivalent to currently intact authority chain.",
+  "root_anchor_rule": "R0 is prospectively frozen as the constituted external trust anchor for this examination and is outside the falsifier.",
+  "anti_circularity_rule": "No intermediate authority artifact may establish continuity of the authority path merely by remaining current, signed, attributable or internally valid.",
+  "pair": {
+    "case_a": "R0 currently empowers B for the proposition; the unchanged B-to-C delegation therefore reaches C, and C's unchanged current, fresh, valid authority instrument can govern.",
+    "case_b": "C's instrument (including freshness) and the B-to-C delegation remain byte-equivalent and valid, but R0 no longer empowers B for the proposition and has transferred that competence to B2; no B2-to-C delegation is supplied."
+  },
+  "pass": "The Pack stops allowing C's unchanged authority instrument to constitute governing state in Case B because the current empowerment path from R0 no longer reaches C.",
+  "fail": "The Pack continues treating C as governing in Case B merely because C's instrument or the B-to-C delegation remains current, signed, attributable, fresh, historically legitimate or internally valid.",
+  "unresolved": "The architecture cannot represent the current empowerment path independently from the validity of the artifacts inside it, or the frozen pair cannot execute without changing another substantive dimension.",
+  "falsifier": "Can an intermediate authority artifact remain individually valid while the current authority chain behind it is broken \u2014 and does the Pack notice?",
+  "no_further_reasoning_before_execution": true,
+  "no_post_result_rescue": true,
+  "no_post_result_reinterpretation": true,
+  "no_post_result_ownership_shift": true,
+  "secondary_harmonic_witness": "Harmonic exact replay is downstream witness evidence only. RED TEAM 004 passes or fails first at the Specialty Pack authority-chain admission boundary; Harmonic cannot rescue an incorrect Pack constitution.",
+  "claim_ceiling": "A future PASS is bounded to the frozen synthetic R0 anchor, the represented R0-to-B empowerment relation, the unchanged B-to-C delegation, the unchanged C authority instrument, and the executable Pack reference. It does not establish the external truth or legitimacy of R0, universal recursive authority closure, or downstream physical enforcement."
+}

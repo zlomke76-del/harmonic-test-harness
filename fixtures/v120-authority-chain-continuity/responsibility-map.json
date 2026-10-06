@@ -1,0 +1,38 @@
+{
+  "examination_id": "V120-AUTHORITY-CHAIN-CONTINUITY-001",
+  "freeze_rule": "R0, C's authority instrument, B-to-C delegation, domain facts, sources, consequence and rules remain fixed. Only independently established R0-to-B current empowerment state may differ across the pair, plus specimen/packet identity.",
+  "separate_variables": [
+    "intermediate_artifact_validity",
+    "current_authority_chain_continuity"
+  ],
+  "frozen_root_anchor": "/root_trust_anchor",
+  "frozen_intermediate_artifacts": [
+    "/intermediate_delegation_b_to_c",
+    "/authority_instrument_c"
+  ],
+  "frozen_non_chain_dimensions": [
+    "/root_trust_anchor",
+    "/intermediate_delegation_b_to_c",
+    "/authority_instrument_c",
+    "/sources",
+    "/domain_rule",
+    "/consequence",
+    "/observed_at",
+    "/authority_chain_rule"
+  ],
+  "allowed_pair_differences": [
+    "/specimen_id",
+    "/authority_path_state"
+  ],
+  "anti_circularity_rule": "The R0-to-B empowerment state must be evidenced independently of C's authority instrument and the B-to-C delegation under examination.",
+  "forbidden_proxies_for_chain_continuity": [
+    "intermediate_artifact_currentness",
+    "signature_validity",
+    "artifact_attribution",
+    "internal_validity",
+    "unchanged_content",
+    "historical_legitimacy"
+  ],
+  "forbidden_reclassification_after_run": true,
+  "forbidden_ownership_shift_after_run": true
+}

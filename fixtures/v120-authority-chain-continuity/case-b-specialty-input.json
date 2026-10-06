@@ -1,0 +1,167 @@
+{
+  "specialty_pack": {
+    "id": "federation-domain-pack",
+    "version": "1.3.0-v120"
+  },
+  "observed_at": "2026-10-06T13:30:00.000Z",
+  "consequence": {
+    "type": "shared_execution",
+    "scope": "federated_shared_consequence",
+    "required_execution_region": "EU-WEST"
+  },
+  "domain_rule": {
+    "rule_id": "rule-r1",
+    "version": "1",
+    "expression": "currently_governing_source.execution_region MUST_EQUAL consequence.required_execution_region for shared_execution",
+    "preserving_class": "consistent",
+    "defeating_domain_class": "material_contradiction"
+  },
+  "sources": {
+    "source_a": {
+      "source_id": "execution-region-registry-a",
+      "content": {
+        "execution_region": "EU-WEST"
+      },
+      "provenance": {
+        "attributable_source": "source-data-service",
+        "record_id": "A-120",
+        "integrity": "preserved"
+      },
+      "freshness": {
+        "status": "current",
+        "observed_at": "2026-10-06T13:29:30.000Z",
+        "max_age_seconds": 300
+      },
+      "availability": "available",
+      "confidence": 1
+    },
+    "source_b": {
+      "source_id": "execution-region-registry-b",
+      "content": {
+        "execution_region": "US-EAST"
+      },
+      "provenance": {
+        "attributable_source": "source-data-service",
+        "record_id": "B-120",
+        "integrity": "preserved"
+      },
+      "freshness": {
+        "status": "current",
+        "observed_at": "2026-10-06T13:29:30.000Z",
+        "max_age_seconds": 300
+      },
+      "availability": "available",
+      "confidence": 1
+    }
+  },
+  "specimen_id": "V120-AUTHORITY-CHAIN-B-INPUT-001",
+  "authority_instrument_c": {
+    "record_id": "AUTH-REG-120-001",
+    "issuer_id": "authority-node-c",
+    "proposition_id": "execution_region_for_shared_execution",
+    "statement": {
+      "governing_source_id": "execution-region-registry-a"
+    },
+    "issued_at": "2026-09-15T00:00:00.000Z",
+    "record_status": "current",
+    "signature": {
+      "status": "valid",
+      "algorithm": "synthetic-ed25519",
+      "signature_ref": "sig-auth-reg-120-001"
+    },
+    "provenance": {
+      "attributable_source": "institutional-authority-registry",
+      "integrity": "preserved"
+    },
+    "content_hash": "sha256:9c2fe37a1f2cedce491847563e561118b81e75cd09f68c44049ba52e62e13497",
+    "freshness": {
+      "status": "current",
+      "observed_at": "2026-10-06T13:29:30.000Z",
+      "max_age_seconds": 300
+    }
+  },
+  "authority_chain_rule": {
+    "rule_id": "authority-chain-continuity-rule",
+    "version": "1",
+    "expression": "An authority instrument issued by C may govern this proposition only if a current independently established empowerment path from frozen trust anchor R0 reaches C through the declared intermediary chain at observed_at. No intermediate authority artifact may prove continuity of that path merely by remaining internally valid."
+  },
+  "root_trust_anchor": {
+    "anchor_id": "R0",
+    "authority_id": "institutional-constitutional-root",
+    "status": "FROZEN_EXTERNAL_TRUST_ANCHOR",
+    "scope": [
+      "execution_region_for_shared_execution"
+    ],
+    "effective_interval": {
+      "from": "2026-01-01T00:00:00.000Z",
+      "until": null
+    },
+    "evidence_source_id": "external-root-authority-register",
+    "evidence_record_id": "R0-120-FROZEN",
+    "integrity": "preserved",
+    "outside_falsifier": true
+  },
+  "intermediate_delegation_b_to_c": {
+    "instrument_id": "DELEG-B-C-120-001",
+    "issuer_id": "authority-node-b",
+    "delegate_id": "authority-node-c",
+    "scope": [
+      "execution_region_for_shared_execution"
+    ],
+    "issued_at": "2026-09-10T00:00:00.000Z",
+    "record_status": "current",
+    "signature": {
+      "status": "valid",
+      "algorithm": "synthetic-ed25519",
+      "signature_ref": "sig-deleg-b-c-120-001"
+    },
+    "provenance": {
+      "attributable_source": "institutional-delegation-registry",
+      "integrity": "preserved"
+    },
+    "effective_interval": {
+      "from": "2026-09-10T00:00:00.000Z",
+      "until": null
+    },
+    "content_hash": "sha256:8eff13f3051a7617077950903569b22a7c57f2ae8d580812933541032bb75867"
+  },
+  "authority_path_state": {
+    "root_to_intermediate": {
+      "anchor_id": "R0",
+      "empowered_authority_id": "authority-node-b",
+      "standing_state": "NON_GOVERNING_SUPERSEDED",
+      "scope": [
+        "execution_region_for_shared_execution"
+      ],
+      "effective_interval": {
+        "from": "2026-01-01T00:00:00.000Z",
+        "until": "2026-10-06T13:20:00.000Z"
+      },
+      "standing_basis_ref": "external-root-authority-register#R0-TO-B-V1",
+      "standing_evidence": {
+        "source_id": "external-root-authority-register",
+        "record_id": "R0-B-120-SUPERSEDED",
+        "integrity": "preserved",
+        "self_asserted": false
+      }
+    },
+    "successor_intermediate": {
+      "authority_id": "authority-node-b2",
+      "standing_state": "GOVERNING",
+      "scope": [
+        "execution_region_for_shared_execution"
+      ],
+      "effective_interval": {
+        "from": "2026-10-06T13:20:00.000Z",
+        "until": null
+      },
+      "standing_basis_ref": "external-root-authority-register#R0-TO-B2-V2",
+      "standing_evidence": {
+        "source_id": "external-root-authority-register",
+        "record_id": "R0-B2-120-ACTIVE",
+        "integrity": "preserved",
+        "self_asserted": false
+      }
+    }
+  }
+}

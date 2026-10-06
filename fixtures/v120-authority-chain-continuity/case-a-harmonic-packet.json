@@ -1,0 +1,173 @@
+{
+  "requested_action": {
+    "type": "shared_execution",
+    "scope": [
+      "federated_shared_consequence"
+    ],
+    "reversibility": "reversible"
+  },
+  "understanding_state": {
+    "current": true,
+    "complete": true,
+    "provenance_preserved": true,
+    "applicable": true,
+    "confidence": 1,
+    "source_ids": [
+      "execution-region-registry-a",
+      "execution-region-registry-b",
+      "institutional-authority-registry",
+      "institutional-delegation-registry",
+      "external-root-authority-register",
+      "authority-chain-continuity-rule@1",
+      "rule-r1@1",
+      "federation-domain-pack@1.3.0-v120"
+    ],
+    "unresolved_tensions": [],
+    "missing_information": [],
+    "revision_status": "current"
+  },
+  "declared_reality": {
+    "current_state_claims": [
+      "R0 is prospectively frozen as the constituted external trust anchor and is outside the falsifier.",
+      "The B-to-C delegation and C authority instrument are byte-equivalent across the frozen pair and remain current, signed, attributable and internally valid.",
+      "Intermediate artifact validity and current authority-chain continuity are separate frozen variables.",
+      "No intermediate authority artifact may establish continuity of the authority path merely by remaining internally valid."
+    ],
+    "last_verified_at": "2026-10-06T13:30:00.000Z"
+  },
+  "relational_rule": {
+    "rule_id": "rule-r1",
+    "version": "1",
+    "constituted_at": "T0",
+    "scope": [
+      "federated_shared_consequence"
+    ],
+    "expression": "currently_governing_source.execution_region MUST_EQUAL consequence.required_execution_region for shared_execution",
+    "source": "federation-constitution-r1"
+  },
+  "governing_basis": {
+    "constituted_at": "T0",
+    "domain_rule_ref": "rule-r1@1",
+    "authority_chain_rule_ref": "authority-chain-continuity-rule@1",
+    "root_trust_anchor_ref": "external-root-authority-register#R0-120-FROZEN",
+    "transition_vocabulary_contract": "Harmonic V3_8 state_transition relationship vocabulary",
+    "case_specific_constitutional_answer_supplied": false
+  },
+  "authority_chain": {
+    "subject": "federated-execution-agent",
+    "issuer": "institutional-execution-authority",
+    "scope": [
+      "federated_shared_consequence"
+    ],
+    "last_verified_at": "2026-10-05T19:15:00.000Z",
+    "chain": [
+      {
+        "actor": "federated-execution-agent",
+        "status": "active"
+      },
+      {
+        "actor": "institutional-execution-authority",
+        "status": "active"
+      }
+    ]
+  },
+  "revocation_state": {
+    "last_revocation_check_at": "2026-10-05T19:15:00.000Z",
+    "known_revocations": []
+  },
+  "obligation_witness": {
+    "detected": true,
+    "status": "not_applicable",
+    "source": "v120-examination:no-separate-obligation",
+    "evidence_refs": [
+      "v120-examination:no-separate-obligation"
+    ]
+  },
+  "consequence_profile": {
+    "level": "low",
+    "reversibility": "reversible",
+    "execution_surface": "shared_execution",
+    "blast_radius": "local"
+  },
+  "safeguards": {
+    "operator_review_confirmed": true
+  },
+  "packet_id": "V120-AUTHORITY-CHAIN-A-001",
+  "observed_reality": {
+    "signals": [
+      {
+        "statement": "Source A reports execution_region = EU-WEST.",
+        "source": "execution-region-registry-a",
+        "evidence_ref": "execution-region-registry-a#execution_region"
+      },
+      {
+        "statement": "The B-to-C delegation remains current, signed, attributable, internally valid and unchanged across the frozen pair.",
+        "source": "institutional-delegation-registry",
+        "evidence_ref": "institutional-delegation-registry#DELEG-B-C-120-001"
+      },
+      {
+        "statement": "The C authority instrument remains current, signed, attributable, internally valid and unchanged across the frozen pair.",
+        "source": "institutional-authority-registry",
+        "evidence_ref": "institutional-authority-registry#AUTH-REG-120-001"
+      },
+      {
+        "statement": "Independent root-authority evidence reports R0 -> B as GOVERNING for execution_region_for_shared_execution at 2026-10-06T13:30:00.000Z.",
+        "source": "external-root-authority-register",
+        "evidence_ref": "external-root-authority-register#v120-case-a-root-empowerment"
+      }
+    ]
+  },
+  "present_state_provenance": {
+    "attributable_source": "federation-domain-pack@1.3.0-v120",
+    "established_at": "2026-10-06T13:30:00.000Z",
+    "epistemic_status": "ESTABLISHED",
+    "evidence_refs": [
+      "external-root-authority-register#R0-120-FROZEN",
+      "external-root-authority-register#v120-case-a-root-empowerment",
+      "institutional-delegation-registry#DELEG-B-C-120-001",
+      "institutional-authority-registry#AUTH-REG-120-001",
+      "authority-chain-continuity-rule@1",
+      "rule-r1@1",
+      "federation-domain-pack@1.3.0-v120"
+    ]
+  },
+  "state_transition": {
+    "prior_state_ref": "V120-T0-R0-B-C-AUTHORITY-PATH-INTACT",
+    "new_observation_refs": [
+      "institutional-delegation-registry#DELEG-B-C-120-001",
+      "institutional-authority-registry#AUTH-REG-120-001",
+      "external-root-authority-register#v120-case-a-root-empowerment"
+    ],
+    "relationship": "consistent_with_prior_state",
+    "attributable_source": "federation-domain-pack@1.3.0-v120",
+    "observed_at": "2026-10-06T13:30:00.000Z",
+    "scope": [
+      "federated_shared_consequence"
+    ]
+  },
+  "specialty_pack_evidence": {
+    "specialty_pack": "federation-domain-pack@1.3.0-v120",
+    "proposition_id": "execution_region_for_shared_execution",
+    "root_anchor_id": "R0",
+    "root_anchor_authority_id": "institutional-constitutional-root",
+    "root_anchor_outside_falsifier": true,
+    "root_to_intermediate_standing": "GOVERNING",
+    "root_to_intermediate_basis_ref": "external-root-authority-register#R0-TO-B-V1",
+    "root_to_intermediate_evidence_source": "external-root-authority-register",
+    "intermediate_delegation_id": "DELEG-B-C-120-001",
+    "intermediate_delegation_content_valid": true,
+    "authority_instrument_id": "AUTH-REG-120-001",
+    "authority_instrument_content_valid": true,
+    "authority_instrument_issuer_id": "authority-node-c",
+    "authority_chain_status": "INTACT",
+    "anti_circularity_satisfied": true,
+    "domain_rule_ref": "rule-r1@1",
+    "scope": "federated_shared_consequence",
+    "constitutional_answer_supplied": false,
+    "constitution_status": "CONSTITUTED",
+    "proposition_value": "EU-WEST",
+    "governing_source_id": "execution-region-registry-a",
+    "relationship": "consistent",
+    "relationship_basis": "current authority path R0 -> B -> C is intact; unchanged C instrument selects Source A, whose value matches the frozen domain rule"
+  }
+}
