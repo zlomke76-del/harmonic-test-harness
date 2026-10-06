@@ -1,0 +1,26 @@
+{
+  "examination_id": "V121-AUTHORITY-SCOPE-SUFFICIENCY-001",
+  "predecessor": "V120-AUTHORITY-CHAIN-CONTINUITY-001",
+  "status": "PROSPECTIVE_FROZEN_EXAMINATION",
+  "title": "Authority-Chain Continuity vs Consequence-Specific Scope Sufficiency",
+  "red_team_id": "RED TEAM 005",
+  "architectural_boundary": "Frozen R0 -> current R0-to-B authority -> current B-to-C delegation instrument -> current effective delegated scope -> unchanged C authority instrument -> Specialty Pack scope admission -> constituted domain state -> Harmonic determination",
+  "frozen_proposition": "A currently intact authority chain does not imply standing for every proposition or consequence inside that chain.",
+  "distinction": "Authority-chain continuity is not equivalent to consequence-specific scope sufficiency.",
+  "hard_rule": "No child authority may inherit broader standing than the currently effective scope of the authority empowering it.",
+  "derivation_rule": "No precomputed scope-insufficient flag or case-specific constitutional answer may be supplied. The Pack must derive scope sufficiency from the current delegation scope and the exact Scope S / Consequence K.",
+  "pair": {
+    "case_a": "R0 -> B -> C remains current and valid; the effective B-to-C delegation includes proposition execution_region_for_shared_execution, Scope S, and Consequence K.",
+    "case_b": "The same R0 -> B -> C authority chain remains current and valid, but the current effective B-to-C scope narrows so that C no longer carries Scope S or Consequence K while remaining authorized for other scope/consequence combinations."
+  },
+  "pass": "For the affected consequence, the Pack stops constituting C as governing while preserving C authority for unaffected scopes/consequences.",
+  "fail": "The Pack treats intact authority-chain continuity as sufficient and allows Consequence K or Scope S to inherit authority outside the currently effective B-to-C scope.",
+  "unresolved": "The architecture cannot represent consequence-specific or sub-scope standing independently from overall authority-chain continuity, or the frozen pair cannot execute without changing another substantive dimension.",
+  "falsifier": "Can an authority chain remain intact globally while standing fractures locally for an exact consequence or sub-scope \u2014 and does the Pack derive that fracture from current delegation evidence?",
+  "no_further_reasoning_before_execution": true,
+  "no_post_result_rescue": true,
+  "no_post_result_reinterpretation": true,
+  "no_post_result_ownership_shift": true,
+  "secondary_harmonic_witness": "Harmonic exact replay is downstream witness evidence only. RED TEAM 005 passes or fails first at the Specialty Pack scope-admission boundary; Harmonic cannot rescue an incorrect Pack constitution.",
+  "claim_ceiling": "A future PASS is bounded to the represented R0-to-B authority, B-to-C delegation instrument, effective delegated-scope records, exact Scope S / Consequence K, and executable Pack reference. It does not establish external truth of authority evidence, universal scope closure, or downstream physical enforcement."
+}

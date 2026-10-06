@@ -1,0 +1,41 @@
+{
+  "examination_id": "V121-AUTHORITY-SCOPE-SUFFICIENCY-001",
+  "freeze_rule": "R0, R0-to-B authority, the B-to-C delegation instrument, C authority instrument, domain facts, sources, exact consequence and rules remain fixed. Only the current effective delegated scope may differ across the pair, plus specimen/packet identity.",
+  "separate_variables": [
+    "authority_chain_continuity",
+    "consequence_specific_scope_sufficiency"
+  ],
+  "frozen_chain_dimensions": [
+    "/root_trust_anchor",
+    "/root_to_intermediate",
+    "/intermediate_delegation_b_to_c",
+    "/authority_instrument_c"
+  ],
+  "frozen_non_scope_dimensions": [
+    "/root_trust_anchor",
+    "/root_to_intermediate",
+    "/intermediate_delegation_b_to_c",
+    "/authority_instrument_c",
+    "/sources",
+    "/domain_rule",
+    "/consequence",
+    "/observed_at",
+    "/authority_scope_rule"
+  ],
+  "allowed_pair_differences": [
+    "/specimen_id",
+    "/effective_delegated_scope"
+  ],
+  "no_answer_smuggling_rule": "No precomputed scope sufficiency status, mismatch flag, or case-specific constitutional answer may be supplied to the Pack input.",
+  "inheritance_rule": "No child authority may inherit broader standing than the currently effective scope of the authority empowering it.",
+  "forbidden_proxies_for_scope_sufficiency": [
+    "overall_chain_continuity",
+    "artifact_currentness",
+    "signature_validity",
+    "artifact_attribution",
+    "historical_scope",
+    "parent_scope_without_child_scope"
+  ],
+  "forbidden_reclassification_after_run": true,
+  "forbidden_ownership_shift_after_run": true
+}

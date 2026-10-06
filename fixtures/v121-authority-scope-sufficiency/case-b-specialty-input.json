@@ -1,0 +1,193 @@
+{
+  "specialty_pack": {
+    "id": "federation-domain-pack",
+    "version": "1.4.0-v121"
+  },
+  "observed_at": "2026-10-06T17:15:00.000Z",
+  "consequence": {
+    "type": "shared_execution",
+    "scope": "federated_shared_consequence",
+    "scope_id": "scope-s",
+    "consequence_id": "consequence-k",
+    "required_execution_region": "EU-WEST"
+  },
+  "domain_rule": {
+    "rule_id": "rule-r1",
+    "version": "1",
+    "expression": "currently_governing_source.execution_region MUST_EQUAL consequence.required_execution_region for shared_execution",
+    "preserving_class": "consistent",
+    "defeating_domain_class": "material_contradiction"
+  },
+  "sources": {
+    "source_a": {
+      "source_id": "execution-region-registry-a",
+      "content": {
+        "execution_region": "EU-WEST"
+      },
+      "provenance": {
+        "attributable_source": "source-data-service",
+        "record_id": "A-121",
+        "integrity": "preserved"
+      },
+      "freshness": {
+        "status": "current",
+        "observed_at": "2026-10-06T17:14:30.000Z",
+        "max_age_seconds": 300
+      },
+      "availability": "available",
+      "confidence": 1
+    },
+    "source_b": {
+      "source_id": "execution-region-registry-b",
+      "content": {
+        "execution_region": "US-EAST"
+      },
+      "provenance": {
+        "attributable_source": "source-data-service",
+        "record_id": "B-121",
+        "integrity": "preserved"
+      },
+      "freshness": {
+        "status": "current",
+        "observed_at": "2026-10-06T17:14:30.000Z",
+        "max_age_seconds": 300
+      },
+      "availability": "available",
+      "confidence": 1
+    }
+  },
+  "root_trust_anchor": {
+    "anchor_id": "R0",
+    "authority_id": "institutional-constitutional-root",
+    "status": "FROZEN_EXTERNAL_TRUST_ANCHOR",
+    "scope": [
+      "execution_region_for_shared_execution"
+    ],
+    "effective_interval": {
+      "from": "2026-01-01T00:00:00.000Z",
+      "until": null
+    },
+    "evidence_source_id": "external-root-authority-register",
+    "evidence_record_id": "R0-121-FROZEN",
+    "integrity": "preserved",
+    "outside_falsifier": true
+  },
+  "root_to_intermediate": {
+    "anchor_id": "R0",
+    "empowered_authority_id": "authority-node-b",
+    "standing_state": "GOVERNING",
+    "proposition_scope": [
+      "execution_region_for_shared_execution"
+    ],
+    "consequence_scope": [
+      "consequence-j",
+      "consequence-k"
+    ],
+    "subscope": [
+      "scope-s",
+      "scope-t"
+    ],
+    "effective_interval": {
+      "from": "2026-01-01T00:00:00.000Z",
+      "until": null
+    },
+    "standing_basis_ref": "external-root-authority-register#R0-TO-B-V1",
+    "standing_evidence": {
+      "source_id": "external-root-authority-register",
+      "record_id": "R0-B-121-ACTIVE",
+      "integrity": "preserved",
+      "self_asserted": false
+    }
+  },
+  "intermediate_delegation_b_to_c": {
+    "instrument_id": "DELEG-B-C-121-001",
+    "issuer_id": "authority-node-b",
+    "delegate_id": "authority-node-c",
+    "proposition_scope_ceiling": [
+      "execution_region_for_shared_execution"
+    ],
+    "consequence_scope_ceiling": [
+      "consequence-j",
+      "consequence-k"
+    ],
+    "subscope_ceiling": [
+      "scope-s",
+      "scope-t"
+    ],
+    "issued_at": "2026-09-10T00:00:00.000Z",
+    "record_status": "current",
+    "signature": {
+      "status": "valid",
+      "algorithm": "synthetic-ed25519",
+      "signature_ref": "sig-deleg-b-c-121-001"
+    },
+    "provenance": {
+      "attributable_source": "institutional-delegation-registry",
+      "integrity": "preserved"
+    },
+    "effective_interval": {
+      "from": "2026-09-10T00:00:00.000Z",
+      "until": null
+    },
+    "content_hash": "sha256:3ce0a17316c145502188030e5176577309ce53729e3aad2d57b539f436f8dc72"
+  },
+  "authority_instrument_c": {
+    "record_id": "AUTH-REG-121-001",
+    "issuer_id": "authority-node-c",
+    "proposition_id": "execution_region_for_shared_execution",
+    "statement": {
+      "governing_source_id": "execution-region-registry-a"
+    },
+    "issued_at": "2026-09-15T00:00:00.000Z",
+    "record_status": "current",
+    "signature": {
+      "status": "valid",
+      "algorithm": "synthetic-ed25519",
+      "signature_ref": "sig-auth-reg-121-001"
+    },
+    "provenance": {
+      "attributable_source": "institutional-authority-registry",
+      "integrity": "preserved"
+    },
+    "content_hash": "sha256:459081847070931ab857db50a8f52f0b93b6070cd7dc0b8dbf5d5f1c3df06a50",
+    "freshness": {
+      "status": "current",
+      "observed_at": "2026-10-06T17:14:30.000Z",
+      "max_age_seconds": 300
+    }
+  },
+  "authority_scope_rule": {
+    "rule_id": "authority-scope-inheritance-rule",
+    "version": "1",
+    "expression": "No child authority may inherit broader standing than the currently effective scope of the authority empowering it. Chain continuity alone is insufficient for proposition- or consequence-specific scope standing."
+  },
+  "specimen_id": "V121-AUTHORITY-SCOPE-B-INPUT-001",
+  "effective_delegated_scope": {
+    "scope_record_id": "B-C-SCOPE-121-B",
+    "issuer_id": "authority-node-b",
+    "delegate_id": "authority-node-c",
+    "record_status": "current",
+    "signature": {
+      "status": "valid",
+      "algorithm": "synthetic-ed25519",
+      "signature_ref": "sig-b-c-scope-121-b"
+    },
+    "provenance": {
+      "attributable_source": "institutional-delegation-scope-registry",
+      "integrity": "preserved"
+    },
+    "effective_interval": {
+      "from": "2026-10-06T17:10:00.000Z",
+      "until": null
+    },
+    "proposition_scope": [
+      "execution_region_for_shared_execution"
+    ],
+    "consequence_scope": [
+      "consequence-j"
+    ],
+    "subscope": [
+      "scope-t"
+    ]
+  }
+}

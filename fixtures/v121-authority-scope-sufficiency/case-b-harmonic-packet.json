@@ -1,0 +1,199 @@
+{
+  "requested_action": {
+    "type": "shared_execution",
+    "scope": [
+      "federated_shared_consequence",
+      "scope-s",
+      "consequence-k"
+    ],
+    "reversibility": "reversible"
+  },
+  "understanding_state": {
+    "current": false,
+    "complete": false,
+    "provenance_preserved": true,
+    "applicable": false,
+    "confidence": 0.5,
+    "source_ids": [
+      "execution-region-registry-a",
+      "execution-region-registry-b",
+      "institutional-authority-registry",
+      "institutional-delegation-registry",
+      "institutional-delegation-scope-registry",
+      "external-root-authority-register",
+      "authority-scope-inheritance-rule@1",
+      "rule-r1@1",
+      "federation-domain-pack@1.4.0-v121"
+    ],
+    "unresolved_tensions": [],
+    "missing_information": [
+      "Current B-to-C delegated scope does not cover Scope scope-s / Consequence consequence-k."
+    ],
+    "revision_status": "superseded"
+  },
+  "declared_reality": {
+    "current_state_claims": [
+      "R0 -> B -> C is prospectively frozen as current and valid in both cases.",
+      "The B-to-C delegation instrument and C authority instrument remain unchanged, current, signed, attributable and valid across the pair.",
+      "Only the currently effective B-to-C delegated scope changes.",
+      "No child authority may inherit broader standing than the currently effective scope of the authority empowering it.",
+      "No precomputed scope-insufficient flag or case-specific constitutional answer is supplied to the Pack."
+    ],
+    "last_verified_at": "2026-10-06T17:15:00.000Z"
+  },
+  "relational_rule": {
+    "rule_id": "rule-r1",
+    "version": "1",
+    "constituted_at": "T0",
+    "scope": [
+      "federated_shared_consequence"
+    ],
+    "expression": "currently_governing_source.execution_region MUST_EQUAL consequence.required_execution_region for shared_execution",
+    "source": "federation-constitution-r1"
+  },
+  "governing_basis": {
+    "constituted_at": "T0",
+    "domain_rule_ref": "rule-r1@1",
+    "authority_scope_rule_ref": "authority-scope-inheritance-rule@1",
+    "root_trust_anchor_ref": "external-root-authority-register#R0-121-FROZEN",
+    "transition_vocabulary_contract": "Harmonic V3_8 state_transition relationship vocabulary",
+    "case_specific_constitutional_answer_supplied": false
+  },
+  "authority_chain": {
+    "subject": "federated-execution-agent",
+    "issuer": "institutional-execution-authority",
+    "scope": [
+      "federated_shared_consequence",
+      "scope-s",
+      "consequence-k"
+    ],
+    "last_verified_at": "2026-10-06T17:15:00.000Z",
+    "chain": [
+      {
+        "actor": "federated-execution-agent",
+        "status": "active"
+      },
+      {
+        "actor": "institutional-execution-authority",
+        "status": "active"
+      }
+    ]
+  },
+  "revocation_state": {
+    "last_revocation_check_at": "2026-10-06T17:15:00.000Z",
+    "known_revocations": []
+  },
+  "obligation_witness": {
+    "detected": true,
+    "status": "not_applicable",
+    "source": "v121-examination:no-separate-obligation",
+    "evidence_refs": [
+      "v121-examination:no-separate-obligation"
+    ]
+  },
+  "consequence_profile": {
+    "level": "low",
+    "reversibility": "reversible",
+    "execution_surface": "shared_execution",
+    "blast_radius": "local"
+  },
+  "safeguards": {
+    "operator_review_confirmed": true
+  },
+  "packet_id": "V121-AUTHORITY-SCOPE-B-001",
+  "observed_reality": {
+    "signals": [
+      {
+        "statement": "Source A reports execution_region = EU-WEST.",
+        "source": "execution-region-registry-a",
+        "evidence_ref": "execution-region-registry-a#execution_region"
+      },
+      {
+        "statement": "R0 -> B remains current and governing for the proposition, Scope S and Consequence K.",
+        "source": "external-root-authority-register",
+        "evidence_ref": "external-root-authority-register#v121-root-to-b-current"
+      },
+      {
+        "statement": "The B-to-C delegation instrument remains current, signed, attributable, internally valid and unchanged across the frozen pair.",
+        "source": "institutional-delegation-registry",
+        "evidence_ref": "institutional-delegation-registry#DELEG-B-C-121-001"
+      },
+      {
+        "statement": "The C authority instrument remains current, signed, attributable, internally valid and unchanged across the frozen pair.",
+        "source": "institutional-authority-registry",
+        "evidence_ref": "institutional-authority-registry#AUTH-REG-121-001"
+      },
+      {
+        "statement": "Current B-to-C delegated scope remains valid but is narrowed to Consequence consequence-j and Scope scope-t; it no longer includes Scope scope-s or Consequence consequence-k.",
+        "source": "institutional-delegation-scope-registry",
+        "evidence_ref": "institutional-delegation-scope-registry#B-C-SCOPE-121-B"
+      }
+    ]
+  },
+  "present_state_provenance": {
+    "attributable_source": "federation-domain-pack@1.4.0-v121",
+    "established_at": "2026-10-06T17:15:00.000Z",
+    "epistemic_status": "UNRESOLVED",
+    "evidence_refs": [
+      "external-root-authority-register#R0-121-FROZEN",
+      "external-root-authority-register#v121-root-to-b-current",
+      "institutional-delegation-registry#DELEG-B-C-121-001",
+      "institutional-delegation-scope-registry#B-C-SCOPE-121-B",
+      "institutional-authority-registry#AUTH-REG-121-001",
+      "authority-scope-inheritance-rule@1",
+      "rule-r1@1",
+      "federation-domain-pack@1.4.0-v121"
+    ]
+  },
+  "state_transition": {
+    "prior_state_ref": "V121-T0-R0-B-C-SCOPE-K-S-COVERED",
+    "new_observation_refs": [
+      "institutional-delegation-registry#DELEG-B-C-121-001",
+      "institutional-delegation-scope-registry#B-C-SCOPE-121-B",
+      "institutional-authority-registry#AUTH-REG-121-001"
+    ],
+    "relationship": "invalidates_prior_state",
+    "attributable_source": "federation-domain-pack@1.4.0-v121",
+    "observed_at": "2026-10-06T17:15:00.000Z",
+    "scope": [
+      "federated_shared_consequence",
+      "scope-s",
+      "consequence-k"
+    ]
+  },
+  "specialty_pack_evidence": {
+    "specialty_pack": "federation-domain-pack@1.4.0-v121",
+    "proposition_id": "execution_region_for_shared_execution",
+    "root_anchor_id": "R0",
+    "root_anchor_outside_falsifier": true,
+    "root_to_intermediate_standing": "GOVERNING",
+    "intermediate_delegation_id": "DELEG-B-C-121-001",
+    "intermediate_delegation_content_valid": true,
+    "effective_scope_record_id": "B-C-SCOPE-121-B",
+    "effective_scope_record_valid": true,
+    "effective_proposition_scope": [
+      "execution_region_for_shared_execution"
+    ],
+    "effective_consequence_scope": [
+      "consequence-j"
+    ],
+    "effective_subscope": [
+      "scope-t"
+    ],
+    "authority_instrument_id": "AUTH-REG-121-001",
+    "authority_instrument_content_valid": true,
+    "authority_chain_status": "INTACT",
+    "child_scope_within_parent": true,
+    "child_scope_within_delegation_ceiling": true,
+    "exact_scope_id": "scope-s",
+    "exact_consequence_id": "consequence-k",
+    "exact_scope_sufficient": false,
+    "domain_rule_ref": "rule-r1@1",
+    "constitutional_answer_supplied": false,
+    "constitution_status": "UNRESOLVED_AUTHORITY_SCOPE",
+    "proposition_value": null,
+    "governing_source_id": null,
+    "relationship": "invalidates_prior_state",
+    "relationship_basis": "R0 -> B -> C remains intact, but the current effective B-to-C scope does not cover proposition execution_region_for_shared_execution, Scope scope-s, and Consequence consequence-k together; unaffected delegated scope remains preserved"
+  }
+}
