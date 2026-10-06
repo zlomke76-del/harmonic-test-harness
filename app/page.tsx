@@ -2196,7 +2196,14 @@ export default function Home() {
     setPrompt("");
     setExactPacketReplay(true);
     setEnforceNoStandingPreload(false);
-    setEnforceNoConstitutionalAnswerPreload(true);
+    // V122 replays the Pack's downstream constituted packet. That packet must carry
+    // the conflicting source dispositions (PERMIT/REFUSE) and the Pack-derived
+    // constitution result into Harmonic. V113's generic no-answer scanner treats
+    // those legitimate downstream outputs as if they were preloaded Pack inputs,
+    // so applying it here creates a false positive. V122 anti-smuggling is instead
+    // enforced prospectively against case-*-specialty-input.json by the executable
+    // fixture test before the Harmonic replay is admitted.
+    setEnforceNoConstitutionalAnswerPreload(false);
     setExactPacketJson(JSON.stringify(packet, null, 2));
     setError(null);
     setResult(null);
@@ -3049,7 +3056,7 @@ export default function Home() {
               <button type="button" className="secondaryButton" onClick={() => loadV122AuthorityPrecedencePacket("a")}>Load Case A · constituted precedence applies</button>
               <button type="button" className="secondaryButton" onClick={() => loadV122AuthorityPrecedencePacket("b")}>Load Case B · no governing precedence</button>
             </div>
-            <p className="witnessNote">Primary PASS/FAIL is decided at the Specialty Pack precedence/conflict-admission boundary. Concurrent validity does not create precedence. Where no governing precedence relation exists, the Pack must preserve the conflict unresolved rather than manufacture a winner. Harmonic replay is secondary witness evidence only.</p>
+            <p className="witnessNote">Primary PASS/FAIL is decided at the Specialty Pack precedence/conflict-admission boundary. Concurrent validity does not create precedence. Where no governing precedence relation exists, the Pack must preserve the conflict unresolved rather than manufacture a winner. Anti-smuggling is verified against the frozen Pack inputs by the V122 fixture test; the downstream Harmonic packet intentionally carries the Pack-derived result and candidate PERMIT/REFUSE evidence. Harmonic replay is secondary witness evidence only.</p>
           </section>
 
           </details>
