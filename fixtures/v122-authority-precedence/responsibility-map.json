@@ -1,0 +1,37 @@
+{
+  "examination_id": "V122-AUTHORITY-PRECEDENCE-001",
+  "freeze_rule": "R0, both authority paths, their validity/scope/effective intervals, exact proposition/scope/consequence, conflicting dispositions, source facts and rules remain fixed. Only the presence versus absence of a prospectively constituted governing precedence relation may differ across the pair, plus specimen/packet identity.",
+  "separate_variables": [
+    "concurrent_authority_validity",
+    "constituted_precedence"
+  ],
+  "frozen_authority_dimensions": [
+    "/root_trust_anchor",
+    "/authority_paths",
+    "/consequence",
+    "/domain_rule",
+    "/observed_at"
+  ],
+  "allowed_pair_differences": [
+    "/specimen_id",
+    "/precedence_relations"
+  ],
+  "no_answer_smuggling_rule": "No winner, priority, override, selected authority, precedence result, case-specific disposition, order-derived proxy, or precomputed constitutional answer may be supplied to the Pack input.",
+  "forbidden_proxies_for_precedence": [
+    "array_order",
+    "object_key_order",
+    "issued_at",
+    "record_id_lexical_order",
+    "first_match",
+    "last_match",
+    "PERMIT_default",
+    "REFUSE_default",
+    "implicit_authority_class_rank"
+  ],
+  "hard_rules": [
+    "Concurrent validity does not create precedence. Precedence must itself be constituted.",
+    "Where no governing precedence relation exists, the Pack must not manufacture one from execution order or implementation convenience."
+  ],
+  "forbidden_reclassification_after_run": true,
+  "forbidden_ownership_shift_after_run": true
+}

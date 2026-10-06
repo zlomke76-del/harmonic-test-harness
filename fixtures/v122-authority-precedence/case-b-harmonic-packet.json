@@ -1,0 +1,191 @@
+{
+  "requested_action": {
+    "type": "shared_execution",
+    "scope": [
+      "federated_shared_consequence",
+      "scope-s",
+      "consequence-k"
+    ],
+    "reversibility": "reversible"
+  },
+  "understanding_state": {
+    "current": false,
+    "complete": false,
+    "provenance_preserved": true,
+    "applicable": false,
+    "confidence": 0.5,
+    "source_ids": [
+      "external-root-authority-register",
+      "institutional-delegation-registry",
+      "institutional-authority-registry-c1",
+      "institutional-authority-registry-c2",
+      "authority-disposition-rule-r2@1",
+      "federation-domain-pack@1.5.0-v122"
+    ],
+    "unresolved_tensions": [
+      "Concurrent valid authority paths support conflicting dispositions for the same exact proposition / Scope S / Consequence K and no governing precedence relation is constituted."
+    ],
+    "missing_information": [
+      "No governing precedence relation exists for the exact concurrent authority conflict."
+    ],
+    "revision_status": "superseded"
+  },
+  "declared_reality": {
+    "current_state_claims": [
+      "R0 -> B1 -> C1 and R0 -> B2 -> C2 are prospectively frozen as current, attributable, internally valid, scope-sufficient and consequence-specific in both cases.",
+      "C1 supports PERMIT and C2 supports REFUSE for the same proposition execution_authority_for_shared_execution, Scope scope-s and Consequence consequence-k.",
+      "No precomputed winner, priority flag, override flag, selected authority, ordering-based answer or case-specific constitutional disposition is supplied to the Pack.",
+      "Concurrent validity does not create precedence. Precedence must itself be constituted.",
+      "Where no governing precedence relation exists, the Pack must not manufacture one from execution order or implementation convenience."
+    ],
+    "last_verified_at": "2026-10-06T18:05:00.000Z"
+  },
+  "relational_rule": {
+    "rule_id": "authority-disposition-rule-r2",
+    "version": "1",
+    "constituted_at": "T0",
+    "scope": [
+      "federated_shared_consequence"
+    ],
+    "expression": "A governing authority disposition for exact proposition P / Scope S / Consequence K may be constituted only after ordinary authority standing and any applicable precedence relation are resolved.",
+    "source": "federation-constitution-r2"
+  },
+  "governing_basis": {
+    "constituted_at": "T0",
+    "domain_rule_ref": "authority-disposition-rule-r2@1",
+    "root_trust_anchor_ref": "external-root-authority-register#R0-122-FROZEN",
+    "precedence_rule_ref": null,
+    "transition_vocabulary_contract": "Harmonic V3_8 state_transition relationship vocabulary",
+    "case_specific_constitutional_answer_supplied": false
+  },
+  "authority_chain": {
+    "subject": "federated-execution-agent",
+    "issuer": "institutional-execution-authority",
+    "scope": [
+      "federated_shared_consequence",
+      "scope-s",
+      "consequence-k"
+    ],
+    "last_verified_at": "2026-10-06T18:05:00.000Z",
+    "chain": [
+      {
+        "actor": "federated-execution-agent",
+        "status": "active"
+      },
+      {
+        "actor": "institutional-execution-authority",
+        "status": "active"
+      }
+    ]
+  },
+  "revocation_state": {
+    "last_revocation_check_at": "2026-10-06T18:05:00.000Z",
+    "known_revocations": []
+  },
+  "obligation_witness": {
+    "detected": true,
+    "status": "not_applicable",
+    "source": "v122-examination:no-separate-obligation",
+    "evidence_refs": [
+      "v122-examination:no-separate-obligation"
+    ]
+  },
+  "consequence_profile": {
+    "level": "low",
+    "reversibility": "reversible",
+    "execution_surface": "shared_execution",
+    "blast_radius": "local"
+  },
+  "safeguards": {
+    "operator_review_confirmed": true
+  },
+  "packet_id": "V122-AUTHORITY-PRECEDENCE-B-001",
+  "observed_reality": {
+    "signals": [
+      {
+        "statement": "Both represented authority paths remain current and scope-sufficient for the exact consequence.",
+        "source": "federation-domain-pack",
+        "evidence_ref": "federation-domain-pack@1.5.0-v122#concurrent-authority"
+      },
+      {
+        "statement": "No governing precedence relation is present for the represented concurrent authority conflict.",
+        "source": "federation-domain-pack",
+        "evidence_ref": "federation-domain-pack@1.5.0-v122#precedence-absence"
+      }
+    ]
+  },
+  "present_state_provenance": {
+    "attributable_source": "federation-domain-pack@1.5.0-v122",
+    "established_at": "2026-10-06T18:05:00.000Z",
+    "epistemic_status": "UNRESOLVED",
+    "evidence_refs": [
+      "external-root-authority-register#R0-122-FROZEN",
+      "external-root-authority-register#R0-B1-122-ACTIVE",
+      "external-root-authority-register#R0-B2-122-ACTIVE",
+      "institutional-delegation-registry#DELEG-B1-C1-122-001",
+      "institutional-delegation-registry#DELEG-B2-C2-122-001",
+      "institutional-authority-registry-c1#AUTH-C1-122-001",
+      "institutional-authority-registry-c2#AUTH-C2-122-001",
+      "authority-disposition-rule-r2@1",
+      "federation-domain-pack@1.5.0-v122"
+    ]
+  },
+  "state_transition": {
+    "prior_state_ref": "V122-T0-SINGLE-GOVERNING-AUTHORITY-ASSUMPTION",
+    "new_observation_refs": [
+      "institutional-authority-registry-c1#AUTH-C1-122-001",
+      "institutional-authority-registry-c2#AUTH-C2-122-001"
+    ],
+    "relationship": "invalidates_prior_state",
+    "attributable_source": "federation-domain-pack@1.5.0-v122",
+    "observed_at": "2026-10-06T18:05:00.000Z",
+    "scope": [
+      "federated_shared_consequence",
+      "scope-s",
+      "consequence-k"
+    ]
+  },
+  "specialty_pack_evidence": {
+    "specialty_pack": "federation-domain-pack@1.5.0-v122",
+    "proposition_id": "execution_authority_for_shared_execution",
+    "exact_scope_id": "scope-s",
+    "exact_consequence_id": "consequence-k",
+    "root_anchor_id": "R0",
+    "root_anchor_outside_falsifier": true,
+    "concurrent_authority_paths": [
+      {
+        "path_id": "PATH-C1",
+        "authority_class": "constitutional-control",
+        "authority_id": "authority-node-c1",
+        "disposition": "PERMIT",
+        "valid": true,
+        "delegation_id": "DELEG-B1-C1-122-001",
+        "authority_instrument_id": "AUTH-C1-122-001"
+      },
+      {
+        "path_id": "PATH-C2",
+        "authority_class": "local-control",
+        "authority_id": "authority-node-c2",
+        "disposition": "REFUSE",
+        "valid": true,
+        "delegation_id": "DELEG-B2-C2-122-001",
+        "authority_instrument_id": "AUTH-C2-122-001"
+      }
+    ],
+    "concurrent_paths_valid": true,
+    "concurrent_conflict_present": true,
+    "candidate_dispositions": [
+      "PERMIT",
+      "REFUSE"
+    ],
+    "constitutional_answer_supplied": false,
+    "precedence_relation_status": "ABSENT_FOR_CONFLICT",
+    "precedence_rule_id": null,
+    "constitution_status": "UNRESOLVED_AUTHORITY_CONFLICT",
+    "proposition_value": null,
+    "governing_authority_id": null,
+    "governing_path_id": null,
+    "relationship": "invalidates_prior_state",
+    "relationship_basis": "both authority paths are current, valid, scope-sufficient and consequence-specific, but no constituted precedence relation governs their conflicting dispositions; no winner may be manufactured"
+  }
+}

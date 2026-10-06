@@ -1,0 +1,244 @@
+{
+  "specialty_pack": {
+    "id": "federation-domain-pack",
+    "version": "1.5.0-v122"
+  },
+  "observed_at": "2026-10-06T18:05:00.000Z",
+  "consequence": {
+    "type": "shared_execution",
+    "scope": "federated_shared_consequence",
+    "proposition_id": "execution_authority_for_shared_execution",
+    "scope_id": "scope-s",
+    "consequence_id": "consequence-k"
+  },
+  "domain_rule": {
+    "rule_id": "authority-disposition-rule-r2",
+    "version": "1",
+    "expression": "A governing authority disposition for exact proposition P / Scope S / Consequence K may be constituted only after ordinary authority standing and any applicable precedence relation are resolved.",
+    "preserving_class": "consistent",
+    "defeating_domain_class": "material_authority_conflict"
+  },
+  "root_trust_anchor": {
+    "anchor_id": "R0",
+    "authority_id": "institutional-constitutional-root",
+    "status": "FROZEN_EXTERNAL_TRUST_ANCHOR",
+    "scope": [
+      "execution_authority_for_shared_execution"
+    ],
+    "effective_interval": {
+      "from": "2026-01-01T00:00:00.000Z",
+      "until": null
+    },
+    "evidence_source_id": "external-root-authority-register",
+    "evidence_record_id": "R0-122-FROZEN",
+    "integrity": "preserved",
+    "outside_falsifier": true
+  },
+  "authority_paths": [
+    {
+      "path_id": "PATH-C1",
+      "authority_class": "constitutional-control",
+      "root_anchor_id": "R0",
+      "root_to_intermediate": {
+        "empowered_authority_id": "authority-node-b1",
+        "standing_state": "GOVERNING",
+        "proposition_scope": [
+          "execution_authority_for_shared_execution"
+        ],
+        "consequence_scope": [
+          "consequence-k"
+        ],
+        "subscope": [
+          "scope-s"
+        ],
+        "effective_interval": {
+          "from": "2026-01-01T00:00:00.000Z",
+          "until": null
+        },
+        "standing_evidence": {
+          "source_id": "external-root-authority-register",
+          "record_id": "R0-B1-122-ACTIVE",
+          "integrity": "preserved",
+          "self_asserted": false
+        }
+      },
+      "intermediate_delegation": {
+        "instrument_id": "DELEG-B1-C1-122-001",
+        "issuer_id": "authority-node-b1",
+        "delegate_id": "authority-node-c1",
+        "proposition_scope": [
+          "execution_authority_for_shared_execution"
+        ],
+        "consequence_scope": [
+          "consequence-k"
+        ],
+        "subscope": [
+          "scope-s"
+        ],
+        "issued_at": "2026-09-10T00:00:00.000Z",
+        "record_status": "current",
+        "signature": {
+          "status": "valid",
+          "algorithm": "synthetic-ed25519",
+          "signature_ref": "sig-deleg-b1-c1-122-001"
+        },
+        "provenance": {
+          "attributable_source": "institutional-delegation-registry",
+          "integrity": "preserved"
+        },
+        "effective_interval": {
+          "from": "2026-09-10T00:00:00.000Z",
+          "until": null
+        }
+      },
+      "authority_instrument": {
+        "record_id": "AUTH-C1-122-001",
+        "issuer_id": "authority-node-c1",
+        "proposition_id": "execution_authority_for_shared_execution",
+        "consequence_scope": [
+          "consequence-k"
+        ],
+        "subscope": [
+          "scope-s"
+        ],
+        "statement": {
+          "disposition": "PERMIT"
+        },
+        "issued_at": "2026-09-15T00:00:00.000Z",
+        "record_status": "current",
+        "signature": {
+          "status": "valid",
+          "algorithm": "synthetic-ed25519",
+          "signature_ref": "sig-auth-c1-122-001"
+        },
+        "provenance": {
+          "attributable_source": "institutional-authority-registry-c1",
+          "integrity": "preserved"
+        },
+        "effective_interval": {
+          "from": "2026-09-15T00:00:00.000Z",
+          "until": null
+        }
+      }
+    },
+    {
+      "path_id": "PATH-C2",
+      "authority_class": "local-control",
+      "root_anchor_id": "R0",
+      "root_to_intermediate": {
+        "empowered_authority_id": "authority-node-b2",
+        "standing_state": "GOVERNING",
+        "proposition_scope": [
+          "execution_authority_for_shared_execution"
+        ],
+        "consequence_scope": [
+          "consequence-k"
+        ],
+        "subscope": [
+          "scope-s"
+        ],
+        "effective_interval": {
+          "from": "2026-01-01T00:00:00.000Z",
+          "until": null
+        },
+        "standing_evidence": {
+          "source_id": "external-root-authority-register",
+          "record_id": "R0-B2-122-ACTIVE",
+          "integrity": "preserved",
+          "self_asserted": false
+        }
+      },
+      "intermediate_delegation": {
+        "instrument_id": "DELEG-B2-C2-122-001",
+        "issuer_id": "authority-node-b2",
+        "delegate_id": "authority-node-c2",
+        "proposition_scope": [
+          "execution_authority_for_shared_execution"
+        ],
+        "consequence_scope": [
+          "consequence-k"
+        ],
+        "subscope": [
+          "scope-s"
+        ],
+        "issued_at": "2026-09-10T00:00:00.000Z",
+        "record_status": "current",
+        "signature": {
+          "status": "valid",
+          "algorithm": "synthetic-ed25519",
+          "signature_ref": "sig-deleg-b2-c2-122-001"
+        },
+        "provenance": {
+          "attributable_source": "institutional-delegation-registry",
+          "integrity": "preserved"
+        },
+        "effective_interval": {
+          "from": "2026-09-10T00:00:00.000Z",
+          "until": null
+        }
+      },
+      "authority_instrument": {
+        "record_id": "AUTH-C2-122-001",
+        "issuer_id": "authority-node-c2",
+        "proposition_id": "execution_authority_for_shared_execution",
+        "consequence_scope": [
+          "consequence-k"
+        ],
+        "subscope": [
+          "scope-s"
+        ],
+        "statement": {
+          "disposition": "REFUSE"
+        },
+        "issued_at": "2026-09-15T00:00:00.000Z",
+        "record_status": "current",
+        "signature": {
+          "status": "valid",
+          "algorithm": "synthetic-ed25519",
+          "signature_ref": "sig-auth-c2-122-001"
+        },
+        "provenance": {
+          "attributable_source": "institutional-authority-registry-c2",
+          "integrity": "preserved"
+        },
+        "effective_interval": {
+          "from": "2026-09-15T00:00:00.000Z",
+          "until": null
+        }
+      }
+    }
+  ],
+  "specimen_id": "V122-AUTHORITY-PRECEDENCE-A-INPUT-001",
+  "precedence_relations": [
+    {
+      "rule_id": "PRECEDENCE-122-CONSTITUTIONAL-OVER-LOCAL",
+      "record_status": "current",
+      "proposition_id": "execution_authority_for_shared_execution",
+      "consequence_scope": [
+        "consequence-k"
+      ],
+      "subscope": [
+        "scope-s"
+      ],
+      "relation": {
+        "higher_authority_class": "constitutional-control",
+        "lower_authority_class": "local-control"
+      },
+      "issued_at": "2026-08-01T00:00:00.000Z",
+      "effective_interval": {
+        "from": "2026-08-01T00:00:00.000Z",
+        "until": null
+      },
+      "signature": {
+        "status": "valid",
+        "algorithm": "synthetic-ed25519",
+        "signature_ref": "sig-precedence-122-001"
+      },
+      "provenance": {
+        "attributable_source": "institutional-precedence-charter",
+        "integrity": "preserved"
+      },
+      "expression": "For proposition execution_authority_for_shared_execution at Scope scope-s / Consequence consequence-k, constitutional-control precedes local-control when both are concurrently valid and conflict."
+    }
+  ]
+}

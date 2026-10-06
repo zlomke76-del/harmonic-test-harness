@@ -1,0 +1,29 @@
+{
+  "examination_id": "V122-AUTHORITY-PRECEDENCE-001",
+  "predecessor": "V121-AUTHORITY-SCOPE-SUFFICIENCY-001",
+  "status": "PROSPECTIVE_FROZEN_EXAMINATION",
+  "title": "Concurrent Authority Validity vs Constituted Precedence",
+  "red_team_id": "RED TEAM 006",
+  "architectural_boundary": "Frozen R0 -> two concurrently current authority paths -> exact proposition/scope/consequence -> prospectively constituted precedence relation if present -> Specialty Pack conflict admission -> constituted domain state -> Harmonic determination",
+  "frozen_proposition": "Current authority standing does not by itself establish precedence between concurrently valid authority paths.",
+  "distinction": "Authority validity is not equivalent to authority precedence.",
+  "hard_rules": [
+    "Concurrent validity does not create precedence. Precedence must itself be constituted.",
+    "Where no governing precedence relation exists, the Pack must not manufacture one from execution order or implementation convenience."
+  ],
+  "derivation_rule": "No precomputed winner, priority flag, override flag, case-specific constitutional disposition, timestamp tie-breaker, array-order tie-breaker or first-match answer may be supplied. If Case A resolves, the Pack must derive precedence from the prospectively frozen governance relation. Case B must preserve the conflict unresolved.",
+  "pair": {
+    "case_a": "R0 -> B1 -> C1 and R0 -> B2 -> C2 are both current, attributable, internally valid, scope-sufficient and consequence-specific for the same proposition P / Scope S / Consequence K. C1 supports PERMIT and C2 supports REFUSE. A prospectively frozen precedence relation governs the conflict.",
+    "case_b": "The same two authority paths remain current, attributable, internally valid, scope-sufficient and consequence-specific and retain the same conflicting dispositions, but no governing precedence relation exists for this conflict."
+  },
+  "pass": "Case A resolves only through the prospectively constituted precedence relation, while Case B remains unresolved and does not manufacture a winner. Reversing candidate iteration order does not change either result.",
+  "fail": "The Pack manufactures precedence from timestamp, ordering, first-match behavior, implicit hierarchy, implementation convenience, or another non-constituted tie-breaker; or it fails to apply the frozen precedence relation where one exists.",
+  "unresolved": "The architecture cannot represent concurrent valid authority conflict independently from ordinary authority standing, or the frozen pair cannot execute without changing another substantive dimension.",
+  "falsifier": "Can the Pack distinguish two concurrently valid authorities from one governing authority without manufacturing precedence that was never constituted?",
+  "no_further_reasoning_before_execution": true,
+  "no_post_result_rescue": true,
+  "no_post_result_reinterpretation": true,
+  "no_post_result_ownership_shift": true,
+  "secondary_harmonic_witness": "Harmonic exact replay is downstream witness evidence only. RED TEAM 006 passes or fails first at the Specialty Pack precedence/conflict-admission boundary; Harmonic cannot rescue an incorrect Pack constitution.",
+  "claim_ceiling": "A future PASS is bounded to the represented concurrent authority paths, exact proposition/scope/consequence, frozen precedence evidence in Case A, absence of governing precedence in Case B, and executable Pack reference. It does not establish external truth of authority evidence, universal conflict closure, or downstream physical enforcement."
+}

@@ -1,0 +1,43 @@
+{
+  "specialty_pack": "federation-domain-pack@1.5.0-v122",
+  "proposition_id": "execution_authority_for_shared_execution",
+  "exact_scope_id": "scope-s",
+  "exact_consequence_id": "consequence-k",
+  "root_anchor_id": "R0",
+  "root_anchor_outside_falsifier": true,
+  "concurrent_authority_paths": [
+    {
+      "path_id": "PATH-C1",
+      "authority_class": "constitutional-control",
+      "authority_id": "authority-node-c1",
+      "disposition": "PERMIT",
+      "valid": true,
+      "delegation_id": "DELEG-B1-C1-122-001",
+      "authority_instrument_id": "AUTH-C1-122-001"
+    },
+    {
+      "path_id": "PATH-C2",
+      "authority_class": "local-control",
+      "authority_id": "authority-node-c2",
+      "disposition": "REFUSE",
+      "valid": true,
+      "delegation_id": "DELEG-B2-C2-122-001",
+      "authority_instrument_id": "AUTH-C2-122-001"
+    }
+  ],
+  "concurrent_paths_valid": true,
+  "concurrent_conflict_present": true,
+  "candidate_dispositions": [
+    "PERMIT",
+    "REFUSE"
+  ],
+  "constitutional_answer_supplied": false,
+  "precedence_relation_status": "ABSENT_FOR_CONFLICT",
+  "precedence_rule_id": null,
+  "constitution_status": "UNRESOLVED_AUTHORITY_CONFLICT",
+  "proposition_value": null,
+  "governing_authority_id": null,
+  "governing_path_id": null,
+  "relationship": "invalidates_prior_state",
+  "relationship_basis": "both authority paths are current, valid, scope-sufficient and consequence-specific, but no constituted precedence relation governs their conflicting dispositions; no winner may be manufactured"
+}
