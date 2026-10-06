@@ -18,6 +18,8 @@ import v120CaseA from "../fixtures/v120-authority-chain-continuity/case-a-harmon
 import v120CaseB from "../fixtures/v120-authority-chain-continuity/case-b-harmonic-packet.json";
 import v121CaseA from "../fixtures/v121-authority-scope-sufficiency/case-a-harmonic-packet.json";
 import v121CaseB from "../fixtures/v121-authority-scope-sufficiency/case-b-harmonic-packet.json";
+import v122CaseA from "../fixtures/v122-authority-precedence/case-a-harmonic-packet.json";
+import v122CaseB from "../fixtures/v122-authority-precedence/case-b-harmonic-packet.json";
 import type { CompareResponse, GovernanceAuthorityProvenance, GovernanceDecision, GovernanceDownstreamAccountability, GovernanceRequestedAction, GovernanceRealityWitness, GovernanceConsequenceProfile, GovernanceObligationWitness, GovernanceStateProvenanceWitness, GovernanceUnderstandingWitness, GovernanceSignal, LaneResult, PrimitiveResult, RuntimeTarget } from "../lib/types";
 
 function ExpandingPrompt(props: TextareaHTMLAttributes<HTMLTextAreaElement>) {
@@ -2186,6 +2188,20 @@ export default function Home() {
     setResult(null);
   }
 
+  function loadV122AuthorityPrecedencePacket(which: "a" | "b") {
+    const packet = which === "a" ? v122CaseA : v122CaseB;
+    setSelectedPattern(PATTERN_ALL);
+    setScenario(CUSTOM_SCENARIO_ID);
+    setCustomScenarioName(which === "a" ? "V122 Authority Precedence — Case A" : "V122 Authority Precedence — Case B");
+    setPrompt("");
+    setExactPacketReplay(true);
+    setEnforceNoStandingPreload(false);
+    setEnforceNoConstitutionalAnswerPreload(true);
+    setExactPacketJson(JSON.stringify(packet, null, 2));
+    setError(null);
+    setResult(null);
+  }
+
   function applyPattern(pattern: string) {
     setSelectedPattern(pattern);
     if (pattern === PATTERN_ALL) return;
@@ -2917,7 +2933,7 @@ export default function Home() {
           ) : null}
 
           <details className="researchExaminations">
-            <summary>Research examinations <small>V109 · V112 · V113 · V116 · V117 · V118 · V120 · V121</small></summary>
+            <summary>Research examinations <small>V109 · V112 · V113 · V116 · V117 · V118 · V120 · V121 · V122</small></summary>
             <p className="fieldHint">For exact reproduction: load a frozen specimen, then run its packet unchanged.</p>
           <section className="exactReplayPanel">
             <div className="witnessActions">
@@ -3021,6 +3037,19 @@ export default function Home() {
               <button type="button" className="secondaryButton" onClick={() => loadV121AuthorityScopePacket("b")}>Load Case B · chain intact, exact scope narrowed</button>
             </div>
             <p className="witnessNote">Primary PASS/FAIL is decided at the Specialty Pack scope-admission boundary. Hard rule: no child authority may inherit broader standing than the currently effective scope of the authority empowering it. Unaffected delegated authority must remain preserved. Harmonic replay is secondary witness evidence only.</p>
+          </section>
+
+          <section className="exactReplayPanel">
+            <div className="witnessActions">
+              <strong>V122 — Concurrent Authority Validity vs Constituted Precedence</strong>
+              <span className="fieldHint">RED TEAM 006 · two valid conflicting paths · precedence only if constituted</span>
+            </div>
+            <p className="witnessBoundary">R₀ → B₁ → C₁ and R₀ → B₂ → C₂ remain current, valid, scope-sufficient and consequence-specific in both cases. C₁ supports PERMIT; C₂ supports REFUSE. The Pack receives no precomputed winner, priority flag, override flag, first-match answer or ordering-based disposition.</p>
+            <div className="witnessActions">
+              <button type="button" className="secondaryButton" onClick={() => loadV122AuthorityPrecedencePacket("a")}>Load Case A · constituted precedence applies</button>
+              <button type="button" className="secondaryButton" onClick={() => loadV122AuthorityPrecedencePacket("b")}>Load Case B · no governing precedence</button>
+            </div>
+            <p className="witnessNote">Primary PASS/FAIL is decided at the Specialty Pack precedence/conflict-admission boundary. Concurrent validity does not create precedence. Where no governing precedence relation exists, the Pack must preserve the conflict unresolved rather than manufacture a winner. Harmonic replay is secondary witness evidence only.</p>
           </section>
 
           </details>
