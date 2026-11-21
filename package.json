@@ -45,7 +45,8 @@
     "test:v121-authority-scope-sufficiency": "node scripts/test-v121-authority-scope-sufficiency-fixtures.cjs",
     "test:v122-authority-precedence": "node scripts/test-v122-authority-precedence-fixtures.cjs",
     "test:interruption-continuity-resumption": "node examples/interruption-continuity-resumption/run.mjs",
-    "test:receiver-commit-controls": "node scripts/test-receiver-commit-controls.cjs"
+    "test:receiver-commit-controls": "node scripts/test-receiver-commit-controls.cjs",
+    "test:receiver-alignment": "node scripts/test-receiver-alignment.cjs"
   },
   "dependencies": {
     "@vercel/analytics": "^2.0.1",

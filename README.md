@@ -283,3 +283,13 @@ receiver with a temporary on-disk ledger and locally signed fixture receipts.
 It checks challenge-first and commit-first ordering, both adjudication branches,
 independent execution, and ledger attribution. This test is included in
 `npm test`. Its evidence applies to the locally executed SDK receiver.
+
+To verify alignment with a Harmonic core checkout, apply the SQLite receiver
+interruptibility code delta to core, then run from the harness:
+
+```bash
+npm run test:receiver-alignment -- /path/to/harmonic-core
+```
+
+This checks the SDK source copies, allowing the harness's CommonJS import
+extension, and runs the same on-disk ledger examination against both SDKs.
