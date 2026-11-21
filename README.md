@@ -262,3 +262,18 @@ npm run test:v122-authority-precedence
 ```
 
 Then use **Research examinations → V122** for exact packet replay. Primary PASS/FAIL is at the Specialty Pack precedence/conflict-admission boundary; Harmonic is downstream witness evidence only.
+
+## Interruption → Continuity → Resumption
+
+Run `npm run test:interruption-continuity-resumption` (no credentials or packages
+required). The command asserts the primary A → B → C run, the separate
+A → B → C₁ → C₂ run, an independent-delegation control, and commit-first
+ordering. It emits the ordered evidence with action and attempt identities.
+An assertion failure exits nonzero.
+
+The executable uses an in-memory reference receiver and ledger. The fixture
+supplies approvals, material challenge admission, and competent adjudication
+as constituted inputs. It exercises final standing evaluation and ledger
+commit in a single synchronous section, with a deterministic intervention after
+initial evaluation. Results establish behavior for this synthetic receiver.
+The private Harmonic runtime and deployed receiver remain outside this test.
