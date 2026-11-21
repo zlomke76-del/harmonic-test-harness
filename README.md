@@ -35,7 +35,7 @@ See [`docs/public/CLAIM_BOUNDARIES.md`](docs/public/CLAIM_BOUNDARIES.md).
 
 Requirements:
 
-- Node.js 20+
+- Node.js 22.13+ with `node:sqlite` for the full suite
 - npm
 - an issued Harmonic API key for live API examples
 
@@ -277,3 +277,9 @@ as constituted inputs. It exercises final standing evaluation and ledger
 commit in a single synchronous section, with a deterministic intervention after
 initial evaluation. Results establish behavior for this synthetic receiver.
 The private Harmonic runtime and deployed receiver remain outside this test.
+
+Run `npm run test:receiver-commit-controls` to exercise the Harmonic SQLite SDK
+receiver with a temporary on-disk ledger and locally signed fixture receipts.
+It checks challenge-first and commit-first ordering, both adjudication branches,
+independent execution, and ledger attribution. This test is included in
+`npm test`. Its evidence applies to the locally executed SDK receiver.
